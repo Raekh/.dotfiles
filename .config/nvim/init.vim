@@ -1,6 +1,7 @@
 syntax on
 let mapleader=" "
 set rnu 
+set colorcolumn=120
 
 call plug#begin()
 
@@ -14,8 +15,15 @@ call plug#begin()
 	Plug 'ggreer/the_silver_searcher'
 	Plug 'thePrimeagen/vim-be-good'
 	Plug 'wellle/targets.vim'
+	Plug 'nvim-lua/plenary.nvim' " don't forget to add this one if you don't have it yet!
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'ThePrimeagen/harpoon'
+	Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
+
+" To install tabnine
+" :CocInstall coc-tabnine
 
 colorscheme gruvbox
 nmap <leader>gd <Plug>(coc-definition)
@@ -27,4 +35,5 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-source $HOME/.config/nvim/themes/airline.vim
+" highlightedyank
+let g:highlightedyank_highlight_duration = 200
