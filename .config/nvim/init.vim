@@ -33,6 +33,14 @@ call plug#end()
 
 " To install tabnine
 " :CocInstall coc-tabnine
+"
+  "dependencies": {
+    "coc-actions": ">=1.5.0",
+    "coc-angular": ">=11.2.9",
+    "coc-json": ">=1.3.6",
+    "coc-tabnine": ">=1.3.4",
+    "coc-tsserver": ">=1.8.1"
+"  }
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPS='--reverse --color=always'
