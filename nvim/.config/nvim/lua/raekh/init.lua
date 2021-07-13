@@ -1,7 +1,7 @@
 require('raekh.telescope')
 require('raekh.git-worktree')
 require('raekh.harpoon')
--- require('raekh.lsp')
+require('raekh.lsp')
 require('raekh.statusline')
 
 P = function(v)

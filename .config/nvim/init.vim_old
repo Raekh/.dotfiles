@@ -1,7 +1,6 @@
-syntax on
 let mapleader=" "
 set number
-set rnu 
+set rnu
 set colorcolumn=120
 
 call plug#begin()

@@ -1,22 +1,48 @@
-call plug#begin('~/.vim/plugged')
+" == Useful sets
+set path+=**
 
+set wildmode=longest,list,full
+set wildmenu
+
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/android/*
+set wildignore+=*/ios/*
+set wildignore+=*/.git/*
+" ====
+"
+" ==== Packages
+call plug#begin('~/.vim/plugged')
 " == Themes and visual stuff
 " Themes
 Plug 'gruvbox-community/gruvbox'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
+" Vim airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Yank highlight
 Plug 'machakann/vim-highlightedyank'
 " ====
 "
 " == Helpers
 " LSP
+" Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+" Plug 'kabouzeid/nvim-lspinstall'
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
+Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'sharkdp/fd'
 " Autocompletion
-Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': ':CocInstall coc-actions coc-angular coc-json coc-tabnine coc-tsserver' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': ':CocInstall coc-actions coc-angular coc-json coc-tabnine coc-tsserver' }
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
 " Quick comments
@@ -46,6 +72,8 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'theprimeagen/git-worktree.nvim'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
 " ====
 "
 " == Miscellaneous
@@ -60,23 +88,12 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-surround'
 Plug 'theprimeagen/vim-with-me'
 " ====
-
 call plug#end()
+" ======
 
-
-" == Useful sets
-set path+=**
-
-set wildmode=longest,list,full
-set wildmenu
-
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
-set wildignore+=*/node_modules/*
-set wildignore+=*/android/*
-set wildignore+=*/ios/*
-set wildignore+=*/.git/*
+"
+" == Miscellaneous
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 " ====
 "
 " == Includes
@@ -86,6 +103,8 @@ lua require("raekh")
 " == Useful lets
 let mapleader=" "
 let loaded_matchparen = 1
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+set completeopt=menuone,noinsert,noselect
 let g:highlightedyank_highlight_duration = 200
 " ====
 "
@@ -144,6 +163,7 @@ augroup RAEKH
 augroup END
 " ====
 "
-" == Miscellaneous
-colorscheme gruvbox
+" == ES
+com! W w
 " ====
+"
