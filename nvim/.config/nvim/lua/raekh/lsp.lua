@@ -1,19 +1,18 @@
-local function on_attach()
-end
+local completion_callback = require'completion'.on_attach
 
+require'lspconfig'.tsserver.setup{ on_attach=completion_callback }
 
-require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 require'lspconfig'.clangd.setup{
-    on_attach=on_attach,
+    on_attach=completion_callback,
     root_dir = function() return vim.loop.cwd() end
 }
 
-require'lspconfig'.pyls.setup{ on_attach=on_attach }
-require'lspconfig'.svelte.setup{}
-require'lspconfig'.yamlls.setup{}
+require'lspconfig'.pyls.setup{ on_attach=completion_callback }
+require'lspconfig'.svelte.setup{ on_attach=completion_callback }
+require'lspconfig'.yamlls.setup{ on_attach=completion_callback }
 
 require'lspconfig'.gopls.setup{
-    on_attach=on_attach,
+    on_attach=completion_callback,
     cmd = { "gopls", "serve" },
     settings = {
         gopls = {
