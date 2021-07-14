@@ -106,6 +106,7 @@ let loaded_matchparen = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 set completeopt=menuone,noinsert,noselect
 let g:highlightedyank_highlight_duration = 200
+let g:completion_enable_auto_popup = 1
 " ====
 "
 " == Some remaps
