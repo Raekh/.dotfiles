@@ -1,0 +1,8 @@
+#!/bin/bash
+
+~/.config/herbstluftwm/configs/theme
+~/.config/herbstluftwm/configs/keybinds
+~/.config/herbstluftwm/configs/setup
+# ~/.config/herbstluftwm/configs/pacel
+~/.config/polybar/launch.sh --blocks
+
