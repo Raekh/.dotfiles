@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 " == Themes and visual stuff
 " Themes
 Plug 'gruvbox-community/gruvbox'
+Plug 'dylanaraps/wal.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 " Vim airline
@@ -36,6 +37,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+Plug 'folke/lsp-colors.nvim'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
@@ -91,13 +93,12 @@ Plug 'theprimeagen/vim-with-me'
 call plug#end()
 " ======
 
+" == Includes
+lua require("raekh")
+" ====
 "
 " == Miscellaneous
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-" ====
-"
-" == Includes
-lua require("raekh")
 " ====
 "
 " == Useful lets

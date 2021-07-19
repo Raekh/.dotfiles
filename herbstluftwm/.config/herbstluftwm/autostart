@@ -1,8 +1,11 @@
 #!/bin/bash
+xmodmap /home/raekh/.config/xkb/symbols/rpd-xmodmap &
+
+picom &
 
 ~/.config/herbstluftwm/configs/theme
 ~/.config/herbstluftwm/configs/keybinds
 ~/.config/herbstluftwm/configs/setup
 # ~/.config/herbstluftwm/configs/pacel
-~/.config/polybar/launch.sh --blocks
+~/.config/polybar/launch.sh --docky
 
