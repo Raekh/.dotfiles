@@ -106,9 +106,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-xmodmap /home/raekh/.config/xkb/symbols/rpd-xmodmap
-alias nn='~/.progs/nvim/nvim.appimage'
+(cat ~/.cache/wal/sequences)
+
+alias nn='/home/raekh/.appimages/nvim/nvim.appimage -u /home/raekh/.config/nvim/init.vim'
 alias acm='argo-commit'
 
+# export PATH=/home/raekh/.local/bin:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

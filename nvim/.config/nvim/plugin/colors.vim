@@ -1,6 +1,8 @@
 let raekh_colorscheme = "gruvbox"
+" let raekh_colorscheme = ""
 fun! ColorMyShit()
-    " let g:gruvbox_contrast_dark = 'hard'
+    " set termguicolors
+    let g:gruvbox_contrast_dark = 'hard'
     if exists('+termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -16,12 +18,13 @@ fun! ColorMyShit()
     endif
 
     highlight ColorColumn ctermbg=0 guibg=grey
-    " hi SignColumn guibg=none
-    " hi CursorLineNR guibg=None
-    " highlight Normal guibg=none
+    hi SignColumn guibg=none
+    hi CursorLineNR guibg=None
+    highlight Normal guibg=none
     " highlight LineNr guibg=#5eacd3
     highlight netrwDir guifg=#5eacd3
     highlight qfFileName guifg=#aed75f
+    highlight LspDiagnosticsDefaultError guifg=#FF0000
     hi TelescopeBorder guifg=#5eacd3
 endfun
 call ColorMyShit()
