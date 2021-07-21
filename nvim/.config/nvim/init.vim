@@ -26,6 +26,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Yank highlight
 Plug 'machakann/vim-highlightedyank'
+" Indent lines
+Plug 'lukas-reineke/indent-blankline.nvim'
+" LSP error handling
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 " ====
 "
 " == Helpers
@@ -126,10 +131,10 @@ nnoremap <Leader>ww ofunction wait(ms: number): Promise<void> {<CR>return new Pr
 " Disable Ex mode
 nnoremap <silent> Q <nop>
 " Disable navigation keys
-nmap <Up> <nop>
-nmap <Down> <nop>
-nmap <Left> <nop>
-nmap <Right> <nop>
+" nmap <Up> <nop>
+" nmap <Down> <nop>
+" nmap <Left> <nop>
+" nmap <Right> <nop>
 " Resource config file
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 " Resize

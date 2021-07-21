@@ -1,11 +1,20 @@
 local completion_callback = require'completion'.on_attach
 
-require("lsp-colors").setup({
-    Error = "#db4b4b",
-    Warning = "#e0af68",
-    Information = "#0db9d7",
-    Hint = "#10B981"
-})
+-- require("lsp-colors").setup({
+--     Error = "#db4b4b",
+--     Warning = "#e0af68",
+--     Information = "#0db9d7",
+--     Hint = "#10B981"
+-- })
+
+vim.fn.sign_define("LspDiagnosticsSignError",
+    {text = "", texthl = "GruvboxRed"})
+vim.fn.sign_define("LspDiagnosticsSignWarning",
+    {text = "", texthl = "GruvboxYellow"})
+vim.fn.sign_define("LspDiagnosticsSignInformation",
+    {text = "", texthl = "GruvboxBlue"})
+vim.fn.sign_define("LspDiagnosticsSignHint",
+    {text = "", texthl = "GruvboxAqua"})
 
 require'lspconfig'.tsserver.setup{ on_attach=completion_callback }
 
@@ -39,3 +48,6 @@ local opts = {
 }
 
 require('symbols-outline').setup(opts)
+
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
