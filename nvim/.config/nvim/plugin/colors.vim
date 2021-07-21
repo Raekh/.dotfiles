@@ -21,11 +21,16 @@ fun! ColorMyShit()
     hi SignColumn guibg=none
     hi CursorLineNR guibg=None
     highlight Normal guibg=none
-    " highlight LineNr guibg=#5eacd3
     highlight netrwDir guifg=#5eacd3
     highlight qfFileName guifg=#aed75f
-    highlight LspDiagnosticsDefaultError guifg=#FF0000
     hi TelescopeBorder guifg=#5eacd3
+    " Old commands
+    " highlight LineNr guibg=#5eacd3
+    " LSP Settings
+    " hi LspDiagnosticsVirtualTextError guifg=red gui=bold,italic,underline
+    " hi LspDiagnosticsVirtualTextWarning guifg=orange gui=bold,italic,underline
+    " hi LspDiagnosticsVirtualTextInformation guifg=yellow gui=bold,italic,underline
+    " hi LspDiagnosticsVirtualTextHint guifg=green gui=bold,italic,underline
 endfun
 call ColorMyShit()
 
