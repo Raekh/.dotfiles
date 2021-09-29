@@ -3,11 +3,13 @@ cursor:
 
 font:
   normal:
-    family: Fira code
-  size: 9.0
+   # family: Operator Mono Lig
+    family: Iosevka Nerd Font Mono
+    style: Regular
+  size: 14.0
   offset:
     x: 0
-    y: 3
+    y: 0
 
 window:
   padding:
@@ -18,4 +20,4 @@ window:
 background_opacity: 0.9
 
 shell:
-  program: /bin/zsh
+  program: /usr/local/bin/zsh

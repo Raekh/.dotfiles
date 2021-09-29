@@ -15,7 +15,10 @@ set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
-set expandtab
+set noexpandtab
+" set list listchars=tab:\⎸\ ,trail:·,extends:»,precedes:«,nbsp:×
+set list listchars=tab:\│\ ,trail:·,extends:»,precedes:«,nbsp:×
+" autocmd! bufreadpost * set noexpandtab | retab! 4
 
 " No wrap
 set nowrap
@@ -52,3 +55,8 @@ set shortmess+=c
 
 " Color column for `max-len`
 set colorcolumn=80
+" set colorrow=80
+""
+"" Italic comments
+"set t_ZH=^[[3m
+"set t_ZR=^[[23m
