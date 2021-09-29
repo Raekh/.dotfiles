@@ -36,6 +36,14 @@ M.search_dotfiles = function()
     })
 end
 
+M.search_config = function()
+	require('telescope.builtin').find_files({
+		prompt_title = '< DotFiles >',
+		cwd = '~/.dotfiles/',
+		hidden = true,
+	})
+end
+
 M.git_branches = function()
     require('telescope.builtin').git_branches({
         attach_mappings = function(_, map)
@@ -48,7 +56,7 @@ end
 
 function set_background(content)
     vim.fn.system(
-    "~/.config/polybar/docky/scripts/pywal.sh " .. content)
+    "wal -i " .. content)
 end
 
 local function select_background(prompt_bufnr, map)
@@ -83,5 +91,5 @@ local function image_selector(prompt, cwd)
     end
 end
 
-M.background_selector = image_selector("< Set background and colors > ", "~/.dotfiles/backgrounds/")
+M.background_selector = image_selector("< Set background and colors > ", "~/.config/backgrounds/")
 return M

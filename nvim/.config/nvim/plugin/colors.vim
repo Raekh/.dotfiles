@@ -23,14 +23,15 @@ fun! ColorMyShit()
     highlight Normal guibg=none
     highlight netrwDir guifg=#5eacd3
     highlight qfFileName guifg=#aed75f
+    highlight Comment cterm=italic gui=italic
     hi TelescopeBorder guifg=#5eacd3
     " Old commands
     " highlight LineNr guibg=#5eacd3
     " LSP Settings
-    " hi LspDiagnosticsVirtualTextError guifg=red gui=bold,italic,underline
-    " hi LspDiagnosticsVirtualTextWarning guifg=orange gui=bold,italic,underline
-    " hi LspDiagnosticsVirtualTextInformation guifg=yellow gui=bold,italic,underline
-    " hi LspDiagnosticsVirtualTextHint guifg=green gui=bold,italic,underline
+    hi LspDiagnosticsVirtualTextError guifg=#cc241d gui=bold,italic,underline
+    hi LspDiagnosticsVirtualTextWarning guifg=#d79921 gui=bold,italic,underline
+    hi LspDiagnosticsVirtualTextInformation guifg=#458588 gui=bold,italic,underline
+    hi LspDiagnosticsVirtualTextHint guifg=#689d6a gui=bold,italic,underline
 endfun
 call ColorMyShit()
 

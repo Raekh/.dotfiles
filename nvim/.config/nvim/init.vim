@@ -1,4 +1,4 @@
-" == Useful sets
+"}== Useful sets
 set path+=**
 
 set wildmode=longest,list,full
@@ -15,34 +15,46 @@ set wildignore+=*/.git/*
 "
 " ==== Packages
 call plug#begin('~/.vim/plugged')
+Plug 'ashzero2/VimPilot'
 " == Themes and visual stuff
+" Dashboard
+" Plug 'glepnir/dashboard-nvim'
 " Themes
 Plug 'gruvbox-community/gruvbox'
 Plug 'dylanaraps/wal.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 " Vim airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
 " Yank highlight
 Plug 'machakann/vim-highlightedyank'
 " Indent lines
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'Yggdroot/indentLine'
 " LSP error handling
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 " ====
 "
 " == Helpers
+" Tree
+" Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 " LSP
 " Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'sublimelsp/LSP-tailwindcss'
+Plug 'ray-x/lsp_signature.nvim'
 " Plug 'kabouzeid/nvim-lspinstall'
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'folke/lsp-colors.nvim'
+" QuickFix
+Plug 'kevinhwang91/nvim-bqf'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
@@ -73,6 +85,8 @@ Plug 'theprimeagen/rfc-reader'
 Plug 'mhinz/vim-rfc'
 " Prettier
 Plug 'sbdchd/neoformat'
+" Refactor
+Plug 'theprimeagen/refactoring.nvim'
 " ====
 "
 " == Git related stuff
@@ -93,6 +107,10 @@ Plug 'theprimeagen/vim-be-good'
 Plug 'tpope/vim-projectionist'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-surround'
+" Plug 'windwp/nvim-autopairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'LunarWatcher/auto-pairs'
+Plug 'AndrewRadev/dsf.vim'
 Plug 'theprimeagen/vim-with-me'
 " ====
 call plug#end()
@@ -108,11 +126,21 @@ lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 "
 " == Useful lets
 let mapleader=" "
+" ====
+"
+" == Useful lets
+let mapleader=" "
 let loaded_matchparen = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 set completeopt=menuone,noinsert,noselect
 let g:highlightedyank_highlight_duration = 200
 let g:completion_enable_auto_popup = 1
+" ====
+"
+" == indentLine
+" let g:indentLine_setColors = 0
+let g:indentLine_defaultGroup = 'SpecialKey'
+let g:indentLine_char = '⎸'
 " ====
 "
 " == Some remaps
@@ -126,9 +154,41 @@ vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
+
+nnoremap Y y$
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==i
+inoremap <C-k> <esc>:m .-2<CR>==i
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
+nnoremap zj o<Esc>k
+nnoremap zk O<Esc>j
+
+nnoremap o o<Esc>
+nnoremap O O<Esc>
+
+vnoremap < <gv
+vnoremap > >gv
 " Snippet
+
 nnoremap <Leader>ww ofunction wait(ms: number): Promise<void> {<CR>return new Promise(res => setTimeout(res, ms));<CR>}<esc>k=i{<CR>
-" Disable Ex mode
+nmap <Leader>cl yss)iconsole.log<Esc>ww
+nmap <Leader>cll <Leader>cli"", "", bbla%c
+"Disable Ex mode
 nnoremap <silent> Q <nop>
 " Disable navigation keys
 " nmap <Up> <nop>
@@ -150,23 +210,30 @@ nnoremap <leader>pv :Ex<CR>
 nnoremap <leader>gt <Plug>PlenaryTestFile
 nnoremap <leader>vwm :lua require("vim-with-me").init()<CR>
 nnoremap <leader>dwm :lua require("vdm-with-me").disconnect()<CR>
-
-nnoremap J :m '>+1<CR>gv=gv
-nnoremap K :m '<-2<CR>gv=gv
 " ====
 "
 " == Functions
 fun! EmptyRegisters()
-    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
-    for r in regs
-        call setreg(r, [])
-    endfor
+	let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+	for r in regs
+		call setreg(r, [])
+	endfor
 endfun
 
+fun! CenterSearch()
+	let cmdtype = getcmdtype()
+	if cmdtype == '/' || cmdtype == '?'
+		return "\<enter>zz"
+	endif
+	return "\<enter>"
+endfun
+
+cnoremap <silent> <expr> <enter> CenterSearch()
+
 augroup RAEKH
-    autocmd!
-    autocmd BufWritePre * %s/\s\+$//e
-    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+	autocmd!
+	autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 " ====
 "
