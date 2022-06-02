@@ -1,3 +1,6 @@
+set nocompatible
+set ttyfast
+
 " Line numbers
 set rnu
 set nu
@@ -8,17 +11,12 @@ set nohlsearch
 " Buffers in background
 set hidden
 
-" No error bells
-set noerrorbells
-
 " Tab settings
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
 set noexpandtab
-" set list listchars=tab:\⎸\ ,trail:·,extends:»,precedes:«,nbsp:×
 set list listchars=tab:\│\ ,trail:·,extends:»,precedes:«,nbsp:×
-" autocmd! bufreadpost * set noexpandtab | retab! 4
 
 " No wrap
 set nowrap
@@ -31,9 +29,6 @@ set undofile
 
 " Search
 set incsearch
-
-" Colors
-set termguicolors
 
 " Scroll before the end of the screen
 set scrolloff=8
@@ -54,9 +49,12 @@ set updatetime=50
 set shortmess+=c
 
 " Color column for `max-len`
-set colorcolumn=80
-" set colorrow=80
-""
-"" Italic comments
-"set t_ZH=^[[3m
-"set t_ZR=^[[23m
+set colorcolumn=140
+
+" View command results asynchronously
+set inccommand=nosplit
+
+" Italic comments
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+

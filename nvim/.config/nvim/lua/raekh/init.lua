@@ -1,10 +1,8 @@
 require('raekh.telescope')
-require('raekh.git-worktree')
-require('raekh.harpoon')
-require('raekh.lsp')
-require('raekh.statusline')
-require('raekh.refactoring')
+require('raekh.tabline')
 require('raekh.lualine')
+require('raekh.utils')
+require('raekh.diaglist')
 require('raekh.treesitter')
 
 P = function(v)
