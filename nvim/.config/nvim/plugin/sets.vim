@@ -14,7 +14,8 @@ set hidden
 " Tab settings
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set smartindent
+filetype plugin indent on
+set autoindent
 set noexpandtab
 set list listchars=tab:\│\ ,trail:·,extends:»,precedes:«,nbsp:×
 
@@ -58,3 +59,14 @@ set inccommand=nosplit
 set t_ZH=^[[3m
 set t_ZR=^[[23m
 
+" Javascript settings
+setl nospell
+setl nowrap
+setl tabstop=4
+setl shiftwidth=4
+setl smartindent
+setl noexpandtab
+let b:vcm_tab_complete = 'javascript'
+let b:javascript_fold = 1
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0

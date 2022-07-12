@@ -22,7 +22,7 @@ Plug 'windwp/nvim-ts-autotag'
 Plug 'w0rp/ale'
 " Lsp
 Plug 'neovim/nvim-lspconfig'
-Plug 'tami5/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'weilbith/nvim-code-action-menu'
 Plug 'williamboman/nvim-lsp-installer'
 " Completion/Lsp
@@ -81,11 +81,16 @@ Plug 'j5shi/CommandLineComplete.vim'
 " Trial
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 Plug 'glacambre/firenvim', {'do': ':firenvim#install()'}
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'hrsh7th/cmp-copilot'
 Plug '907th/vim-auto-save'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'samjwill/nvim-unception'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'nvim-emmet/nvim-emmet'
+Plug 'MunifTanjim/prettier.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
 call plug#end()
 
 lua require("raekh")

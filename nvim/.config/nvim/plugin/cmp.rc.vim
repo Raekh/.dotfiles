@@ -38,7 +38,7 @@ cmp.setup {
 		}
 	},
 	sources = {
-		{ name = "copilot" },
+		{ name = "tailwindcss" },
 		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "buffer" },

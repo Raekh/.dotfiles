@@ -4,6 +4,7 @@ require('raekh.lualine')
 require('raekh.utils')
 require('raekh.diaglist')
 require('raekh.treesitter')
+require('raekh.lsp')
 
 P = function(v)
 	print(vim.inspect(v))
