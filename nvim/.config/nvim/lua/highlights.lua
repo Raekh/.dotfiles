@@ -5,4 +5,4 @@ vim.opt.wildoptions = 'pum'
 vim.opt.pumblend = 5
 vim.opt.background = 'dark'
 
-vim.cmd('set list listchars=tab:\\│\\ ,trail:·,extends:»,precedes:«,nbsp:×')
+-- vim.cmd('set list listchars=tab:\\│\\ ,trail:·,extends:»,precedes:«,nbsp:×')
