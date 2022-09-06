@@ -52,6 +52,8 @@ packer.startup(function(use)
     -- Themes
     use 'ellisonleao/gruvbox.nvim'
     use 'akinsho/nvim-bufferline.lua'
+    use 'tiagovla/scope.nvim'
+    -- use 'romgrk/barbar.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -71,6 +73,9 @@ packer.startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end
     }
     use 'superhawk610/ascii-blocks.nvim'
+
+    -- on trial
+    use 'sunjon/Shade.nvim'
     -- [[
     --	use {
     --		'svrana/neosolarized.nvim',

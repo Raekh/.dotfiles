@@ -3,9 +3,11 @@ if (not status) then return end
 
 bufferline.setup {
 	options = {
-		mode = 'tabs',
+		mode = 'buffers',
 		numbers = 'ordinal',
 		show_tab_indicators = true,
+        max_name_length = 30,
+        max_prefix_length = 20,
 		diagnostics = "nvim_lsp",
 		diagnostics_update_in_insert = true,
 		name_formatter = function(buf)
@@ -13,10 +15,10 @@ bufferline.setup {
 				return vim.fn.fnamemodify(buf.name, ':t:r')
 			end
 		end,
-		separator_style = 'slant',
+		-- separator_style = 'slant',
 		always_show_bufferline = true,
-		show_buffer_close_icons = true,
-		show_close_icon = true,
+		show_buffer_close_icons = false,
+		show_close_icon = false,
 		color_icons = true
 	},
 	--[[
@@ -43,5 +45,7 @@ bufferline.setup {
 	--]]
 }
 
-vim.api.nvim_set_keymap('n', 'gt', '<cmd>BufferLineCycleNext<CR>', {})
-vim.api.nvim_set_keymap('n', 'gT', '<cmd>BufferLineCyclePrev<CR>', {})
+vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>BufferLineCycleNext<CR>', {})
+vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>BufferLineCyclePrev<CR>', {})
+vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>bdelete<CR>', {})
+vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>enew<CR>', {})
