@@ -110,7 +110,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# thefuck
+eval $(thefuck --alias)
 
+# ls (exa override)
+alias ls='exa'
+alias ll='exa -l'
+alias la='exa -la'
 # neovim
 alias nn='nvim'
 
