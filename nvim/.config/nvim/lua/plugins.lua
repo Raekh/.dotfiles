@@ -77,6 +77,7 @@ packer.startup(function(use)
     use 'superhawk610/ascii-blocks.nvim'
 
     -- on trial
+    use 'folke/tokyonight.nvim'
     use 'sindrets/diffview.nvim'
     use 'karb94/neoscroll.nvim'
     -- [[

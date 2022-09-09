@@ -8,7 +8,7 @@ local symbol_map = {
     hint = "",
 }
 
-bufferline.setup {
+require'bufferline'.setup {
 	options = {
 		mode = 'buffers',
 		numbers = 'none',
@@ -38,7 +38,7 @@ bufferline.setup {
 			end
 		end,
         ---@diagnostic disable-next-line: assign-type-mismatch
-        separator_style = 'thick',
+        separator_style = { "│", "│" },
 		always_show_bufferline = true,
 		show_buffer_close_icons = true,
 		show_close_icon = false,
