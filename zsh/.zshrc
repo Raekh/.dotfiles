@@ -81,6 +81,17 @@ plugins=(
     git
     safe-paste
     zsh-z
+    docker-compose
+    aliases
+    ansible
+    autojump
+    brew
+    colored-man-pages
+    macos
+    nmap
+    ripgrep
+    thefuck
+    z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,7 +126,7 @@ source $ZSH/oh-my-zsh.sh
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
 
 # thefuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # ls (exa override)
 alias ls='exa --group-directories-first'
