@@ -111,13 +111,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+# kitty
+alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
+
 # thefuck
 eval $(thefuck --alias)
 
 # ls (exa override)
-alias ls='exa'
-alias ll='exa -l'
-alias la='exa -la'
+alias ls='exa --group-directories-first'
+alias ll='exa -l --group-directories-first'
+alias la='exa -la --group-directories-first'
 # neovim
 alias nn='nvim'
 
@@ -128,7 +131,10 @@ alias yag='yarn global add'
 
 # git
 alias changeMEP='git log --no-merges --pretty=oneline --abbrev-commit --no-decorate origin/master..origin/develop | sed "s/^\(\w\)* //"'
+alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short"
 
 export TERM=xterm-256color
+
+export PATH="$PATH:$HOME/.config/zsh/scripts/"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
