@@ -53,6 +53,7 @@ packer.startup(function(use)
     use 'ellisonleao/gruvbox.nvim'
     use 'akinsho/nvim-bufferline.lua'
     use 'tiagovla/scope.nvim'
+    use 'moll/vim-bbye'
     -- use 'romgrk/barbar.nvim'
     use {
         'nvim-lualine/lualine.nvim',
@@ -65,6 +66,7 @@ packer.startup(function(use)
     use 'tpope/vim-rhubarb'
     use 'tpope/vim-dispatch'
     use 'tpope/vim-projectionist'
+    use 'tpope/vim-dadbod'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
     --Utils
@@ -75,7 +77,8 @@ packer.startup(function(use)
     use 'superhawk610/ascii-blocks.nvim'
 
     -- on trial
-    use 'sunjon/Shade.nvim'
+    use 'sindrets/diffview.nvim'
+    use 'karb94/neoscroll.nvim'
     -- [[
     --	use {
     --		'svrana/neosolarized.nvim',
