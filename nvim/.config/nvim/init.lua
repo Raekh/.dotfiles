@@ -19,5 +19,5 @@ if is_win then
 end
 
 -- Small trick to fix theme related issues
-vim.cmd [[ colorscheme gruvbox ]]
-vim.cmd [[ colorscheme gruvbox ]]
+vim.cmd [[ colorscheme tokyonight-night ]]
+-- vim.cmd [[ colorscheme gruvbox ]]
