@@ -79,6 +79,7 @@ packer.startup(function(use)
     -- on trial
     use 'folke/tokyonight.nvim'
     use 'sindrets/diffview.nvim'
+    -- use 'sindrets/winshift.nvim'
     use 'karb94/neoscroll.nvim'
     -- [[
     --	use {
