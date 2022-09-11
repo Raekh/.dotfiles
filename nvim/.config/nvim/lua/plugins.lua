@@ -55,10 +55,9 @@ packer.startup(function(use)
     use 'tiagovla/scope.nvim'
     use 'moll/vim-bbye'
     -- use 'romgrk/barbar.nvim'
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    use 'kyazdani42/nvim-web-devicons'
+    use 'nvim-lualine/lualine.nvim'
+
     -- tpope
     use 'tpope/vim-commentary'
     use 'tpope/vim-abolish'
@@ -81,6 +80,13 @@ packer.startup(function(use)
     use 'sindrets/diffview.nvim'
     -- use 'sindrets/winshift.nvim'
     use 'karb94/neoscroll.nvim'
+    use 'Djancyp/better-comments.nvim' -- Okay, but maybe try to change colors automatically. Colorizer/Theme plugin maybe ?
+    use 'vigoux/notifier.nvim'
+    use 'phaazon/mind.nvim'
+    use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
+    use 'WilsonOh/emoji_picker-nvim' -- A lot of missing emojis + no search function. No sure if worth it.
+    use 'gaoDean/autolist.nvim'
+    use 'simrat39/symbols-outline.nvim'
     -- [[
     --	use {
     --		'svrana/neosolarized.nvim',
