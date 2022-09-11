@@ -18,6 +18,8 @@ if is_win then
 	require('windows')
 end
 
+vim.cmd [[ runtime scratch/automagic/part3.lua ]]
+
 -- Small trick to fix theme related issues
 vim.cmd [[ colorscheme tokyonight-night ]]
 -- vim.cmd [[ colorscheme gruvbox ]]
