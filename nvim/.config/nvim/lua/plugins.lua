@@ -34,10 +34,13 @@ packer.startup(function(use)
         run = ':TSUpdate'
     }
     -- QOL
+    use 'karb94/neoscroll.nvim'
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
     use 'lewis6991/gitsigns.nvim'
     use 'norcalli/nvim-colorizer.lua'
+    use 'vigoux/notifier.nvim'
+    use 'Djancyp/better-comments.nvim' -- Okay, but maybe try to change colors automatically. Colorizer/Theme plugin maybe ?
     -- use 'machakann/vim-highlightedyank'
     -- Telescope
     use 'nvim-lua/plenary.nvim' -- common utilities
@@ -45,16 +48,17 @@ packer.startup(function(use)
     use 'nvim-telescope/telescope-file-browser.nvim'
     -- Git
     use 'dinhhuy258/git.nvim' -- for git blame & browse
+    use 'sindrets/diffview.nvim'
     -- Misc/Icons
     use 'onsails/lspkind-nvim' -- vscode-like pictograms
     -- Tabs/Spaces
     use 'lukas-reineke/indent-blankline.nvim'
     -- Themes
+    use 'folke/tokyonight.nvim'
     use 'ellisonleao/gruvbox.nvim'
     use 'akinsho/nvim-bufferline.lua'
     use 'tiagovla/scope.nvim'
     use 'moll/vim-bbye'
-    -- use 'romgrk/barbar.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
 
@@ -76,24 +80,12 @@ packer.startup(function(use)
     use 'superhawk610/ascii-blocks.nvim'
 
     -- on trial
-    use 'folke/tokyonight.nvim'
-    use 'sindrets/diffview.nvim'
     -- use 'sindrets/winshift.nvim'
-    use 'karb94/neoscroll.nvim'
-    use 'Djancyp/better-comments.nvim' -- Okay, but maybe try to change colors automatically. Colorizer/Theme plugin maybe ?
-    use 'vigoux/notifier.nvim'
     use 'phaazon/mind.nvim'
     use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
-    use 'WilsonOh/emoji_picker-nvim' -- A lot of missing emojis + no search function. No sure if worth it.
     use 'gaoDean/autolist.nvim'
     use 'simrat39/symbols-outline.nvim'
     use {'0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
         run = 'cd js && npm ci'
     }
-    -- [[
-    --	use {
-    --		'svrana/neosolarized.nvim',
-    --		requires = { 'tjdevries/colorbuddy.nvim' }
-    --	}
-    --
 end)
