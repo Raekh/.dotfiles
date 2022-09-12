@@ -87,6 +87,9 @@ packer.startup(function(use)
     use 'WilsonOh/emoji_picker-nvim' -- A lot of missing emojis + no search function. No sure if worth it.
     use 'gaoDean/autolist.nvim'
     use 'simrat39/symbols-outline.nvim'
+    use {'0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
+        run = 'cd js && npm ci'
+    }
     -- [[
     --	use {
     --		'svrana/neosolarized.nvim',
