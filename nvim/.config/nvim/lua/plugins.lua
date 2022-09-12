@@ -80,7 +80,8 @@ packer.startup(function(use)
     use 'superhawk610/ascii-blocks.nvim'
 
     -- on trial
-    -- use 'sindrets/winshift.nvim'
+    use 'sindrets/winshift.nvim'
+    use 'sindrets/oxocarbon-lua.nvim'
     use 'phaazon/mind.nvim'
     use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
     use 'gaoDean/autolist.nvim'

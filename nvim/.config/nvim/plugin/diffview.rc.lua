@@ -104,3 +104,11 @@ require('diffview').setup({
         },
     }
 })
+
+
+vim.keymap.set('n', ';dv', '<Cmd>DiffviewOpen<CR>')
+vim.keymap.set('n', ';dc', '<Cmd>DiffviewClose<CR>')
+vim.keymap.set('n', ';dt', '<Cmd>DiffviewToggleFiles<CR>')
+vim.keymap.set('n', ';dh', '<Cmd>DiffviewFileHistory<CR>')
+vim.keymap.set('n', ';df', '<Cmd>DiffviewFileHistory %<CR>')
+vim.keymap.set('n', ';dr', '<Cmd>DiffviewRefresh<CR>')
