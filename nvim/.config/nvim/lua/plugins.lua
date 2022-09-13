@@ -80,6 +80,7 @@ packer.startup(function(use)
     use 'superhawk610/ascii-blocks.nvim'
 
     -- on trial
+    use "glepnir/dashboard-nvim"
     use 'jayp0521/mason-null-ls.nvim'
     use 'ldelossa/buffertag'
     use 'sindrets/winshift.nvim'
@@ -89,7 +90,7 @@ packer.startup(function(use)
     use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
     use 'gaoDean/autolist.nvim'
     use 'simrat39/symbols-outline.nvim'
-    use {'0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
+    use { '0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
         run = 'cd js && npm ci'
     }
 end)
