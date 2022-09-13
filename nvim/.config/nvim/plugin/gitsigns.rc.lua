@@ -37,6 +37,9 @@ gitsigns.setup {
         internal = true,
         indent_heuristic = true,
     },
+    sign_priority = 6,
+    update_debounce = 100,
+    status_formatter = nil,
     on_attach = function (bufnr)
         local gs = package.loaded.gitsigns
 
@@ -83,3 +86,34 @@ gitsigns.setup {
         map("n", ";td", gs.toggle_deleted)
     end
 }
+
+---@param from string|string[] Syntax group name or a list of group names.
+---@param to? string Syntax group name. (default: `"NONE"`)
+---@param opt? hl.HiLinkSpec
+local hi_link = function(from, to, opt)
+  if to and tostring(to):upper() == "NONE" then
+    ---@diagnostic disable-next-line: cast-local-type
+    to = -1
+  end
+
+  opt = vim.tbl_extend("keep", opt or {}, {
+    force = true,
+  }) --[[@as hl.HiLinkSpec ]]
+
+  if type(from) ~= "table" then from = { from } end
+
+  for _, f in ipairs(from) do
+    if opt.clear then
+      vim.api.nvim_set_hl(0, f, {})
+    end
+
+    vim.api.nvim_set_hl(0, f, {
+      default = opt.default,
+      link = to,
+    })
+  end
+end
+
+hi_link("GitSignsAdd", "diffAdded", { default = true })
+hi_link("GitSignsChange", "diffChanged", { default = true })
+hi_link("GitSignsDelete", "diffRemoved", { default = true })
