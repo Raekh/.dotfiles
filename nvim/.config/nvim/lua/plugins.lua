@@ -80,8 +80,11 @@ packer.startup(function(use)
     use 'superhawk610/ascii-blocks.nvim'
 
     -- on trial
+    use 'jayp0521/mason-null-ls.nvim'
+    use 'ldelossa/buffertag'
     use 'sindrets/winshift.nvim'
     use 'sindrets/oxocarbon-lua.nvim'
+    -- use 'sindrets/gitsigns.nvim' -- Should be thoroughly tested with every map
     use 'phaazon/mind.nvim'
     use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
     use 'gaoDean/autolist.nvim'
