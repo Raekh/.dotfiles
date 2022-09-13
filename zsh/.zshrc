@@ -124,6 +124,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
+alias zshconf='nvim $HOME/.zshrc'
 
 # thefuck
 # eval $(thefuck --alias)
@@ -144,8 +145,12 @@ alias yag='yarn global add'
 alias changeMEP='git log --no-merges --pretty=oneline --abbrev-commit --no-decorate origin/master..origin/develop | sed "s/^\(\w\)* //"'
 alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short"
 
+# tmuxinator
+alias mux='tmuxinator'
+
 export TERM=xterm-256color
 
+export EDITOR="nvim"
 export PATH="$PATH:$HOME/.config/zsh/scripts/"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
