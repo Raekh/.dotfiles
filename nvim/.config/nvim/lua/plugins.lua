@@ -80,7 +80,7 @@ packer.startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end
     }
     use 'superhawk610/ascii-blocks.nvim'
-
+    use 'kyazdani42/nvim-tree.lua'
     -- on trial
     use "glepnir/dashboard-nvim"
     use 'jayp0521/mason-null-ls.nvim'
