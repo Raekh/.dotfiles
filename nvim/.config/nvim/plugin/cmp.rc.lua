@@ -4,12 +4,14 @@ if (not status) then return end
 
 local lspkind = require 'lspkind'
 
+local separator = "• "
+
 local source_mapping = {
-    buffer = "[Buffer]",
-    nvim_lsp = "[LSP]",
-    nvim_lua = "[Lua]",
-    cmp_tabnine = "[TN]",
-    path = "[Path]",
+    buffer = separator .. "Buffer",
+    nvim_lsp = separator .. "LSP",
+    nvim_lua = separator .. "Lua",
+    cmp_tabnine = separator .. "TN",
+    path = separator .. "Path",
 }
 
 cmp.setup({
@@ -35,9 +37,9 @@ cmp.setup({
     }),
     formatting = {
         format = function (entry, vim_item)
-            vim_item.kind = lspkind.symbolic(vim_item.kind, {mode = "symbol"})
+            vim_item.kind = lspkind.symbolic(vim_item.kind, {mode = "symbol_text"})
             vim_item.menu = source_mapping[entry.source.name]
-            if entry.source.nabe == "cmp_tabnine" then
+            if entry.source.name == "cmp_tabnine" then
                 local detail = (entry.completion_item.data or {}).detail
                 vim_item.kind = ""
                 if detail and detail:find('.*%%.*') then
