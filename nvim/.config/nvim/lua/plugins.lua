@@ -26,6 +26,7 @@ packer.startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's builtin lsp
     use 'hrsh7th/nvim-cmp' -- Completion
     use 'jose-elias-alvarez/null-ls.nvim' -- Use neovim as language server to inject lsp diagnostics, code actions and more
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     -- Snippets
     use 'L3MON4D3/Luasnip' -- Snippets
     -- Treesitter
