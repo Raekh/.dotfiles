@@ -72,6 +72,7 @@ packer.startup(function(use)
     use 'tpope/vim-dadbod'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
+    use 'AndrewRadev/dsf.vim'
     --Utils
     use {
         'iamcco/markdown-preview.nvim',
