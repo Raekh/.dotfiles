@@ -34,6 +34,7 @@ packer.startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'RRethy/nvim-treesitter-textsubjects'
     -- QOL
     use 'karb94/neoscroll.nvim'
     use 'windwp/nvim-autopairs'
@@ -88,6 +89,10 @@ packer.startup(function(use)
     use 'sindrets/winshift.nvim'
     use 'phaazon/mind.nvim'
     use 'simrat39/symbols-outline.nvim'
+    use 'code-biscuits/nvim-biscuits'
+    use 'potamides/pantran.nvim'
+    -- use 'alec-gibson/nvim-tetris'
+    -- use 'seandewar/nvimesweeper'
     -- Might be useful later
     -- use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
     -- use { '0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...

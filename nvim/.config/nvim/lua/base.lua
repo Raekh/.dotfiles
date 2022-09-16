@@ -50,6 +50,13 @@ vim.opt.formatoptions:append { 'r' }
 -- Suppress appending <PasteStart> and <PasteEnd> when pasting
 vim.cmd([[ set t_BE= ]])
 
+
+-- Use tabs for snippets
+vim.cmd([[
+    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+    inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+]])
+
 -- vim.opt.cursorline = true
 
 --vim.cmd([[colorscheme gruvbox ]])
