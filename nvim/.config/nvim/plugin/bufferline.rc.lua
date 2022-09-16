@@ -42,7 +42,15 @@ require'bufferline'.setup {
 		always_show_bufferline = true,
 		show_buffer_close_icons = true,
 		show_close_icon = false,
-		color_icons = true
+		color_icons = true,
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                text_align = "center",
+                separator = true
+            }
+        },
 	},
 	--[[
 	highlights = {
