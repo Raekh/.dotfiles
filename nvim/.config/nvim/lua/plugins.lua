@@ -84,13 +84,12 @@ packer.startup(function(use)
     use 'jayp0521/mason-null-ls.nvim'
     use 'ldelossa/buffertag'
     use 'sindrets/winshift.nvim'
-    use 'sindrets/oxocarbon-lua.nvim'
-    -- use 'sindrets/gitsigns.nvim' -- Should be thoroughly tested with every map
     use 'phaazon/mind.nvim'
-    use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
-    use 'gaoDean/autolist.nvim'
     use 'simrat39/symbols-outline.nvim'
-    use { '0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
-        run = 'cd js && npm ci'
-    }
+    -- Might be useful later
+    -- use 'AckslD/nvim-FeMaco.lua' -- ~ cannot save code, only useful for viewing with syntax
+    -- use { '0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
+    --     run = 'cd js && npm ci'
+    -- }
+    -- use 'gaoDean/autolist.nvim' -- Seems to be causing issues sometimes
 end)
