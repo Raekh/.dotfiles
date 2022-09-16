@@ -147,6 +147,14 @@ alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 
 # tmuxinator
 alias mux='tmuxinator'
+sw() {
+    echo $@ | xargs -n 1 tmuxinator start
+}
+swt() {
+    echo $@
+}
+alias swa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator start'
+alias swk='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator stop'
 
 export TERM=xterm-256color
 
