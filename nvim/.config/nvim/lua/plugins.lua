@@ -93,6 +93,7 @@ packer.startup(function(use)
     use 'potamides/pantran.nvim'
     use 'ray-x/lsp_signature.nvim'
     use 'NMAC427/guess-indent.nvim'
+    use 'ziontee113/color-picker.nvim'
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
     -- Might be useful later
