@@ -74,6 +74,7 @@ packer.startup(function(use)
     use 'tpope/vim-dadbod'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
+    use 'AckslD/nvim-revJ.lua'
     use 'AndrewRadev/dsf.vim'
     --Utils
     use {
@@ -94,6 +95,7 @@ packer.startup(function(use)
     use 'ray-x/lsp_signature.nvim'
     use 'NMAC427/guess-indent.nvim'
     use 'ziontee113/color-picker.nvim'
+    use 'petertriho/nvim-scrollbar'
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
     -- Might be useful later
