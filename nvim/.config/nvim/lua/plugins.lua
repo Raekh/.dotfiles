@@ -91,6 +91,8 @@ packer.startup(function(use)
     use 'simrat39/symbols-outline.nvim'
     use 'code-biscuits/nvim-biscuits'
     use 'potamides/pantran.nvim'
+    use 'ray-x/lsp_signature.nvim'
+    use 'NMAC427/guess-indent.nvim'
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
     -- Might be useful later
