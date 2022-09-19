@@ -112,7 +112,7 @@ packer.startup(function(use)
             'MunifTanjim/nui.nvim',
         }
     }
-
+    use "danymat/neogen"
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
     -- Might be useful later
