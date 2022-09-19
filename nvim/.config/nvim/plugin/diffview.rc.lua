@@ -56,29 +56,28 @@ require('diffview').setup({
     },
     hooks = {
         -----@param view StandardView
-        --view_opened = function(view)
-        --    -- Highlight 'DiffChange' as 'DiffDelete' on the left, and 'DiffAdd' on
-        --    -- the right.
-        --    local function post_layout()
-        --        utils.tbl_ensure(view, "winopts.diff2.a")
-        --        utils.tbl_ensure(view, "winopts.diff2.b")
-        --        view.winopts.diff2.a = utils.tbl_union_extend(view.winopts.diff2.a, {
-        --            winhl = {
-        --                "DiffChange:DiffAddAsDelete",
-        --                "DiffText:DiffDeleteText",
-        --            },
-        --        })
-        --        view.winopts.diff2.b = utils.tbl_union_extend(view.winopts.diff2.b, {
-        --            winhl = {
-        --                "DiffChange:DiffAdd",
-        --                "DiffText:DiffAddText",
-        --            },
-        --        })
-        --    end
+        view_opened = function(view)
+            local function handle_windows()
+                local status, windows = pcall(require, 'windows')
+                if (not status) then return end
 
-        --    view.emitter:on("post_layout", post_layout)
-        --    post_layout()
-        --end,
+                -- vim.cmd [[ :WindowsDisableAutowidth ]]
+            end
+
+            view.emitter:on("post_layout", handle_windows)
+            handle_windows()
+        end,
+        view_closed = function(view)
+            local function handle_windows()
+                local status, windows = pcall(require, 'windows')
+                if (not status) then return end
+
+                -- vim.cmd [[ :WindowsEnableAutowidth ]]
+            end
+
+            view.emitter:on("post_layout", handle_windows)
+            handle_windows()
+        end
         --diff_buf_read = function(bufnr)
         --    -- Disable some performance heavy stuff in long files.
         --    if vim.api.nvim_buf_line_count(bufnr) >= 2500 then
