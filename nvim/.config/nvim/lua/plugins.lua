@@ -105,6 +105,13 @@ packer.startup(function(use)
             'anuvyklack/animation.nvim'
         }
     }
+    use 'nacro90/numb.nvim'
+    use { 'bennypowers/nvim-regexplainer',
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+            'MunifTanjim/nui.nvim',
+        }
+    }
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
