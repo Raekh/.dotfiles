@@ -7,6 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
+    use 'lewis6991/impatient.nvim'
     -- Packer
     use 'wbthomason/packer.nvim'
     -- Lsp
@@ -114,6 +115,13 @@ packer.startup(function(use)
     }
     use 'danymat/neogen'
     use 'axkirillov/easypick.nvim'
+    use {
+        'lewis6991/spaceless.nvim',
+        config = function()
+            require'spaceless'.setup()
+        end
+    }
+
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
     -- Might be useful later

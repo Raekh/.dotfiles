@@ -1,3 +1,5 @@
+require('impatient')
+
 require('base')
 require('highlights')
 require('maps')
