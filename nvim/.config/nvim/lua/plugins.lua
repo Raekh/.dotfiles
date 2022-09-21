@@ -1,6 +1,6 @@
 local status, packer = pcall(require, 'packer')
 if (not status) then
-    print("Packer is not installed")
+    print('Packer is not installed')
     return
 end
 
@@ -17,7 +17,7 @@ packer.startup(function(use)
     use 'MunifTanjim/prettier.nvim' -- Prettier plugin for builtin Neovim lsp
     -- use {
     -- 	'prettier/vim-prettier',
-    -- 	run = function () vim.fn["yarn install --frozen-lockfile --production"]() end
+    -- 	run = function () vim.fn['yarn install --frozen-lockfile --production']() end
     -- }
     use 'MunifTanjim/eslint.nvim'
     use 'neoclide/vim-jsx-improve'
@@ -79,12 +79,12 @@ packer.startup(function(use)
     --Utils
     use {
         'iamcco/markdown-preview.nvim',
-        run = function() vim.fn["mkdp#util#install"]() end
+        run = function() vim.fn['mkdp#util#install']() end
     }
     use 'superhawk610/ascii-blocks.nvim'
     use 'kyazdani42/nvim-tree.lua'
     -- on trial
-    use "glepnir/dashboard-nvim"
+    use 'glepnir/dashboard-nvim'
     use 'jayp0521/mason-null-ls.nvim'
     use 'ldelossa/buffertag'
     use 'sindrets/winshift.nvim'
@@ -99,7 +99,7 @@ packer.startup(function(use)
     use 'anuvyklack/middleclass'
     use 'anuvyklack/animation.nvim'
     use {
-        "anuvyklack/windows.nvim",
+        'anuvyklack/windows.nvim',
         requires = {
             'anuvyklack/middleclass',
             'anuvyklack/animation.nvim'
@@ -112,7 +112,8 @@ packer.startup(function(use)
             'MunifTanjim/nui.nvim',
         }
     }
-    use "danymat/neogen"
+    use 'danymat/neogen'
+    use 'axkirillov/easypick.nvim'
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
     -- Might be useful later

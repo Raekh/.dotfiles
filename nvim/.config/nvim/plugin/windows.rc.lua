@@ -23,4 +23,4 @@ vim.o.winwidth = 10
 vim.o.winminwidth = 10
 vim.o.equalalways = false
 
-vim.keymap.set('n', ';wz', '<Cmd>WindowsMaximaze<CR>')
+vim.keymap.set('n', ';wz', '<Cmd>WindowsMaximize<CR>')

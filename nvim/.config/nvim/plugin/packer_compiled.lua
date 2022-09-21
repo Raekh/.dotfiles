@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/Luasnip",
     url = "https://github.com/L3MON4D3/Luasnip"
   },
+  ["animation.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/animation.nvim",
+    url = "https://github.com/anuvyklack/animation.nvim"
+  },
   ["ascii-blocks.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/ascii-blocks.nvim",
@@ -104,6 +109,16 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
+  ["color-picker.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/color-picker.nvim",
+    url = "https://github.com/ziontee113/color-picker.nvim"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -113,6 +128,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
+  },
+  ["dsf.vim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/dsf.vim",
+    url = "https://github.com/AndrewRadev/dsf.vim"
+  },
+  ["easypick.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/easypick.nvim",
+    url = "https://github.com/axkirillov/easypick.nvim"
   },
   ["eslint.nvim"] = {
     loaded = true,
@@ -134,10 +159,20 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["guess-indent.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/guess-indent.nvim",
+    url = "https://github.com/NMAC427/guess-indent.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -174,10 +209,20 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  middleclass = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/middleclass",
+    url = "https://github.com/anuvyklack/middleclass"
+  },
   ["mind.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/mind.nvim",
     url = "https://github.com/phaazon/mind.nvim"
+  },
+  neogen = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/neogen",
+    url = "https://github.com/danymat/neogen"
   },
   ["neoscroll.nvim"] = {
     loaded = true,
@@ -189,15 +234,30 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/notifier.nvim",
     url = "https://github.com/vigoux/notifier.nvim"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  ["numb.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/numb.nvim",
+    url = "https://github.com/nacro90/numb.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-biscuits"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-biscuits",
+    url = "https://github.com/code-biscuits/nvim-biscuits"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
@@ -219,10 +279,35 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-regexplainer"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-regexplainer",
+    url = "https://github.com/bennypowers/nvim-regexplainer"
+  },
+  ["nvim-revJ.lua"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-revJ.lua",
+    url = "https://github.com/AckslD/nvim-revJ.lua"
+  },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-textsubjects"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textsubjects",
+    url = "https://github.com/RRethy/nvim-treesitter-textsubjects"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
@@ -238,6 +323,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["pantran.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/pantran.nvim",
+    url = "https://github.com/potamides/pantran.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -328,6 +418,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["windows.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/windows.nvim",
+    url = "https://github.com/anuvyklack/windows.nvim"
   },
   ["winshift.nvim"] = {
     loaded = true,
