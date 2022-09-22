@@ -51,3 +51,5 @@ db.custom_header = {
 db.custom_center = {
     { desc = "Let's get this party started !!" }
 }
+
+vim.api.nvim_set_keymap('n', '<C-n>', '<Cmd>DashboardNewFile<CR>', {})

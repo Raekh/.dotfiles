@@ -79,4 +79,3 @@ require'bufferline'.setup {
 vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>BufferLineCycleNext<CR>', {})
 vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>BufferLineCyclePrev<CR>', {})
 vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>Bdelete<CR>', {})
-vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>enew<CR>', {})
