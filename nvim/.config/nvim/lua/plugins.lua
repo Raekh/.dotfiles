@@ -121,6 +121,7 @@ packer.startup(function(use)
             require'spaceless'.setup()
         end
     }
+    use 'luk400/vim-lichess'
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
