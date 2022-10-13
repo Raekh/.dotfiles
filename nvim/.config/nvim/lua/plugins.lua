@@ -127,6 +127,7 @@ packer.startup(function(use)
             require'spaceless'.setup()
         end
     }
+    use 'ja-ford/delaytrain.nvim'
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
