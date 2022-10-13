@@ -415,6 +415,11 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-jsx-improve",
     url = "https://github.com/neoclide/vim-jsx-improve"
   },
+  ["vim-lichess"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-lichess",
+    url = "https://github.com/luk400/vim-lichess"
+  },
   ["vim-projectionist"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-projectionist",

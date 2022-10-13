@@ -32,6 +32,7 @@ vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.wo.scl='yes'
 vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
+vim.opt.hidden = false
 
 
 -- Undercurl

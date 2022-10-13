@@ -6,6 +6,10 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
+packer.init({
+    max_jobs = 20
+})
+
 packer.startup(function(use)
     use 'lewis6991/impatient.nvim'
     -- Packer
@@ -59,9 +63,11 @@ packer.startup(function(use)
     -- Themes
     use 'folke/tokyonight.nvim'
     use 'ellisonleao/gruvbox.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'akinsho/nvim-bufferline.lua'
     use 'tiagovla/scope.nvim'
     use 'moll/vim-bbye'
+    use 'kazhala/close-buffers.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
 
@@ -121,7 +127,6 @@ packer.startup(function(use)
             require'spaceless'.setup()
         end
     }
-    use 'luk400/vim-lichess'
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
