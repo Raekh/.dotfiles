@@ -1,6 +1,8 @@
 local status, neoscroll = pcall(require, 'neoscroll')
 if (not status and not neoscroll) then return end
 
+if(true) then return end
+
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
 -- Use the "sine" easing function
@@ -23,7 +25,8 @@ require'neoscroll'.setup({
     stop_eof = true,
     respect_scrolloff = true,
     cursor_scrolls_alone = true,
-    easing_function = 'quadratic'
+    easing_function = 'quadratic',
+    performance_mode = true
 })
 
 require'neoscroll.config'.set_mappings(t);
