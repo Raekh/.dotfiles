@@ -128,6 +128,7 @@ packer.startup(function(use)
         end
     }
     use 'ja-ford/delaytrain.nvim'
+    use 'arithran/vim-delete-hidden-buffers'
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
