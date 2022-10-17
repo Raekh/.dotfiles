@@ -13,9 +13,9 @@ end
 
 ---@diagnostic disable-next-line: redundant-parameter
 require 'null-ls'.setup({
-    on_exit = function(client, bufnr)
-        vim.lsp.buf_detach_client(bufnr, client.id)
-    end,
+    -- on_exit = function(client, bufnr)
+    --     vim.lsp.buf_detach_client(bufnr, client.id)
+    -- end,
     on_attach = function(client, bufnr)
         -- local detach = function ()
         --     vim.lsp.buf_detach_client(bufnr, client.id)
