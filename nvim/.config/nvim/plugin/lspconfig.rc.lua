@@ -65,7 +65,10 @@ local function on_attach(client, bufnr)
 end
 
 nvim_lsp.tsserver.setup {
-    on_attach = on_attach,
+    on_attach = function(client,bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
 }

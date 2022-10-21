@@ -127,7 +127,6 @@ packer.startup(function(use)
             require'spaceless'.setup()
         end
     }
-    use 'ja-ford/delaytrain.nvim'
     use 'arithran/vim-delete-hidden-buffers'
 
     -- use 'alec-gibson/nvim-tetris'
