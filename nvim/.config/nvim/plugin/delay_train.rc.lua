@@ -1,4 +1,4 @@
-local status, delaytrain = pcall(require, 'delaytrain')
-if (not status) then return end
+-- local status, delaytrain = pcall(require, 'delaytrain')
+-- if (not status) then return end
 
-delaytrain.setup()
+-- delaytrain.setup()

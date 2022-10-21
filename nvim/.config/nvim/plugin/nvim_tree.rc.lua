@@ -19,3 +19,4 @@ nt.setup({
 })
 
 vim.keymap.set("n", ";nt", "<Cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", ";nf", "<Cmd>NvimTreeFindFileToggle<CR>")
