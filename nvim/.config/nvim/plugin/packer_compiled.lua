@@ -89,15 +89,15 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/ascii-blocks.nvim",
     url = "https://github.com/superhawk610/ascii-blocks.nvim"
   },
-  ["better-comments.nvim"] = {
+  catppuccin = {
     loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/better-comments.nvim",
-    url = "https://github.com/Djancyp/better-comments.nvim"
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
   },
-  buffertag = {
+  ["close-buffers.nvim"] = {
     loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/buffertag",
-    url = "https://github.com/ldelossa/buffertag"
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/close-buffers.nvim",
+    url = "https://github.com/kazhala/close-buffers.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -164,11 +164,6 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/guess-indent.nvim",
     url = "https://github.com/NMAC427/guess-indent.nvim"
   },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
-  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -224,15 +219,13 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/mind.nvim",
     url = "https://github.com/phaazon/mind.nvim"
   },
-  neogen = {
-    loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/neogen",
-    url = "https://github.com/danymat/neogen"
-  },
-  ["neoscroll.nvim"] = {
-    loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
-    url = "https://github.com/karb94/neoscroll.nvim"
+  ["noice.nvim"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nnoice\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/opt/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
   },
   ["notifier.nvim"] = {
     loaded = true,
@@ -283,6 +276,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-regexplainer"] = {
     loaded = true,
@@ -375,6 +373,11 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -400,6 +403,11 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-dadbod",
     url = "https://github.com/tpope/vim-dadbod"
   },
+  ["vim-delete-hidden-buffers"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-delete-hidden-buffers",
+    url = "https://github.com/arithran/vim-delete-hidden-buffers"
+  },
   ["vim-dispatch"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-dispatch",
@@ -414,11 +422,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-jsx-improve",
     url = "https://github.com/neoclide/vim-jsx-improve"
-  },
-  ["vim-lichess"] = {
-    loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/vim-lichess",
-    url = "https://github.com/luk400/vim-lichess"
   },
   ["vim-projectionist"] = {
     loaded = true,
@@ -452,6 +455,13 @@ time([[Defining packer_plugins]], false)
 time([[Config for spaceless.nvim]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14spaceless\frequire\0", "config", "spaceless.nvim")
 time([[Config for spaceless.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'noice.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

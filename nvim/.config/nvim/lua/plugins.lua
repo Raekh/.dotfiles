@@ -11,7 +11,7 @@ packer.init({
 })
 
 packer.startup(function(use)
-    use 'lewis6991/impatient.nvim'
+    -- use 'lewis6991/impatient.nvim'
     -- Packer
     use 'wbthomason/packer.nvim'
     -- Lsp
@@ -20,10 +20,6 @@ packer.startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'MunifTanjim/prettier.nvim' -- Prettier plugin for builtin Neovim lsp
-    -- use {
-    -- 	'prettier/vim-prettier',
-    -- 	run = function () vim.fn['yarn install --frozen-lockfile --production']() end
-    -- }
     use 'MunifTanjim/eslint.nvim'
     use 'neoclide/vim-jsx-improve'
     -- Completion
@@ -31,6 +27,7 @@ packer.startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's builtin lsp
     use 'hrsh7th/nvim-cmp' -- Completion
     use 'jose-elias-alvarez/null-ls.nvim' -- Use neovim as language server to inject lsp diagnostics, code actions and more
+    use 'jayp0521/mason-null-ls.nvim'
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     -- Snippets
     use 'L3MON4D3/Luasnip' -- Snippets
@@ -41,13 +38,11 @@ packer.startup(function(use)
     }
     use 'RRethy/nvim-treesitter-textsubjects'
     -- QOL
-    use 'karb94/neoscroll.nvim'
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
     use 'lewis6991/gitsigns.nvim'
     use 'norcalli/nvim-colorizer.lua'
     use 'vigoux/notifier.nvim'
-    use 'Djancyp/better-comments.nvim' -- Okay, but maybe try to change colors automatically. Colorizer/Theme plugin maybe ?
     -- use 'machakann/vim-highlightedyank'
     -- Telescope
     use 'nvim-lua/plenary.nvim' -- common utilities
@@ -60,7 +55,20 @@ packer.startup(function(use)
     use 'onsails/lspkind-nvim' -- vscode-like pictograms
     -- Tabs/Spaces
     use 'lukas-reineke/indent-blankline.nvim'
-    -- Themes
+    use 'NMAC427/guess-indent.nvim'
+    -- Window management
+    use 'sindrets/winshift.nvim'
+    use 'anuvyklack/middleclass'
+    use 'anuvyklack/animation.nvim'
+    use {
+        'anuvyklack/windows.nvim',
+        requires = {
+            'anuvyklack/middleclass',
+            'anuvyklack/animation.nvim'
+        }
+    }
+    -- Themes/Visual stuff
+    use 'glepnir/dashboard-nvim'
     use 'folke/tokyonight.nvim'
     use 'ellisonleao/gruvbox.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
@@ -88,39 +96,12 @@ packer.startup(function(use)
         'iamcco/markdown-preview.nvim',
         run = function() vim.fn['mkdp#util#install']() end
     }
-    use 'superhawk610/ascii-blocks.nvim'
     use 'kyazdani42/nvim-tree.lua'
-    -- on trial
-    use 'glepnir/dashboard-nvim'
-    use 'jayp0521/mason-null-ls.nvim'
-    use 'ldelossa/buffertag'
-    use 'sindrets/winshift.nvim'
-    use 'phaazon/mind.nvim'
     use 'simrat39/symbols-outline.nvim'
     use 'code-biscuits/nvim-biscuits'
-    use 'potamides/pantran.nvim'
     use 'ray-x/lsp_signature.nvim'
-    use 'NMAC427/guess-indent.nvim'
-    use 'ziontee113/color-picker.nvim'
     use 'petertriho/nvim-scrollbar'
-    use 'anuvyklack/middleclass'
-    use 'anuvyklack/animation.nvim'
-    use {
-        'anuvyklack/windows.nvim',
-        requires = {
-            'anuvyklack/middleclass',
-            'anuvyklack/animation.nvim'
-        }
-    }
     use 'nacro90/numb.nvim'
-    use { 'bennypowers/nvim-regexplainer',
-        requires = {
-            'nvim-treesitter/nvim-treesitter',
-            'MunifTanjim/nui.nvim',
-        }
-    }
-    use 'danymat/neogen'
-    use 'axkirillov/easypick.nvim'
     use {
         'lewis6991/spaceless.nvim',
         config = function()
@@ -128,6 +109,37 @@ packer.startup(function(use)
         end
     }
     use 'arithran/vim-delete-hidden-buffers'
+
+    -- on trial
+    -- use 'ldelossa/buffertag' -- need better alternative
+    -- use 'kevinhwang91/nvim-bqf -- hmm
+    use 'folke/todo-comments.nvim'
+    use({
+        "folke/noice.nvim",
+        event = "VimEnter",
+        config = function()
+            require("noice").setup()
+        end,
+        requires = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    })
+    use 'superhawk610/ascii-blocks.nvim'
+    use 'potamides/pantran.nvim'
+    use 'axkirillov/easypick.nvim'
+    use 'phaazon/mind.nvim'
+    use 'ziontee113/color-picker.nvim'
+    use { 'bennypowers/nvim-regexplainer',
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+            'MunifTanjim/nui.nvim',
+        }
+    }
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
