@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/guess-indent.nvim",
     url = "https://github.com/NMAC427/guess-indent.nvim"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
