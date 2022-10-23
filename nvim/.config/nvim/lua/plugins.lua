@@ -11,7 +11,7 @@ packer.init({
 })
 
 packer.startup(function(use)
-    -- use 'lewis6991/impatient.nvim'
+    use 'lewis6991/impatient.nvim'
     -- Packer
     use 'wbthomason/packer.nvim'
     -- Lsp
@@ -140,6 +140,8 @@ packer.startup(function(use)
             'MunifTanjim/nui.nvim',
         }
     }
+    use 'andythigpen/nvim-coverage'
+    use 'edluffy/specs.nvim'
 
     -- use 'alec-gibson/nvim-tetris'
     -- use 'seandewar/nvimesweeper'
