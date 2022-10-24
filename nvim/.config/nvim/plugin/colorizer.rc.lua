@@ -1,6 +1,5 @@
-local status, colorizer = pcall(require, 'colorizer')
-if (not status) then return end
-
-colorizer.setup {
-	'*';
-}
+import('colorizer', function(colorizer)
+	colorizer.setup {
+		'*';
+	}
+end)

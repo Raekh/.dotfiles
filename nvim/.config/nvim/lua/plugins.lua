@@ -11,6 +11,7 @@ packer.init({
 })
 
 packer.startup(function(use)
+    use 'miversen33/import.nvim'
     use 'lewis6991/impatient.nvim'
     -- Packer
     use 'wbthomason/packer.nvim'
@@ -89,7 +90,7 @@ packer.startup(function(use)
     use 'tpope/vim-dadbod'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
-    use 'AckslD/nvim-revJ.lua'
+    use 'AckslD/nvim-trevJ.lua'
     use 'AndrewRadev/dsf.vim'
     --Utils
     use {
@@ -117,9 +118,6 @@ packer.startup(function(use)
     use({
         "folke/noice.nvim",
         event = "VimEnter",
-        config = function()
-            require("noice").setup()
-        end,
         requires = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
@@ -150,5 +148,4 @@ packer.startup(function(use)
     -- use { '0x100101/lab.nvim', -- Good, but needs node 16.10.0+ to run. Not ideal...
     --     run = 'cd js && npm ci'
     -- }
-    -- use 'gaoDean/autolist.nvim' -- Seems to be causing issues sometimes
 end)

@@ -1,22 +1,21 @@
-local status, tabnine = pcall(require, "cmp_tabnine.config")
-if (not status) then return end;
+import('cmp_tabnine.config', function(tabnine)
+    tabnine.setup({
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = '..',
+        ignored_file_types = {
+            -- ignored files here
+        },
+        show_prediction_strength = false
+    })
 
-tabnine.setup({
-    max_lines = 1000,
-    max_num_results = 20,
-    sort = true,
-    run_on_every_keystroke = true,
-    snippet_placeholder = '..',
-    ignored_file_types = {
-        -- ignored files here
-    },
-    show_prediction_strength = false
-})
-
-local prefetch = vim.api.nvim_create_augroup("prefetch", {clear=true})
-vim.api.nvim_create_autocmd("Bufread", {
-    group = prefetch,
-    callback = function ()
-        require('cmp_tabnine'):prefetch(vim.fn.expand('%:p'))
-    end
-})
+    local prefetch = vim.api.nvim_create_augroup("prefetch", {clear=true})
+    vim.api.nvim_create_autocmd("Bufread", {
+        group = prefetch,
+        callback = function ()
+            require('cmp_tabnine'):prefetch(vim.fn.expand('%:p'))
+        end
+    })
+end)

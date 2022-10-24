@@ -1,4 +1,3 @@
-local status, gi = pcall(require, "guess-indent")
-if (not status) then return end
-
-gi.setup()
+import('guess-indent', function(gi)
+    gi.setup()
+end)

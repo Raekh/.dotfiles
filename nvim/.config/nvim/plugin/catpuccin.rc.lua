@@ -1,6 +1,8 @@
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+import("catppuccin", function(catpuccin)
+    vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+    catpuccin.setup()
 
-require("catppuccin").setup()
+    -- vim.cmd [[colorscheme catppuccin]]
+    -- vim.cmd [[ hi VertSplit guifg=#aaaaaa guibg=NONE ]]
+end)
 
--- vim.cmd [[colorscheme catppuccin]]
--- vim.cmd [[ hi VertSplit guifg=#aaaaaa guibg=NONE ]]

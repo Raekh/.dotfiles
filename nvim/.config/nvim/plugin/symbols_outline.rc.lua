@@ -1,6 +1,4 @@
-local status, _ = pcall(require, 'symbols-outline')
-if (not status) then return end
-
-require'symbols-outline'.setup()
-
-vim.keymap.set('n', ';so', '<Cmd>SymbolsOutline<CR>')
+import('symbols-outline', function(so)
+    so.setup()
+    vim.keymap.set('n', ';so', '<Cmd>SymbolsOutline<CR>')
+end)

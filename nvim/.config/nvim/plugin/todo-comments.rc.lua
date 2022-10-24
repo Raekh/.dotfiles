@@ -1,5 +1,3 @@
-local status, todo_comments = pcall(require, 'todo-comments')
-if (not status) then return end
-
-todo_comments.setup {}
-
+import('todo-comments', function(todo_comments)
+    todo_comments.setup {}
+end)

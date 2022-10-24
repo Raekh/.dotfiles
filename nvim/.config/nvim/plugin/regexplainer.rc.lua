@@ -1,4 +1,3 @@
-local status, re = pcall(require, 'regexplainer')
-if (not status) then return end
-
-re.setup()
+import('regexplainer', function(re)
+    re.setup()
+end)
