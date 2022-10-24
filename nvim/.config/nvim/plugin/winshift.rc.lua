@@ -1,6 +1,5 @@
-local status, _ = pcall(require, 'winshift')
-if(not status) then return end
+import('winshift', function(winshift)
+    winshift.setup{}
 
-require'winshift'.setup{}
-
-vim.keymap.set("n", ";ws", "<Cmd>WinShift<CR>")
+    vim.keymap.set("n", ";ws", "<Cmd>WinShift<CR>")
+end)

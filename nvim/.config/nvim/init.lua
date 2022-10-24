@@ -1,10 +1,11 @@
-require('impatient')
+require('import')
+import('impatient')
 
-require('base')
-require('highlights')
-require('maps')
-require('plugins')
-require('sets')
+import('base')
+import('highlights')
+import('maps')
+import('plugins')
+import('sets')
 
 local has = function(x)
 	return vim.fn.has(x) == 1

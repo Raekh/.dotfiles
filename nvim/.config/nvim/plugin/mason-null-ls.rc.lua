@@ -1,8 +1,6 @@
-local status, _ = pcall(require, 'mason-null-ls')
-if (not status) then return end
-
-require'mason-null-ls'.setup({
-    automatic_installation = true,
-})
-
+import('mason-null-ls', function(mason_null_ls)
+    mason_null_ls.setup({
+        automatic_installation = true,
+    })
+end)
 -- require'mason-null-ls'.check_install(true)

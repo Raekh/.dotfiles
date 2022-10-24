@@ -1,6 +1,5 @@
-local status, close_buffers = pcall(require, 'close_buffers')
-if (not status) then return end
+import('close_buffers', function(close_buffers)
+    close_buffers.setup({
 
-close_buffers.setup({
-
-})
+    })
+end)

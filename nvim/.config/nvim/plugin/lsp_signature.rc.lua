@@ -1,4 +1,3 @@
-local status, signature = pcall(require, "lsp_signature")
-if (not status) then return end
-
-signature.setup()
+import('lsp_signature', function(signature)
+    signature.setup()
+end)
