@@ -67,7 +67,8 @@ import('lspconfig', function(nvim_lsp)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
         end,
-        filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+        filetypes = { "typescript", "typescriptreact", "typescript.tsx",
+         "javascript", "javascriptreact", "javascript.jsx" },
         cmd = { "typescript-language-server", "--stdio" }
     }
 
