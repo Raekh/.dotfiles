@@ -71,6 +71,7 @@ packer.startup(function(use)
     -- Themes/Visual stuff
     use 'glepnir/dashboard-nvim'
     use 'folke/tokyonight.nvim'
+    use 'doums/darcula'
     use 'ellisonleao/gruvbox.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'akinsho/nvim-bufferline.lua'
