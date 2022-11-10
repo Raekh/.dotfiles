@@ -56,6 +56,12 @@ keymap.set('n', 'N', 'Nzzzv')
 -- Append
 keymap.set('n', 'J', 'mzJ`z')
 
+-- Delete mark
+keymap.set("n", "dm", "<Cmd>execute 'delmarks '.nr2char(getchar())<CR>")
+
+-- Format
+vim.keymap.set("n", ";cf", "<Cmd>lua vim.lsp.buf.format()<CR>")
+
 -- Add undo marks
 keymap.set('i', ',', ',<c-g>u')
 keymap.set('i', '.', '.<c-g>u')
