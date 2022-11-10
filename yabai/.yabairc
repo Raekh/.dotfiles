@@ -1,6 +1,24 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# more conf
+yabai -m config top_padding    20
+yabai -m config bottom_padding 20
+yabai -m config left_padding   20
+yabai -m config right_padding  20
+yabai -m config window_gap     20
+
+# Manage windows by default
 yabai -m config layout bsp
+
+# Windows have are even by default
 yabai -m config auto_balance on
+
+# Show shadows only for floating windows
+yabai -m config window_shadow float
+
+# Render all unfocused windows with 90% opacity
+
+# Space 1
+yabai -m config --space 1 left_padding 40
+
+

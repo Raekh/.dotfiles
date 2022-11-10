@@ -1,1 +1,50 @@
+# Start terminal
 ctrl + alt - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
+# Spaces
+# Focus spaces
+alt + shift - right : yabai -m space --focus next
+# || yabai -m space --focus first # loop
+alt + shift - left : yabai -m space --focus prev
+# || yabai -m space --focus last # loop
+# Create/destroy space
+alt + shift - c : yabai -m space --create
+alt + shift - x : yabai -m space --destroy
+# Move spaces
+alt + shift + ctrl - left : yabai -m space --move prev
+alt + shift + ctrl - right : yabai -m space --move next
+
+
+# Windows 
+# Focus
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+# Move
+ctrl + shift - j : yabai -m window --swap south
+ctrl + shift - k : yabai -m window --swap north
+ctrl + shift - h : yabai -m window --swap west
+ctrl + shift - l : yabai -m window --swap east
+# Change space
+alt + shift + ctrl - h : yabai -m window --space prev; yabai -m space --focus prev
+alt + shift + ctrl - l : yabai -m window --space next; yabai -m space --focus next
+alt + shift + cmd - l : yabai -m space --create && \
+                        yabai -m window --space next && \
+                        yabai -m space --focus next
+# Zoom
+alt + shift - w : yabai -m window --toggle zoom-parent
+alt + shift - z : yabai -m window --toggle zoom-fullscreen
+
+# Stack
+# Focus next window in stack
+ctrl + alt - n : yabai -m window --focus stack.next
+
+# Focus prev window in stack
+ctrl + alt - p : yabai -m window --focus stack.prev
+
+# Merge current window to stack
+cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
