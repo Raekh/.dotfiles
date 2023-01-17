@@ -69,7 +69,7 @@ import('lspconfig', function(nvim_lsp)
         end,
         filetypes = { "typescript", "typescriptreact", "typescript.tsx",
          "javascript", "javascriptreact", "javascript.jsx" },
-        cmd = { "typescript-language-server", "--stdio" }
+        cmd = { "typescript-language-server", "--tsserver-path", "/usr/local/bin/tsserver", "--stdio" }
     }
 
     nvim_lsp.sumneko_lua.setup {

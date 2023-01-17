@@ -1,6 +1,6 @@
-import('nvim-biscuits', function(biscuits)
-    biscuits.setup({
-        toggle_keybind = ";cb",
-        prefix_string = " 📎 "
-    })
-end)
+-- import('nvim-biscuits', function(biscuits)
+--     biscuits.setup({
+--         toggle_keybind = ";cb",
+--         prefix_string = " 📎 "
+--     })
+-- end)
