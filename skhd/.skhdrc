@@ -1,5 +1,6 @@
 # Start terminal
 ctrl + alt - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+ctrl + alt - b : /Applications/boop.app/Contents/MacOS/boop --single-instance -d ~
 
 # Spaces
 # Focus spaces
