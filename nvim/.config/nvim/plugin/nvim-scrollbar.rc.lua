@@ -1,3 +1,7 @@
 import('scrollbar', function(sb)
-    sb.setup()
+    sb.setup({
+        handlers = {
+            cursor = false
+        }
+    })
 end)

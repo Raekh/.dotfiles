@@ -1,0 +1,52 @@
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+local packer = require("packer")
+packer.reset()
+packer.init()
+require('plugins')
+-- require('import')
+-- import('impatient')
+-- import('base')
+-- import('highlights')
+-- import('maps')
+-- import('plugins')
+-- import('sets')
+
+local has = function(x)
+	return vim.fn.has(x) == 1
+end
+
+local is_mac = has "macunix"
+local is_win = has "win32"
+
+if is_mac then
+	require('macos')
+end
+if is_win then
+	require('windows')
+end
+
+vim.cmd [[ runtime scratch/automagic/part3.lua ]]
+
+-- Small trick to fix theme related issues
+-- vim.cmd [[ colorscheme tokyonight-moon ]]
+vim.cmd [[ colorscheme tokyonight-moon ]]
+-- vim.cmd [[ hi VertSplit guifg=#aaaaaa guibg=NONE ]]
+-- vim.cmd [[ colorscheme gruvbox ]]

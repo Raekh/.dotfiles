@@ -32,9 +32,10 @@ vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.wo.scl='yes'
 vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
-vim.opt.hidden = false
-vim.cmd [[ set splitkeep=screen]]
-
+-- TODO: Need to check if this is good
+vim.opt.hidden = true
+-- vim.cmd [[ set splitright=screen]]
+-- vim.o.signcolumn = 'yes:3'
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
