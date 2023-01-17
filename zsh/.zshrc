@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+setopt appendhistory
+setopt auto_cd
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -92,6 +95,7 @@ plugins=(
     ripgrep
     thefuck
     z
+    history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+export OPENAI_API_KEY="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"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -140,6 +145,9 @@ alias nn='nvim'
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yag='yarn global add'
+
+# python
+alias python="python3"
 
 # docker
 alias dc='docker-compose'
