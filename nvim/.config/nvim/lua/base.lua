@@ -2,7 +2,7 @@ vim.cmd('autocmd!')
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
+-- vim.opt.fileencoding = 'utf-8'
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -30,7 +30,7 @@ vim.opt.wrap = false -- No wrap lines
 vim.opt.backspace = 'start,eol,indent'
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
-vim.wo.scl='yes'
+vim.o.scl='yes'
 vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
 -- TODO: Need to check if this is good
 vim.opt.hidden = true
