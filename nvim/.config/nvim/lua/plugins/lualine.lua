@@ -1,6 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
-    after = {
+    dependencies = {
         "folke/noice.nvim",
         "folke/tokyonight.nvim"
     },
