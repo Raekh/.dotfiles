@@ -2,9 +2,12 @@ return {
     "onsails/lspkind-nvim",
     "hrsh7th/cmp-buffer", -- nvim-cmp source for buffer words
     "hrsh7th/cmp-nvim-lsp", -- nvim-cmp source for neovim's builtin lsp
-    "onsails/lspkind-nvim",
     {
-	 "hrsh7th/nvim-cmp", -- Completion
+        "hrsh7th/nvim-cmp", -- Completion
+        dependencies = {
+            "L3MON4D3/Luasnip",
+            "onsails/lspkind-nvim",
+        },
         config = function()
                 local lspkind = require('lspkind')
                 local cmp = require('cmp')
@@ -69,6 +72,6 @@ return {
                     set completeopt=menuone,noinsert,noselect
                     highlight! default link CmpItemKind CmpItemMenuDefault
                 ]]
-        end
+            end
     }
 }
