@@ -118,7 +118,6 @@ use("ziontee113/color-picker.nvim")
 use("bennypowers/nvim-regexplainer")
 use("andythigpen/nvim-coverage")
 use("edluffy/specs.nvim")
-use("joerdav/floobits-neovim")
 use("aduros/ai.vim")
 use("chrisgrieser/nvim-various-textobjs")
 use("folke/noice.nvim", {

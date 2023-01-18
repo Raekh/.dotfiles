@@ -149,11 +149,6 @@ _G.packer_plugins = {
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/eslint.nvim",
     url = "https://github.com/MunifTanjim/eslint.nvim"
   },
-  ["floobits-neovim"] = {
-    loaded = true,
-    path = "/Users/froura/.local/share/nvim/site/pack/packer/start/floobits-neovim",
-    url = "https://github.com/joerdav/floobits-neovim"
-  },
   ["git.nvim"] = {
     loaded = true,
     path = "/Users/froura/.local/share/nvim/site/pack/packer/start/git.nvim",
