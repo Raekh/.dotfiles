@@ -1,5 +1,5 @@
 import("noice", function(noice)
-	noice.setup({
+	require("noice").setup({
 		lsp = {
 			signature = {
 				enabled = false,

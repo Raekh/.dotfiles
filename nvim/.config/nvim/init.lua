@@ -9,7 +9,7 @@ end
 
 -- Plugin setup
 require('plugins')
-require('impatient')
+-- require('impatient')
 require('base')
 require('highlights')
 require('maps')

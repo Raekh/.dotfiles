@@ -24,7 +24,9 @@ end
 
 local packer = require("packer")
 packer.reset()
-packer.init()
+packer.init({
+	max_jobs = 20,
+})
 
 local use = function(plugin, opts)
 	opts = opts or {}
@@ -40,15 +42,7 @@ end
 
 use("wbthomason/packer.nvim")
 use("miversen33/import.nvim")
--- use 'miversen33/import.nvim'
-
--- vim.cmd [[packadd packer.nvim]]
-
--- packer.init({
--- max_jobs = 20
--- })
---
-use("miversen33/import.nvim")
+require("import")
 use("lewis6991/impatient.nvim")
 use("wbthomason/packer.nvim")
 use("glepnir/lspsaga.nvim") -- LSP UIs
