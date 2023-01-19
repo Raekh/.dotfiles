@@ -76,5 +76,10 @@ return {
 	},
 	{ "williamboman/mason.nvim", config = true },
 	{ "williamboman/mason-lspconfig.nvim", config = true },
-	{ "jayp0521/mason-null-ls.nvim", config = true },
+	{
+		"jayp0521/mason-null-ls.nvim",
+		opts = {
+			automatic_installation = true,
+		},
+	},
 }
