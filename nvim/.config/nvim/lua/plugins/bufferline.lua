@@ -57,6 +57,12 @@ return {
 						text_align = "center",
 						separator = true,
 					},
+					{
+						filetype = "filetree",
+						text = "",
+						highlight = "Explorer",
+						text_align = "center",
+					},
 				},
 			},
 			--[[
