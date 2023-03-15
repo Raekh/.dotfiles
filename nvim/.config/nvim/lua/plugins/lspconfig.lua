@@ -16,7 +16,7 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 		end
 
-		local protocol = require("vim.lsp.protocol")
+		-- local protocol = require("vim.lsp.protocol")
 
 		-- local function buffer_augroup(group, bufnr, cmds)
 		--   vim.api.nvim_create_augroup(group, { clear = false })
@@ -80,7 +80,14 @@ return {
 			cmd = { "typescript-language-server", "--tsserver-path", "/usr/local/bin/tsserver", "--stdio" },
 		})
 
-		nvim_lsp.sumneko_lua.setup({
+		nvim_lsp.pylsp.setup({
+			on_attach = function(client, bufnr)
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentRangeFormattingProvider = false
+			end,
+		})
+
+		nvim_lsp.lua_ls.setup({
 			on_attach = on_attach,
 			settings = {
 				Lua = {

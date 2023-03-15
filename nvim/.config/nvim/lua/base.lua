@@ -43,8 +43,8 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- but this doesn't work on iTerm2.
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-    pattern = "*",
-    command = "set nopaste",
+	pattern = "*",
+	command = "set nopaste",
 })
 
 -- Add asterisks in block comments
