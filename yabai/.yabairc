@@ -3,7 +3,7 @@ sudo yabai --load-sa
 
 yabai -m config focus_follows_mouse autoraise
 
-yabai -m config top_padding    20
+yabai -m config top_padding    80
 yabai -m config bottom_padding 20
 yabai -m config left_padding   20
 yabai -m config right_padding  20
@@ -21,6 +21,6 @@ yabai -m config window_shadow float
 # Render all unfocused windows with 90% opacity
 
 # Space 1
-yabai -m config --space 1 left_padding 40
+yabai -m config --space 1 left_padding 20
 
 
