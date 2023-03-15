@@ -1,6 +1,11 @@
+# Refresh yabai
+ctrl + shift - r : yabai restart
+
 # Start terminal
 ctrl + alt - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 ctrl + alt - b : /Applications/boop.app/Contents/MacOS/boop --single-instance -d ~
+ctrl + alt - y : brew services restart yabai
+ctrl + alt - s : brew services restart sketchybar
 
 # Spaces
 # Focus spaces
