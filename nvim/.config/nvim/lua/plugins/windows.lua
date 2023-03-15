@@ -5,7 +5,7 @@ return {
 		"anuvyklack/middleclass",
 	},
 	keys = {
-		{ ";wz", "WindowsMaximize" },
+		{ ";wz", "<Cmd>WindowsMaximize<CR>" },
 	},
 	opts = {
 
