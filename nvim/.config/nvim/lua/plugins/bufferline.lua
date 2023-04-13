@@ -5,7 +5,6 @@ return {
 	keys = {
 		{ "<C-l>", "<cmd>BufferLineCycleNext<CR>" },
 		{ "<C-h>", "<cmd>BufferLineCyclePrev<CR>" },
-		{ "<C-x>", "<cmd>Bdelete<CR>" },
 	},
 	config = function()
 		local symbol_map = {
