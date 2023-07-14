@@ -1,103 +1,36 @@
 return {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-        { "nvim-lua/plenary.nvim" },
-        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-        { "nvim-telescope/telescope-file-browser.nvim", build = "make" },
-    },
-    keys = {
-        {
-            ";f",
-            function()
-                require("telescope.builtin").find_files({
-                    -- path = "%:p:h",
-                    -- cwd = telescope_buffer_dir(),
-                    no_ignore = false,
-                    hidden = true,
-                    grouped = true,
-                })
-            end,
-            desc = "Find files",
+  "nvim-telescope/telescope.nvim",
+  dependencies = {
+    { "nvim-telescope/telescope-fzf-native.nvim", enabled = vim.fn.executable "make" == 1, build = "make" },
+  },
+  cmd = "Telescope",
+  opts = function()
+    local actions = require "telescope.actions"
+    local get_icon = require("astronvim.utils").get_icon
+    return {
+      defaults = {
+        prompt_prefix = get_icon("Selected", 1),
+        selection_caret = get_icon("Selected", 1),
+        path_display = { "truncate" },
+        sorting_strategy = "ascending",
+        layout_config = {
+          horizontal = { prompt_position = "top", preview_width = 0.55 },
+          vertical = { mirror = false },
+          width = 0.87,
+          height = 0.80,
+          preview_cutoff = 120,
         },
-        {
-            ";r",
-            function()
-                require("telescope.builtin").live_grep()
-            end,
+        mappings = {
+          i = {
+            ["<C-n>"] = actions.cycle_history_next,
+            ["<C-p>"] = actions.cycle_history_prev,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+          },
+          n = { q = actions.close },
         },
-        {
-            "\\\\",
-            function()
-                require("telescope.builtin").buffers()
-            end,
-        },
-        {
-            ";t",
-            function()
-                require("telescope.builtin").help_tags()
-            end,
-        },
-        {
-            ";;",
-            function()
-                require("telescope.builtin").resume()
-            end,
-        },
-        {
-            ";e",
-            function()
-                require("telescope.builtin").diagnostics()
-            end,
-        },
-        {
-            "sf",
-            function()
-                local function telescope_buffer_dir()
-                    return vim.fn.expand("%:p:h")
-                end
-
-                require("telescope").extensions.file_browser.file_browser({
-                    path = "%:p:h",
-                    cwd = telescope_buffer_dir(),
-                    respect_gitignore = false,
-                    hidden = true,
-                    grouped = true,
-                    -- previewer = false,
-                    initial_mode = "normal",
-                    layout_config = { height = 39 },
-                })
-            end,
-        },
-    },
-    --   opts = {
-    --   	defaults = {
-    --   		mappings = {
-    --   			n = {
-    --   				['q'] = require('telescope').actions.close
-    --   			}
-    --   		}
-    --   	},
-    --   	extensions = {
-    --   		file_browser = {
-    --   			theme = 'dropdown',
-    --   			-- disables netrw and use telescope instead
-    --   			hijack_netrw = true,
-    --   			mappings = {
-    --   				-- custom insert mode mappings
-    --   				['i'] = {
-    --   					['<C-w>'] = function() vim.cmd('normal vbd') end,
-    --   				},
-    --   				['n'] = {
-    --   					['N'] = require('telescope').extensions.file_browser.action.create,
-    --   					['h'] = require('telescope').extensions.file_browser.action.goto_parent_dir,
-    --   					['l'] = require('telescope').extensions.file_browser.action.change_cwd,
-    --   					['/'] = function()
-    --                           vim.cmd('startinsert')
-    --   					end,
-    --   				},
-    --   			}
-    --   		}
-    --   	}
-    --   },
-    --   end
+      },
+    }
+  end,
+  config = require "plugins.configs.telescope",
 }
