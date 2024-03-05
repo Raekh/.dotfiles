@@ -83,7 +83,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     safe-paste
-    zsh-z
     docker-compose
     aliases
     ansible
@@ -93,8 +92,7 @@ plugins=(
     macos
     nmap
     ripgrep
-    thefuck
-    z
+    # z
     history-substring-search
 )
 
@@ -131,14 +129,15 @@ export OPENAI_API_KEY="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"
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
 alias zshconf='nvim $HOME/.zshrc'
 
+
 # thefuck
-# eval $(thefuck --alias)
 
 # ls (exa override)
 alias ls='exa --group-directories-first'
 alias ll='exa -l --group-directories-first'
 alias la='exa -la --group-directories-first'
 # neovim
+alias nvim='/home/raekh/.local/share/bob/nvim-bin/nvim'
 alias nn='nvim'
 
 # yarn 
@@ -168,6 +167,34 @@ export TERM=xterm-256color
 
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/.config/zsh/scripts/"
+
+export PATH="$PATH:$HOME/.local/bin"
+eval $(thefuck --alias)
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=$PATH:/Users/froura/.spicetify
+
+# bun completions
+[ -s "/home/raekh/.bun/_bun" ] && source "/home/raekh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bob
+export PATH="/home/raekh/.cargo/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/raekh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(zoxide init zsh)"
+
+# zoxide
+alias cd='z'
+alias pn='pnpm'
+# export OPENAI_API_KEY='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'
