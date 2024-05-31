@@ -1,27 +1,27 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  build        = ":TSUpdate",
-  event        = { "BufReadPre", "BufNewFile" },
+  build = ":TSUpdate",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects"
+    "nvim-treesitter/nvim-treesitter-textobjects",
   },
-  config       = function()
-    local treesitter = require("nvim-treesitter.configs")
+  config = function()
+    local treesitter = require "nvim-treesitter.configs"
 
     -- configure treesitter
----@diagnostic disable-next-line: missing-fields
-    treesitter.setup({
+    ---@diagnostic disable-next-line: missing-fields
+    treesitter.setup {
       -- ensure_installed = "maintained",
       highlight = {
-        enable = true
+        enable = true,
       },
       indent = {
-        enable = true
+        enable = true,
       },
-      autotag = {
-        enable = true
-      },
+      -- autotag = {
+      --   enable = true
+      -- },
       ensure_installed = {
         "bash",
         "css",
@@ -48,8 +48,8 @@ return {
           node_incremental = "<C-space>",
           scope_incremental = false,
           node_decremental = "<bs>",
-        }
-      }
-    })
-  end
+        },
+      },
+    }
+  end,
 }

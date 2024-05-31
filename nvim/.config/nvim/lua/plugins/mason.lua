@@ -1,5 +1,3 @@
-if true then return {} end -- WARN:
-
 ---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations
@@ -31,6 +29,21 @@ return {
         "stylua",
         -- add more arguments for adding more null-ls sources
       })
+
+      opts.handlers = {
+        prettier = function()
+          require("null-ls").register(require("null-ls").builtins.formatting.prettier.with {
+            condition = function(utils)
+              return utils.root_has_file "package.json"
+                and (
+                  utils.root_has_file ".prettierrc"
+                  or utils.root_has_file ".prettierrc.json"
+                  or utils.root_has_file ".prettierrc.js"
+                )
+            end,
+          })
+        end,
+      }
     end,
   },
   {
@@ -39,7 +52,7 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "python",
+        -- "python",
         -- add more arguments for adding more debuggers
       })
     end,
