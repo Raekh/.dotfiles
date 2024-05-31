@@ -1,3 +1,4 @@
+if true then return {} end
 return {
   "shellRaining/hlchunk.nvim",
   event = { "UIEnter" },
@@ -26,7 +27,7 @@ return {
       },
 
       indent = {
-        enable = true,
+        enable = false,
         use_treesitter = false,
         chars = {
           "│",

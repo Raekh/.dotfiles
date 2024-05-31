@@ -1,0 +1,289 @@
+{
+  /**
+  * console.log
+  */ 
+  "clog": {
+    "prefix": [
+      "clog"
+    ],
+    "body": [
+      "console.log('=========> ${1:message}')"
+    ],
+    "description": "Simple console.log"
+  },
+  "cvlog": {
+    "prefix": [
+      "cvlog"
+    ],
+    "body": [
+      "console.log('=========> ${1:message}', ${2:variable})"
+    ],
+    "description": "Simple console.log with variable"
+  },
+  "jsonlog": {
+    "prefix": [
+      "jsonlog"
+    ],
+    "body": [
+      "console.log('=========> ${1:variable}', JSON.stringify(${1}, null, 2));"
+    ],
+    "description": "Simple console.log with variable"
+  },
+  //
+  //
+  /**
+  * Exports
+  */
+  "rac": {
+    "prefix": [
+      "rac"
+    ],
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}) => {",
+      "\t${0:return <div>$1</div>}",
+      "}"
+    ],
+    "description": "[Ogth] Arrow function component"
+  },
+  "race": {
+    "prefix": [
+      "race"
+    ],
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}) => {",
+      "\t${0:return <div>$1</div>}",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "[Ogth] Arrow function component with export"
+  },
+  "racp": {
+    "prefix": [
+      "racp"
+    ],
+    "body": [
+      "type ${1}Props = {",
+      "\t${3}",
+      "}",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}: ${1:name}Props) => {",
+      "\t${0:return <div>$1</div>}",
+      "}"
+    ],
+    "description": "[Ogth] Arrow function component with props"
+  },
+  "racep": {
+    "prefix": [
+      "racep"
+    ],
+    "body": [
+      "type ${1}Props = {",
+      "\t${3}",
+      "}",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}: ${1:name}Props) => {",
+      "\t${0:return <div>$1</div>}",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "[Ogth] Arrow function component with export and props"
+  },
+  //
+  //
+  /**
+  * callback
+  */
+  "cab": {
+    "prefix": [
+      "cab"
+    ],
+    "body": [
+      "${1:callback}(() => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "acab": {
+    "prefix": [
+      "acab"
+    ],
+    "body": [
+      "${1:callback}(async () => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "dcab": {
+    "prefix": [
+      "dcab"
+    ],
+    "body": [
+      "${1:callback}('$2', () => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "dacab": {
+    "prefix": [
+      "dacab"
+    ],
+    "body": [
+      "${1:callback}('$2', async () => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  //
+  //
+  /**
+  * tests
+  */
+  "ball": {
+    "prefix": [
+      "ball"
+    ],
+    "body": [
+      "beforeAll(() => {",
+      "\t$0",
+      "})"
+    ],
+    "description": "[Ogth] beforeAll"
+  },
+  "aball": {
+    "prefix": [
+      "aball"
+    ],
+    "body": [
+      "beforeAll(() => {",
+      "\t$0",
+      "})"
+    ],
+    "description": "[Ogth] beforeAll (async)"
+  },
+  "it": {
+    "prefix": [
+      "it"
+    ],
+    "body": [
+      "it('should $1', () => {",
+      "\t$0",
+      "\texpect(1).toBeTruthy();",
+      "})"
+    ],
+    "description": "[Ogth] it"
+  },
+  "ait": {
+    "prefix": [
+      "ait"
+    ],
+    "body": [
+      "it('should $1', async () => {",
+      "\t$0",
+      "\texpect(1).toBeTruthy();",
+      "})"
+    ],
+    "description": "[Ogth] it (async)"
+  },
+  "desit": {
+    "prefix": [
+      "desit"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\tit('should $2', () => {",
+      "\t\t$0",
+      "\t\texpect(1).toBeTruthy();",
+      "\t})",
+      "})"
+    ],
+    "description": "[Ogth] Describe with it"
+  },
+  "desait": {
+    "prefix": [
+      "desait"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\tit('should $2', async () => {",
+      "\t\t$0",
+      "\t\texpect(1).toBeTruthy();",
+      "\t})",
+      "})"
+    ],
+    "description": "[Ogth] Describe with it (async)"
+  },
+  "desballit": {
+    "prefix": [
+      "desballit"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\tbeforeAll(() => {",
+      "\t\t$0",
+      "\t})",
+      "",
+      "\tit('should $3', () => {",
+      "\t\t$0",
+      "\t\texpect(1).toBeTruthy();",
+      "\t})",
+      "})"
+    ],
+    "description": "[Ogth] Describe with beforeAll & it"
+  },
+  "desaballit": {
+    "prefix": [
+      "desaballit"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\tbeforeAll(() => {",
+      "\t\t$0",
+      "\t})",
+      "",
+      "\tit('should $3', () => {",
+      "\t\t$0",
+      "\t\texpect(1).toBeTruthy();",
+      "\t})",
+      "})"
+    ],
+    "description": "[Ogth] Describe with beforeAll (async) & it"
+  },
+  "desballait": {
+    "prefix": [
+      "desballait"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\tbeforeAll(() => {",
+      "\t\t$0",
+      "\t})",
+      "",
+      "\tit('should $3', async () => {",
+      "\t\t$0",
+      "\t\texpect(1).toBeTruthy();",
+      "\t})",
+      "})"
+    ],
+    "description": "[Ogth] Describe with beforeAll & it (async)"
+  },
+  "desaballait": {
+    "prefix": [
+      "desaballait"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\tbeforeAll(() => {",
+      "\t\t$0",
+      "\t})",
+      "",
+      "\tit('should $3', async () => {",
+      "\t\t$0",
+      "\t\texpect(1).toBeTruthy();",
+      "\t})",
+      "})"
+    ],
+    "description": "[Ogth] Describe with beforeAll (async) & it (async)"
+  }
+}

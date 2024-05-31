@@ -9,11 +9,11 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function() require("lsp_signature").setup() end,
+  -- },
   "tanvirtin/monokai.nvim",
   "folke/tokyonight.nvim",
   "catppuccin/nvim",
@@ -65,6 +65,12 @@ return {
         wrapper_symbol_kinds = { SymbolKind.Class, SymbolKind.Struct },
       }
     end,
+  },
+  {
+    "MeanderingProgrammer/markdown.nvim",
+    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function() require("render-markdown").setup {} end,
   },
   -- {
   --   'lvimuser/lsp-inlayhints.nvim',
