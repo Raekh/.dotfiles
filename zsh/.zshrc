@@ -5,6 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# if user is root, disable warning about unsafe dirs
+if [[ "$USER" -eq "root" ]]; then
+    ZSH_DISABLE_COMPFIX=true
+fi
+
+alias powerup="sudo -E zsh"
+
 setopt appendhistory
 setopt auto_cd
 
@@ -83,71 +90,45 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     safe-paste
-    zsh-z
     docker-compose
     aliases
     ansible
-    autojump
-    brew
     colored-man-pages
-    macos
     nmap
     ripgrep
-    thefuck
     z
     history-substring-search
+    sudo
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+## Aliases
+# docker
+alias dc='docker compose'
+# alias dc='docker-compose'
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-export OPENAI_API_KEY="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"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 # kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
-alias zshconf='nvim $HOME/.zshrc'
 
-# thefuck
-# eval $(thefuck --alias)
+# zsh
+alias zshconf='nvim $HOME/.zshrc'
+alias zshreload='source $HOME/.zshrc'
+
+# nvim
+alias nn='nvim'
 
 # ls (exa override)
-alias ls='exa --group-directories-first'
-alias ll='exa -l --group-directories-first'
-alias la='exa -la --group-directories-first'
-# neovim
-alias nn='nvim'
+alias ls='exa --group-directories-first --icons'
+alias ll='exa -l --group-directories-first --icons'
+alias la='exa -la --group-directories-first --icons'
 
 # yarn 
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yag='yarn global add'
-
-# python
-alias python="python3"
 
 # docker
 alias dc='docker-compose'
@@ -158,16 +139,113 @@ alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 
 # tmuxinator
 alias mux='tmuxinator'
+alias dmux="TMUX='' tmux"
 sw() {
-    echo $@ | xargs -n 1 tmuxinator start
+    echo $@ | xargs -n1 tmuxinator start
 }
+kw() {
+    echo $@ | xargs -n1 tmuxinator stop
+}
+viaco-start() {
+    cd ~/Documents/Work;for folder in "serverless-api" "react-admin" "webapp"; do (cd "$folder"; git checkout -b $1); done
+}
+viaco-resume() {
+    cd ~/Documents/Work;for folder in "serverless-api" "react-admin" "webapp"; do (cd "$folder"; git checkout $1); done
+}
+alias viaco-develop-reset='cd ~/Documents/Work;for folder in "serverless-api" "react-admin" "webapp"; do (cd "$folder"; git checkout develop; git pull); done'
 alias swa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator start'
-alias swk='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator stop'
+alias kwa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator stop'
+alias kbgen='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
+# alias asdf='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
+# alias aoeu='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
+# alias asdf=$HOME/Documents/Code/keyboard/kbgen_dvorak && setxkbmap real-prog-dvorak -option caps:escape && xset r rate 250 50'
+# alias aoeu='$HOME/Documents/Code/keyboard/kbgen_dvorak && setxkbmap real-prog-dvorak -option caps:escape && xset r rate 250 50'
+# alias aoeu='$HOME/Documents/Code/keyboard/kbgen_dvorak && setxkbmap real-prog-dvorak -option caps:escape && xset r rate 250 50'
+alias dvo='$HOME/Documents/Code/keyboard/kbgen_dvorak && setxkbmap real-prog-dvorak -option caps:escape && xset r rate 280 30'
+alias aoeu='xset r rate 280 30'
+
+# scale
+alias scale='gsettings set org.gnome.desktop.interface text-scaling-factor 1.0 && regolith-look refresh'
+alias bigScale='gsettings set org.gnome.desktop.interface text-scaling-factor 2.0 && regolith-look refresh'
+alias medScale='gsettings set org.gnome.desktop.interface text-scaling-factor 1.5 && regolith-look refresh'
+customScale() {
+    gsettings set org.gnome.desktop.interface text-scaling-factor $1 && regolith-look refresh
+}
+# vpn
+alias wgup='sudo wg-quick up wg0'
+alias wgdown='sudo wg-quick down wg0'
+#
+eskill() {
+    ps -ax | grep eslint | grep -v grep | awk '{print $1}' | xargs kill -9
+}
+alias tskill='ps -ax | grep tsserver | grep -v grep | awk "{print $1}" | xargs kill -9'
+
+# fixes
+alias node-fix-local='sudo chown -R $USER ./node_modules'
+alias node-fix-global='sudo chown -R $USER $HOME/.cache/yarn/'
+
+alias picom-start='/usr/bin/picom --config /home/ostrogoth/.config/regolith2/picom/config &; disown %1; exit'
+picom-kill() {
+    ps -ax | grep /usr/bin/picom | grep -v grep | awk '{print $1}' | xargs kill -9
+}
+alias dixit='disown %1; exit'
+
+fuck-limits() {
+    sudo ifconfig wlan0 down
+    sudo macchanger -a wlan0
+    sudo ifconfig wlan0 up
+    echo 'No limits for the wicked!'
+}
 
 export TERM=xterm-256color
 
 export EDITOR="nvim"
+
+## Paths
+# zsh scripts
 export PATH="$PATH:$HOME/.config/zsh/scripts/"
+# cargo
+export PATH=$PATH:$HOME/.local/cargo/bin
+
+# bob/nvim
+export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
+
+# yarn
+export PATH=$PATH:$HOME/.config/yarn/global/node_modules/.bin
+
+# ghcup
+export PATH=$PATH:$HOME/.ghcup/env
+export PATH=$PATH:$HOME/.ghcup/bin
+
+
+alias audio-restart="systemctl --user restart pipewire.service"
+alias tidoudi="aplay /usr/share/sounds/sound-icons/prompt.wav 2>/dev/null &"
+
+alias t='clear;tb '
+
+# go
+export PATH=$PATH:/usr/local/go/bin
+
+# token for viaco-shared-packages
+export DEPLOY_TOKEN='babadook'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH=$PATH:/Users/froura/.spicetify
+
+# pnpm
+alias pn='pnpm '
+alias px='pn dlx '
+export PNPM_HOME="/home/ostrogoth/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
+eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/home/ostrogoth/.bun/_bun" ] && source "/home/ostrogoth/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
