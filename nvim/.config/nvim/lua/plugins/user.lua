@@ -72,6 +72,29 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function() require("render-markdown").setup {} end,
   },
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-neo-tree/neo-tree.nvim",
+    },
+    config = function() require("lsp-file-operations").setup() end,
+  },
+  -- {
+  --   "pmizio/typescript-tools.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  --   opts = {
+  --     -- settings = {
+  --     --   separate_diagnostic_server = false,
+  --     --   code_lens = "off",
+  --     -- },
+  --   },
+  -- },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --   opts = {},
+  -- },
   -- {
   --   'lvimuser/lsp-inlayhints.nvim',
   --   config = function()
