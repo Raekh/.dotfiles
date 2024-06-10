@@ -90,7 +90,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     safe-paste
-    docker-compose
     aliases
     ansible
     colored-man-pages
@@ -108,6 +107,9 @@ source $ZSH/oh-my-zsh.sh
 ## Aliases
 # docker
 alias dc='docker compose'
+alias 'docker-compose'='docker compose'
+alias make-dc='sed -i "s/docker-compose/docker compose/g" Makefile'
+alias unmake-dc='sed -i "s/docker compose/docker-compose/g" Makefile'
 # alias dc='docker-compose'
 
 # kitty
@@ -131,11 +133,13 @@ alias yad='yarn add -D'
 alias yag='yarn global add'
 
 # docker
-alias dc='docker-compose'
+alias dokill='docker ps - q | xargs docker kill'
+
 
 # git
 alias changeMEP='git log --no-merges --pretty=oneline --abbrev-commit --no-decorate origin/master..origin/develop | sed "s/^\(\w\)* //"'
 alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short"
+alias gg='lazygit'
 
 # tmuxinator
 alias mux='tmuxinator'
@@ -184,7 +188,7 @@ alias tskill='ps -ax | grep tsserver | grep -v grep | awk "{print $1}" | xargs k
 alias node-fix-local='sudo chown -R $USER ./node_modules'
 alias node-fix-global='sudo chown -R $USER $HOME/.cache/yarn/'
 
-alias picom-start='/usr/bin/picom --config /home/ostrogoth/.config/regolith2/picom/config &; disown %1; exit'
+# alias picom-start='/usr/bin/picom --config /home/ostrogoth/.config/regolith2/picom/config &; disown %1; exit'
 picom-kill() {
     ps -ax | grep /usr/bin/picom | grep -v grep | awk '{print $1}' | xargs kill -9
 }
@@ -232,20 +236,28 @@ export DEPLOY_TOKEN='babadook'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # pnpm
-alias pn='pnpm '
-alias px='pn dlx '
-export PNPM_HOME="/home/ostrogoth/.local/share/pnpm"
+export PNPM_HOME="/home/raekh/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
 eval "$(atuin init zsh)"
 
 # bun completions
-[ -s "/home/ostrogoth/.bun/_bun" ] && source "/home/ostrogoth/.bun/_bun"
+[ -s "/home/$USER/.bun/_bun" ] && source "/home/$USER/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# fnm
+FNM_PATH="/home/raekh/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/raekh/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
