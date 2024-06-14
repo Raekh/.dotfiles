@@ -192,6 +192,7 @@ alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | 
 # }}}
 
 # Environment Variables {{{
+export compositor_name="Hyprland"
 export TERM=xterm-256color
 export EDITOR="nvim"
 export DEPLOY_TOKEN='babadook'

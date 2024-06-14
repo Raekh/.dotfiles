@@ -37,7 +37,7 @@ return {
         "prisma",
         "query",
         "tsx",
-        "typescript",
+        -- "typescript",
         "vim",
         "yaml",
       },

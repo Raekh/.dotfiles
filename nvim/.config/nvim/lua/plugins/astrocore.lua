@@ -66,15 +66,6 @@ return {
         -- Lsp
 
         ["<Leader>l"] = { name = "LSP" },
-        -- FIXME: Need to work on this
-        -- ["<Leader>lH"] = {
-        --   function()
-        --     local is_enabled = vim.lsp.inlay_hint.is_enabled(0)
-        --     -- local is_enabled = require("astrolsp.features").inlay_hints
-        --     vim.lsp.inlay_hint.enable(0, not is_enabled)
-        --   end,
-        --   desc = "Toggle inlay hints",
-        -- },
         ["<Leader>lt"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
 
         ["]q"] = { "<cmd>cnext<CR>", desc = "Next quickfix list entry" },
