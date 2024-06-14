@@ -31,6 +31,7 @@ return {
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
         "tsserver",
+        "typescript-tools",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -84,6 +85,16 @@ return {
     mappings = {
       n = {
         gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        -- Typescript-tools
+        ["<Leader>m"] = { desc = "Typescript" },
+        ["<Leader>mu"] = { "<CMD>TSToolsRemoveUnusedImports<CR>", desc = "Remove unused imports" },
+        ["<Leader>mU"] = { "<CMD>TSToolsRemoveUnused<CR>", desc = "Remove unused" },
+        ["<Leader>ma"] = { "<CMD>TSToolsFixAll<CR>", desc = "Fix all" },
+        ["<Leader>ms"] = { "<CMD>TSToolsSortImports<CR>", desc = "Sort imports" },
+        ["<Leader>mo"] = { "<CMD>TSToolsOrganizeImports<CR>", desc = "Organize imports" },
+        ["<Leader>mM"] = { "<CMD>TSToolsAddMissingImports<CR>", desc = "Add missing imports" },
+        ["<Leader>mm"] = { "<CMD>TSToolsGoToSourceDefinition<CR>", desc = "Go to source definition" },
+        ["<Leader>mr"] = { "<cmd>Telescope lsp_references<cr>", desc = "Search references" },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,

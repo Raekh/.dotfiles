@@ -1,7 +1,7 @@
 {
   /**
   * console.log
-  */ 
+  */
   "clog": {
     "prefix": [
       "clog"
@@ -34,6 +34,15 @@
   /**
   * Exports
   */
+  "curfile": {
+    "prefix": [
+      "curfile"
+    ],
+    "body": [
+      "${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "[Ogth] Current file name"
+  },
   "rac": {
     "prefix": [
       "rac"
@@ -90,11 +99,67 @@
     ],
     "description": "[Ogth] Arrow function component with export and props"
   },
+  "ac": {
+    "prefix": [
+      "ac"
+    ],
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}: {${3:props}}) => {",
+      "\t${0:return 0}",
+      "}",
+    ],
+    "description": "[Ogth] Arrow function component with export and props"
+  },
+  "ace": {
+    "prefix": [
+      "ace"
+    ],
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}: {${3:props}}) => {",
+      "\t${0:return 0}",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "[Ogth] Arrow function component with export and props"
+  },
+  "acp": {
+    "prefix": [
+      "acp"
+    ],
+    "body": [
+      "type ${1}Props = {",
+      "\t${3}",
+      "}",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}: ${1:name}Props) => {",
+      "\t${0:return 0}",
+      "}"
+    ],
+    "description": "[Ogth] Arrow function component with export and props"
+  },
+  "acep": {
+    "prefix": [
+      "acep"
+    ],
+    "body": [
+      "type ${1}Props = {",
+      "\t${3}",
+      "}",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = (${2:params}: ${1:name}Props) => {",
+      "\t${0:return 0}",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "[Ogth] Arrow function component with export and props"
+  },
   //
   //
   /**
-  * callback
-  */
+* callback
+*/
   "cab": {
     "prefix": [
       "cab"
@@ -138,8 +203,8 @@
   //
   //
   /**
-  * tests
-  */
+* tests
+*/
   "ball": {
     "prefix": [
       "ball"
