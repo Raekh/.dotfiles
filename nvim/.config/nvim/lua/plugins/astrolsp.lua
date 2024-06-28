@@ -95,6 +95,7 @@ return {
         ["<Leader>mM"] = { "<CMD>TSToolsAddMissingImports<CR>", desc = "Add missing imports" },
         ["<Leader>mm"] = { "<CMD>TSToolsGoToSourceDefinition<CR>", desc = "Go to source definition" },
         ["<Leader>mr"] = { "<cmd>Telescope lsp_references<cr>", desc = "Search references" },
+        ["<Leader>mR"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename symbol" },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,

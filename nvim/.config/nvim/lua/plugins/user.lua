@@ -80,6 +80,10 @@ return {
     },
     config = function() require("lsp-file-operations").setup() end,
   },
+  {
+    "3rd/image.nvim",
+    opts = {},
+  },
   -- {
   --   "pmizio/typescript-tools.nvim",
   --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
