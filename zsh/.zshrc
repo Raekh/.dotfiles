@@ -187,8 +187,10 @@ fuck-limits() {
 }
 alias audio-restart="systemctl --user restart pipewire.service"
 alias tidoudi="aplay /usr/share/sounds/sound-icons/prompt.wav 2>/dev/null &"
-alias t='clear; tb '
+# alias t='clear; tb '
+alias t='tmux'
 alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
+alias bat='batcat'
 # }}}
 
 # Environment Variables {{{
@@ -237,3 +239,11 @@ eval "$(atuin init zsh)"
 # Bun completions {{{
 [ -s "/home/$USER/.bun/_bun" ] && source "/home/$USER/.bun/_bun"
 # }}}
+
+# pnpm
+export PNPM_HOME="/home/raekh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
