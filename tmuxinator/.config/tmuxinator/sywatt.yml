@@ -45,6 +45,6 @@ root: ~/Documents/Work/sywatt
 # attach: false
 
 windows:
-  - serve: dc up
+  - docker: dc up
   - editor:
   - shell:

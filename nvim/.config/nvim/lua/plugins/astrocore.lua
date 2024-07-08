@@ -90,6 +90,19 @@ return {
         ["<Leader>D"] = { name = "Diffview" },
         ["<Leader>a"] = { name = "Swap with previous..." },
         ["<Leader>s"] = { name = "Swap with next..." },
+        -- Neorg
+        ["<Leader>N"] = { name = "Neorg" },
+        ["<Leader>Nj"] = { "<cmd>Neorg journal<cr>", desc = "Journal" },
+        ["<Leader>Ni"] = { "<cmd>Neorg index<cr>", desc = "Index" },
+        ["<Leader>Nr"] = { "<cmd>Neorg return<cr>", desc = "Return" },
+        ["<Leader>Nw"] = { "<cmd>Neorg workspace<cr>", desc = "Show workspace" },
+        ["<Leader>Nc"] = {
+          "<cmd>Neorg keybind all core.looking-glass.magnify-code-block<cr>",
+          desc = "Magnify code block",
+        },
+        ["<Leader>Ng"] = { "<cmd>Neorg generate-workspace-summary<cr>", desc = "Generate workspace summary" },
+        ["<Leader>Nm"] = { "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
+        ["<Leader>NC"] = { "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
       },
       v = {
         [">"] = { ">gv" },

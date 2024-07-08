@@ -141,15 +141,68 @@ sw() {
 kw() {
     echo $@ | xargs -n1 tmuxinator stop
 }
-viaco-start() {
-    cd ~/Documents/Work; for folder in "serverless-api" "react-admin" "webapp"; do (cd "$folder"; git checkout -b $1); done
-}
-viaco-resume() {
-    cd ~/Documents/Work; for folder in "serverless-api" "react-admin" "webapp"; do (cd "$folder"; git checkout $1); done
-}
-alias viaco-develop-reset='cd ~/Documents/Work; for folder in "serverless-api" "react-admin" "webapp"; do (cd "$folder"; git checkout develop; git pull); done'
 alias swa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator start'
 alias kwa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator stop'
+
+## Viaco
+# Define environment variables
+export WORK_FOLDER="$HOME/Documents/Work"
+export VIACO_FOLDERS=("serverless-api" "react-admin" "webapp")
+export SYWAV2_FOLDERS=("sywatt" "sywack")
+
+# Define task-command function
+task-command() {
+    local -a folders=("${(@P)1}")
+    local command=$2
+    cd $WORK_FOLDER
+    for folder in "${folders[@]}"; do
+        (cd "$folder"; eval "$command")
+    done
+}
+
+# Define develop-reset function
+branches-prune() {
+    local folders_name=$1
+    local -a folders=("${(@P)folders_name}")
+    local command='git removed-branches --prune'
+    task-command folders "$command"
+}
+
+# Define develop-reset function
+develop-reset() {
+    local folders_name=$1
+    local -a folders=("${(@P)folders_name}")
+    local command='git checkout develop && git pull'
+    task-command folders "$command"
+}
+
+# Define start-task function
+start-task() {
+    local folders_name=$1
+    local branch=$2
+    local -a folders=("${(@P)folders_name}")
+    local command="git checkout -b $branch"
+    task-command folders "$command"
+}
+
+# Define resume-task function
+resume-task() {
+    local folders_name=$1
+    local branch=$2
+    local -a folders=("${(@P)folders_name}")
+    local command="git checkout $branch"
+    task-command folders "$command"
+}
+
+# Define aliases
+alias viaco-develop-reset='develop-reset VIACO_FOLDERS'
+alias sywav2-develop-reset='develop-reset SYWAV2_FOLDERS'
+alias viaco-start-task='start-task VIACO_FOLDERS'
+alias sywav2-start-task='start-task SYWAV2_FOLDERS'
+alias viaco-resume-task='resume-task VIACO_FOLDERS'
+alias sywav2-resume-task='resume-task SYWAV2_FOLDERS'
+alias viaco-branches-prune='branches-prune VIACO_FOLDERS'
+alias sywav2-branches-prune='branches-prune SYWAV2_FOLDERS'
 
 ## Keyboard
 alias kbgen='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
