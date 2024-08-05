@@ -68,8 +68,6 @@ return {
         ["<Leader>l"] = { name = "LSP" },
         ["<Leader>lt"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
 
-        ["]q"] = { "<cmd>cnext<CR>", desc = "Next quickfix list entry" },
-        ["[q"] = { "<cmd>cprev<CR>", desc = "Previous quickfix list entry" },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- quick save
