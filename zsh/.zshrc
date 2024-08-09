@@ -90,7 +90,6 @@ plugins=(
     ansible
     colored-man-pages
     nmap
-    ripgrep
     z
     history-substring-search
     sudo
@@ -106,6 +105,20 @@ alias 'docker-compose'='docker compose'
 alias make-dc='sed -i "s/docker-compose/docker compose/g" Makefile'
 alias unmake-dc='sed -i "s/docker compose/docker-compose/g" Makefile'
 alias dokill='docker ps -q | xargs docker kill'
+nuke-docker() {
+    y | docker network prune
+    y | docker system prune
+    y | docker volume prune
+    y | docker stop `docker ps -qa`
+    y | docker rm `docker ps -qa`
+    y | docker rmi -f `docker images -qa `
+    y | docker volume rm $(docker volume ls -q)
+    y | docker network rm `docker network ls -q`
+    y | docker network prune
+    y | docker system prune
+    y | docker volume prune
+}
+
 
 ## Kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
