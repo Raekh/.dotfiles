@@ -101,6 +101,7 @@ return {
         ["<Leader>Ng"] = { "<cmd>Neorg generate-workspace-summary<cr>", desc = "Generate workspace summary" },
         ["<Leader>Nm"] = { "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
         ["<Leader>NC"] = { "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
+        ["<Leader>Nn"] = { "<cmd>Neorg keybind norg core.dirman.new.note<CR>", desc = "Create new note" },
       },
       v = {
         [">"] = { ">gv" },

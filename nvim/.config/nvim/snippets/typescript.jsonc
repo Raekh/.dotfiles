@@ -2,6 +2,15 @@
   /**
   * console.log
   */
+  "cclog": {
+    "prefix": [
+      "cclog"
+    ],
+    "body": [
+      "console.log('=========> %c${1:message}', '${2:css}', ${0:variable})"
+    ],
+    "description": "Colored console.log"
+  },
   "clog": {
     "prefix": [
       "clog"
@@ -221,7 +230,7 @@
       "aball"
     ],
     "body": [
-      "beforeAll(() => {",
+      "beforeAll(async () => {",
       "\t$0",
       "})"
     ],
