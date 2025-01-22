@@ -10,3 +10,6 @@ animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "75% 60%"
+lazy = true
+match_by = "class"
+unfocus = "hide"
