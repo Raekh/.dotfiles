@@ -91,6 +91,33 @@ return {
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
+  {
+    "itchyny/vim-qfedit",
+  },
+  { "andreshazard/vim-freemarker" },
+  {
+    "cseickel/diagnostic-window.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+  },
+  "yochem/jq-playground.nvim",
+  "KaitoMuraoka/websearcher.nvim",
+  {
+    "MysticalDevil/inlay-hints.nvim",
+    event = "LspAttach",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      require("inlay-hints").setup {
+        autocmd = {
+          enable = false,
+        },
+      }
+    end,
+    keys = {
+      { "<leader>lH", "<cmd>InlayHintsToggle<CR>", desc = "Toggle Inlay Hints" },
+    },
+  },
   -- {
   --   "pmizio/typescript-tools.nvim",
   --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },

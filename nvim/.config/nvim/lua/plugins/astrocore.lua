@@ -102,6 +102,80 @@ return {
         ["<Leader>Nm"] = { "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
         ["<Leader>NC"] = { "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
         ["<Leader>Nn"] = { "<cmd>Neorg keybind norg core.dirman.new.note<CR>", desc = "Create new note" },
+
+        -- Neotree
+        ["<Leader>z"] = { name = "Neotree" },
+
+        -- Neotree filesystem
+        ["<Leader>ze"] = { name = "File system" },
+
+        ["<Leader>zeh"] = { "<cmd>Neotree filesystem reveal left<CR>", desc = "Reveal left" },
+        ["<Leader>zeH"] = { "<cmd>Neotree filesystem toggle left<CR>", desc = "Toggle left" },
+        ["<Leader>zej"] = { "<cmd>Neotree filesystem reveal bottom<CR>", desc = "Reveal bottom" },
+        ["<Leader>zeJ"] = { "<cmd>Neotree filesystem toggle bottom<CR>", desc = "Toggle bottom" },
+        ["<Leader>zel"] = { "<cmd>Neotree filesystem reveal right<CR>", desc = "Reveal right" },
+        ["<Leader>zeL"] = { "<cmd>Neotree filesystem toggle right<CR>", desc = "Toggle right" },
+        ["<Leader>zek"] = { "<cmd>Neotree filesystem reveal top<CR>", desc = "Reveal top" },
+        ["<Leader>zeK"] = { "<cmd>Neotree filesystem toggle top<CR>", desc = "Toggle top" },
+        ["<Leader>zec"] = { "<cmd>Neotree filesystem reveal current<CR>", desc = "Open in current buffer" },
+
+        ["<Leader>zeo"] = { "<cmd>Neotree filesystem focus<CR>", desc = "Focus" },
+        ["<Leader>zef"] = { "<cmd>Neotree filesystem float<CR>", desc = "Float" },
+
+        ["<Leader>zE"] = { name = "File system (force cwd)" },
+
+        ["<Leader>zEh"] = { "<cmd>Neotree filesystem reveal_force_cwd left<CR>", desc = "Reveal left (cwd)" },
+        ["<Leader>zEj"] = { "<cmd>Neotree filesystem reveal_force_cwd bottom<CR>", desc = "Reveal bottom (cwd)" },
+        ["<Leader>zEl"] = { "<cmd>Neotree filesystem reveal_force_cwd right<CR>", desc = "Reveal right (cwd)" },
+        ["<Leader>zEk"] = { "<cmd>Neotree filesystem reveal_force_cwd top<CR>", desc = "Reveal top (cwd)" },
+
+        -- Neotree buffers
+        ["<Leader>zb"] = { name = "Buffers" },
+
+        ["<Leader>zbh"] = { "<cmd>Neotree buffers reveal left<CR>", desc = "Reveal left" },
+        ["<Leader>zbH"] = { "<cmd>Neotree buffers toggle left<CR>", desc = "Toggle left" },
+        ["<Leader>zbj"] = { "<cmd>Neotree buffers reveal bottom<CR>", desc = "Reveal bottom" },
+        ["<Leader>zbJ"] = { "<cmd>Neotree buffers toggle bottom<CR>", desc = "Toggle bottom" },
+        ["<Leader>zbl"] = { "<cmd>Neotree buffers reveal right<CR>", desc = "Reveal right" },
+        ["<Leader>zbL"] = { "<cmd>Neotree buffers toggle right<CR>", desc = "Toggle right" },
+        ["<Leader>zbk"] = { "<cmd>Neotree buffers reveal top<CR>", desc = "Reveal top" },
+        ["<Leader>zbK"] = { "<cmd>Neotree buffers toggle top<CR>", desc = "Toggle top" },
+        ["<Leader>zbc"] = { "<cmd>Neotree buffers reveal current<CR>", desc = "Open in current buffer" },
+
+        ["<Leader>zbo"] = { "<cmd>Neotree buffers focus<CR>", desc = "Focus" },
+        ["<Leader>zbf"] = { "<cmd>Neotree buffers float<CR>", desc = "Float" },
+
+        -- Neotree git_status
+        ["<Leader>zg"] = { name = "Git status" },
+
+        ["<Leader>zgh"] = { "<cmd>Neotree git_status reveal left<CR>", desc = "Reveal left" },
+        ["<Leader>zgH"] = { "<cmd>Neotree git_status toggle left<CR>", desc = "Toggle left" },
+        ["<Leader>zgj"] = { "<cmd>Neotree git_status reveal bottom<CR>", desc = "Reveal bottom" },
+        ["<Leader>zgJ"] = { "<cmd>Neotree git_status toggle bottom<CR>", desc = "Toggle bottom" },
+        ["<Leader>zgl"] = { "<cmd>Neotree git_status reveal right<CR>", desc = "Reveal right" },
+        ["<Leader>zgL"] = { "<cmd>Neotree git_status toggle right<CR>", desc = "Toggle right" },
+        ["<Leader>zgk"] = { "<cmd>Neotree git_status reveal top<CR>", desc = "Reveal top" },
+        ["<Leader>zgK"] = { "<cmd>Neotree git_status toggle top<CR>", desc = "Toggle top" },
+        ["<Leader>zgc"] = { "<cmd>Neotree git_status reveal current<CR>", desc = "Open in current buffer" },
+
+        ["<Leader>zgo"] = { "<cmd>Neotree git_status focus<CR>", desc = "Focus" },
+        ["<Leader>zgf"] = { "<cmd>Neotree git_status float<CR>", desc = "Float" },
+
+        -- Neotree diagnostics
+        ["<Leader>zd"] = { name = "Diagnostics" },
+
+        ["<Leader>zdh"] = { "<cmd>Neotree diagnostics reveal left<CR>", desc = "Reveal left" },
+        ["<Leader>zdH"] = { "<cmd>Neotree diagnostics toggle left<CR>", desc = "Toggle left" },
+        ["<Leader>zdj"] = { "<cmd>Neotree diagnostics reveal bottom<CR>", desc = "Reveal bottom" },
+        ["<Leader>zdJ"] = { "<cmd>Neotree diagnostics toggle bottom<CR>", desc = "Toggle bottom" },
+        ["<Leader>zdl"] = { "<cmd>Neotree diagnostics reveal right<CR>", desc = "Reveal right" },
+        ["<Leader>zdL"] = { "<cmd>Neotree diagnostics toggle right<CR>", desc = "Toggle right" },
+        ["<Leader>zdk"] = { "<cmd>Neotree diagnostics reveal top<CR>", desc = "Reveal top" },
+        ["<Leader>zdK"] = { "<cmd>Neotree diagnostics toggle top<CR>", desc = "Toggle top" },
+        ["<Leader>zdc"] = { "<cmd>Neotree diagnostics reveal current<CR>", desc = "Open in current buffer" },
+
+        ["<Leader>zdo"] = { "<cmd>Neotree diagnostics focus<CR>", desc = "Focus" },
+        ["<Leader>zdf"] = { "<cmd>Neotree diagnostics float<CR>", desc = "Float" },
       },
       v = {
         [">"] = { ">gv" },
