@@ -18,5 +18,7 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+if vim.g.neovide then vim.o.guifont = "IBM Plex Mono:h14" end
+
 require "lazy_setup"
 require "polish"

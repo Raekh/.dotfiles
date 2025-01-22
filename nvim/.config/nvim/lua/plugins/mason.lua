@@ -54,6 +54,9 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         -- "python",
         -- add more arguments for adding more debuggers
+        "typescript",
+        "node2",
+        "node",
       })
     end,
   },
