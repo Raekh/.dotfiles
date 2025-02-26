@@ -99,6 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # }}}
 
 # Aliases {{{
+## Ubuntu
+alias fu='sudo --preserve-env'
+alias fus='sudo --preserve-env zsh'
+
 ## Docker
 alias dc='docker compose'
 alias 'docker-compose'='docker compose'
@@ -156,6 +160,9 @@ kw() {
 }
 alias swa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator start'
 alias kwa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator stop'
+
+## Node stuff
+alias pn='pnpm'
 
 ## Viaco
 # Define environment variables
