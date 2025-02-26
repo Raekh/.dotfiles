@@ -7,6 +7,9 @@
 #
 # NOTE: this script uses bash (not POSIX shell) for the RANDOM variable
 
+# TODO: fix the annoying reload issue
+exit 0
+
 wallust_refresh=$HOME/.config/hypr/scripts/RefreshNoWaybar.sh
 
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
