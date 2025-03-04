@@ -14,5 +14,13 @@ return {
         log_file_path = nil, -- absolute path to Tabnine log file
       }
     end,
+    keys = {
+      { "<Leader>T", name = "Tabnine" },
+      { "<Leader>To", "<CMD>TabnineChat<CR>", desc = "TabnineChat: Open" },
+      { "<Leader>TC", "<CMD>TabnineChatClose<CR>", desc = "TabnineChat: Close" },
+      { "<Leader>Tn", "<CMD>TabnineChatNew<CR>", desc = "TabnineChat: New chat" },
+      { "<Leader>Ta", "<CMD>TabnineAccept<CR>", desc = "TabnineChat: Accept" },
+      { "<Leader>Tr", "<CMD>TabnineReject<CR>", desc = "TabnineChat: Reject" },
+    },
   },
 }
