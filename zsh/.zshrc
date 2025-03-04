@@ -109,6 +109,7 @@ alias 'docker-compose'='docker compose'
 alias make-dc='sed -i "s/docker-compose/docker compose/g" Makefile'
 alias unmake-dc='sed -i "s/docker compose/docker-compose/g" Makefile'
 alias dokill='docker ps -q | xargs docker kill'
+alias ld='lazydocker'
 nuke-docker() {
     docker network prune
     docker system prune
@@ -289,6 +290,7 @@ export PATH=$PATH:$HOME/.config/yarn/global/node_modules/.bin
 export PATH=$PATH:$HOME/.ghcup/env
 export PATH=$PATH:$HOME/.ghcup/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH="$BUN_INSTALL/bin:$PATH"
 [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 if [ -d "$FNM_PATH" ]; then
