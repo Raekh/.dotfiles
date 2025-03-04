@@ -17,6 +17,7 @@ return {
   "tanvirtin/monokai.nvim",
   "folke/tokyonight.nvim",
   "catppuccin/nvim",
+  { "rose-pine/neovim", as = "rose-pine" },
   "folke/trouble.nvim",
   "tpope/vim-endwise",
   { "tpope/vim-abolish", event = "BufRead" },
