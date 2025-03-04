@@ -15,6 +15,9 @@ menu(){
   printf "8. view Workspace-Rules\n"
   printf "9. view Default-Settings\n"
   printf "10. view Default-Keybinds\n"
+  printf "11. view Kanshi config\n"
+  printf "12. view Bluetooth devices\n"
+  printf "13. view Audio devices\n"
 }
 
 main() {
@@ -49,6 +52,15 @@ main() {
             ;;
         10)
             kitty -e nvim "$configs/Keybinds.conf"
+            ;;
+        11)
+            kitty -e nvim "$HOME/.config/kanshi/config"
+            ;;
+        12)
+            kitty -e bluetui
+            ;;
+        13)
+            kitty -e pulsemixer
             ;;
         *)
             ;;
