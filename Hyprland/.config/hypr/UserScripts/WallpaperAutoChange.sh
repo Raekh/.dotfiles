@@ -8,6 +8,7 @@
 # NOTE: this script uses bash (not POSIX shell) for the RANDOM variable
 
 # TODO: fix the annoying reload issue
+kanshi reload
 exit 0
 
 wallust_refresh=$HOME/.config/hypr/scripts/RefreshNoWaybar.sh
