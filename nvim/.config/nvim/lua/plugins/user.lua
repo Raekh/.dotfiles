@@ -18,6 +18,7 @@ return {
   "folke/tokyonight.nvim",
   "catppuccin/nvim",
   { "rose-pine/neovim", as = "rose-pine" },
+  "nyoom-engineering/oxocarbon.nvim",
   "folke/trouble.nvim",
   "tpope/vim-endwise",
   { "tpope/vim-abolish", event = "BufRead" },
