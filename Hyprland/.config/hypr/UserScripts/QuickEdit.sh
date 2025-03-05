@@ -18,6 +18,7 @@ menu(){
   printf "11. view Kanshi config\n"
   printf "12. view Bluetooth devices\n"
   printf "13. view Audio devices\n"
+  printf "14. view Neovim plugins\n"
 }
 
 main() {
@@ -61,6 +62,9 @@ main() {
             ;;
         13)
             kitty -e pulsemixer
+            ;;
+        14)
+            kitty -e nvim "$HOME/.config/nvim/lua/plugins/"
             ;;
         *)
             ;;
