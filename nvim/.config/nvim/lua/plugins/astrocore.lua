@@ -74,7 +74,7 @@ return {
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
         -- Registers
-        ["<Leader>r"] = { name = "Registers" },
+        ["<Leader>r"] = { desc = "Registers" },
         ["<Leader>rc"] = {
           function()
             for i = 34, 122 do
