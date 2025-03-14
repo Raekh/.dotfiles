@@ -1,7 +1,7 @@
-# /home/ostrogoth/.config/tmuxinator/bo.yml
+# /home/ostrogoth/.config/tmuxinator/drive.yml
 
-name: front
-root: ~/Documents/Work/webapp/
+name: drive
+root: ~/Documents/Code/drive-tutorial/
 
 # Optional tmux socket
 # socket_name: foo
@@ -49,6 +49,6 @@ windows:
       layout: main-vertical
       panes:
         - lazydocker
-        - docker compose up
+        - pnpm run dev
   - editor:
   - shell:
