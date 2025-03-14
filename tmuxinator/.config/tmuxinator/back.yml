@@ -48,7 +48,7 @@ windows:
   - docker:
       layout: main-vertical
       panes:
+        - lazydocker
         - docker compose up
-        # - vexw; while true; do sleep 10; vexw; done
   - editor:
   - shell:
