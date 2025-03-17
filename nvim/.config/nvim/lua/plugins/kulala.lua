@@ -1,3 +1,5 @@
+if true then return false end
+
 return {
   "mistweaverco/kulala.nvim",
   config = function()
