@@ -1,4 +1,4 @@
-if true then return false end
+if true then return {} end
 
 return {
   "mistweaverco/kulala.nvim",
