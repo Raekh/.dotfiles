@@ -1,3 +1,5 @@
+if true then return false end
+
 return {
   "Kurama622/profile.nvim",
   dependencies = { "3rd/image.nvim" },

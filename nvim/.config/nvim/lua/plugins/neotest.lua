@@ -1,3 +1,5 @@
+if true then return false end
+
 return {
   "nvim-neotest/neotest",
   dependencies = {

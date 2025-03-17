@@ -1,3 +1,5 @@
+if true then return false end
+
 return {
   "frankroeder/parrot.nvim",
   dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
