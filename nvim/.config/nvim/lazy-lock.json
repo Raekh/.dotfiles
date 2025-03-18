@@ -80,7 +80,7 @@
   "pathlib.nvim": { "branch": "main", "commit": "57e5598af6fe253761c1b48e0b59b7cd6699e2c1" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "promise-async": { "branch": "main", "commit": "38a4575da9497326badd3995e768b4ccf0bb153e" },
-  "rainbow-delimiters.nvim": { "branch": "master", "commit": "ffb016e6b5307bb9c0fef056f3b25e365eb2b0a1" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "03347f9afe444f55a70a464c0147bdc0c2036c33" },
   "render-markdown": { "branch": "main", "commit": "9721ffe230ec90e49c49ee33b5ca44c3fc689214" },
   "resession.nvim": { "branch": "master", "commit": "cc819b0489938d03e4f3532a583354f0287c015b" },
   "smart-splits.nvim": { "branch": "master", "commit": "4a231987665d3c6e02ca88833d050e918afe3e1e" },
