@@ -145,6 +145,14 @@ alias ya='yarn add'
 alias yad='yarn add -D'
 alias yag='yarn global add'
 
+## Pnpm
+alias pi="pnpm install"
+alias pa="pnpm add"
+alias pid="pnpm install -D"
+alias pa="pnpm add -D"
+alias pig="pnpm install -g"
+alias pag="pnpm add -g"
+
 ## Git
 alias changeMEP='git log --no-merges --pretty=oneline --abbrev-commit --no-decorate origin/master..origin/develop | sed "s/^\(\w\)* //"'
 alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short"
