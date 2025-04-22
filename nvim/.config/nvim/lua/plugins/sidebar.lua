@@ -1,4 +1,7 @@
+-- vim:fileencoding=utf-8:foldmethod=marker
+--- @type LazySpec
 return {
+  -- Neo-tree {{{
   { "mrbjarksen/neo-tree-diagnostics.nvim", lazy = false },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -11,10 +14,10 @@ return {
     },
     opts = function(_, opts)
       -- No idea why I have to redeclare icons/signs here...
-      vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-      vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-      vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-      vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
+      -- vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+      -- vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+      -- vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+      -- vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
       opts.sources = {
         "filesystem",
@@ -62,17 +65,18 @@ return {
         },
       }
       -- print(vim.inspect(opts.diagnostics))
-      opts.event_handlers = opts.event_handlers or {}
-      table.insert(opts.event_handlers, {
-        event = "neo_tree_popup_input_ready",
-        ---@param args { bufnr: integer, winid: integer }
-        handler = function(args)
-          -- map <esc> to enter normal mode (by default closes prompt)
-          -- don't forget `opts.buffer` to specify the buffer of the popup.
-          vim.keymap.set("i", "jk", vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
-          vim.keymap.set("i", "jj", vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
-        end,
-      })
+      -- opts.event_handlers = opts.event_handlers or {}
+      -- table.insert(opts.event_handlers, {
+      --   event = "neo_tree_popup_input_ready",
+      --   ---@param args { bufnr: integer, winid: integer }
+      --   handler = function(args)
+      --     -- map <esc> to enter normal mode (by default closes prompt)
+      --     -- don't forget `opts.buffer` to specify the buffer of the popup.
+      --     vim.keymap.set("i", "jk", vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
+      --     vim.keymap.set("i", "jj", vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
+      --   end,
+      -- })
     end,
   },
+  -- }}}
 }
