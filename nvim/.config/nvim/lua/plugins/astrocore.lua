@@ -1,3 +1,4 @@
+-- vim:fileencoding=utf-8:foldmethod=marker
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -10,10 +11,10 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -22,18 +23,31 @@ return {
       virtual_text = true,
       underline = true,
     },
+    -- passed to `vim.filetype.add`
+    filetypes = {
+      -- see `:h vim.filetype.add` for usage
+      extension = {
+        foo = "fooscript",
+      },
+      filename = {
+        [".foorc"] = "fooscript",
+      },
+      pattern = {
+        [".*/etc/foo/.*"] = "fooscript",
+      },
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
-        -- NOTE: `mapLeader` and `maplocalLeader` must be set in the AstroNvim opts or before `lazy.setup`
+        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
       },
     },
@@ -42,15 +56,10 @@ return {
     mappings = {
       -- first key is the mode
       n = {
-        -- Disable disgusting mappings
+        -- Disabled mappings {{{
         ["<C-q>"] = false,
-        ["<C-s>"] = false,
-        -- navigate buffer tabs with `H` and `L`
-        -- NOTE: Removing this but keeping it for the interesting factor
-        -- L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        -- H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-
-        -- Buffers
+        -- }}}
+        -- Buffers {{{
         ["<Leader>b"] = { desc = "Buffers" },
         ["<Leader>bD"] = {
           function()
@@ -62,18 +71,8 @@ return {
         },
         ["<Leader>bh"] = { "<cmd>Bdelete hidden<cr>", desc = "Close hidden buffers" },
         ["<Leader>bH"] = { "<cmd>Bwipeout hidden<cr>", desc = "Wipeout hidden buffers" },
-
-        -- Lsp
-
-        ["<Leader>l"] = { name = "LSP" },
-        ["<Leader>lt"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
-
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-
-        -- Registers
+        -- }}}
+        -- Registers {{{
         ["<Leader>r"] = { desc = "Registers" },
         ["<Leader>rc"] = {
           function()
@@ -85,10 +84,25 @@ return {
           end,
           desc = "Clear registers",
         },
+        -- }}}
+        -- Git {{{
+        -- Diffview {{{
         ["<Leader>D"] = { name = "Diffview" },
-        ["<Leader>a"] = { name = "Swap with previous..." },
-        ["<Leader>s"] = { name = "Swap with next..." },
-        -- Neorg
+
+        ["<Leader>Do"] = { "<CMD>DiffviewOpen<CR>", desc = "Diffview: Open" },
+        ["<Leader>Dc"] = { "<CMD>DiffviewClose<CR>", desc = "Diffview: Close" },
+        ["<Leader>Dl"] = { "<CMD>DiffviewLog<CR>", desc = "Diffview: Log" },
+        ["<Leader>Dr"] = { "<CMD>DiffviewRefresh<CR>", desc = "Diffview: Refresh" },
+        ["<Leader>Df"] = { "<CMD>DiffviewFocusFiles<CR>", desc = "Diffview: Focus files" },
+        ["<Leader>Dh"] = { "<CMD>DiffviewFileHistory<CR>", desc = "Diffview: File history" },
+        ["<Leader>DH"] = { "<CMD>DiffviewFileHistory %<CR>", desc = "Diffview: Current file history" },
+        ["<Leader>Dt"] = { "<CMD>DiffviewToggleFiles<CR>", desc = "Diffview: Toggle files" },
+        -- }}}
+        -- }}}
+        -- LSP {{{
+        ["<Leader>lt"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+        -- }}}
+        -- Neorg {{{
         ["<Leader>N"] = { name = "Neorg" },
         ["<Leader>Nj"] = { "<cmd>Neorg journal<cr>", desc = "Journal" },
         ["<Leader>Ni"] = { "<cmd>Neorg index<cr>", desc = "Index" },
@@ -102,11 +116,11 @@ return {
         ["<Leader>Nm"] = { "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
         ["<Leader>NC"] = { "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
         ["<Leader>Nn"] = { "<cmd>Neorg keybind norg core.dirman.new.note<CR>", desc = "Create new note" },
-
-        -- Neotree
+        -- }}}
+        -- Neotree {{{
         ["<Leader>z"] = { name = "Neotree" },
 
-        -- Neotree filesystem
+        -- Neotree filesystem {{{
         ["<Leader>ze"] = { name = "File system" },
 
         ["<Leader>zeh"] = { "<cmd>Neotree filesystem reveal left<CR>", desc = "Reveal left" },
@@ -128,8 +142,9 @@ return {
         ["<Leader>zEj"] = { "<cmd>Neotree filesystem reveal_force_cwd bottom<CR>", desc = "Reveal bottom (cwd)" },
         ["<Leader>zEl"] = { "<cmd>Neotree filesystem reveal_force_cwd right<CR>", desc = "Reveal right (cwd)" },
         ["<Leader>zEk"] = { "<cmd>Neotree filesystem reveal_force_cwd top<CR>", desc = "Reveal top (cwd)" },
+        -- }}}
 
-        -- Neotree buffers
+        -- Neotree buffers {{{
         ["<Leader>zb"] = { name = "Buffers" },
 
         ["<Leader>zbh"] = { "<cmd>Neotree buffers reveal left<CR>", desc = "Reveal left" },
@@ -144,8 +159,9 @@ return {
 
         ["<Leader>zbo"] = { "<cmd>Neotree buffers focus<CR>", desc = "Focus" },
         ["<Leader>zbf"] = { "<cmd>Neotree buffers float<CR>", desc = "Float" },
+        -- }}}
 
-        -- Neotree git_status
+        -- Neotree git status {{{
         ["<Leader>zg"] = { name = "Git status" },
 
         ["<Leader>zgh"] = { "<cmd>Neotree git_status reveal left<CR>", desc = "Reveal left" },
@@ -160,8 +176,9 @@ return {
 
         ["<Leader>zgo"] = { "<cmd>Neotree git_status focus<CR>", desc = "Focus" },
         ["<Leader>zgf"] = { "<cmd>Neotree git_status float<CR>", desc = "Float" },
+        -- }}}
 
-        -- Neotree diagnostics
+        -- Neotree git status {{{
         ["<Leader>zd"] = { name = "Diagnostics" },
 
         ["<Leader>zdh"] = { "<cmd>Neotree diagnostics reveal left<CR>", desc = "Reveal left" },
@@ -176,14 +193,13 @@ return {
 
         ["<Leader>zdo"] = { "<cmd>Neotree diagnostics focus<CR>", desc = "Focus" },
         ["<Leader>zdf"] = { "<cmd>Neotree diagnostics float<CR>", desc = "Float" },
+        -- }}}
+
+        -- }}}
       },
       v = {
         [">"] = { ">gv" },
         ["<"] = { "<gv" },
-      },
-      t = {
-        -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
       },
     },
   },
