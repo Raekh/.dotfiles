@@ -29,6 +29,8 @@ return {
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
+        "typescript-tools",
+        "ts_ls",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -100,7 +102,8 @@ return {
         ["<Leader>mo"] = { "<CMD>TSToolsOrganizeImports<CR>", desc = "Organize imports" },
         ["<Leader>mM"] = { "<CMD>TSToolsAddMissingImports<CR>", desc = "Add missing imports" },
         ["<Leader>mm"] = { "<CMD>TSToolsGoToSourceDefinition<CR>", desc = "Go to source definition" },
-        ["<Leader>mr"] = { "<cmd>Telescope lsp_references<cr>", desc = "Search references" },
+        ---@diagnostic disable-next-line: undefined-global
+        ["<Leader>mr"] = { function() Snacks.picker.lsp_references() end, desc = "Search references" },
         ["<Leader>mR"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename symbol" },
       },
     },
