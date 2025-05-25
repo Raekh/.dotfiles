@@ -17,13 +17,22 @@ final_space = true
   background = 'transparent'
 
 [transient_prompt]
-  template = '<p:yellow,transparent></><,p:yellow> {{ .Folder }} </><p:yellow,transparent></> '
+  template = '<p:yellow,transparent></><,p:yellow>{{ if .Env.TUN0 }}  {{ .Env.TUN0 }} {{ end }} {{ .Folder }} </><p:yellow,transparent></> '
   foreground = 'p:black'
   background = 'transparent'
 
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
+
+  [[blocks.segments]]
+    style = 'diamond'
+    leading_diamond = ''
+    trailing_diamond = ''
+    template = '{{ if .Env.TUN0 }}  {{ .Env.TUN0 }}{{ end }} '
+    foreground = 'p:black'
+    background = 'p:yellow'
+    type = 'session'
 
   [[blocks.segments]]
     style = 'diamond'
