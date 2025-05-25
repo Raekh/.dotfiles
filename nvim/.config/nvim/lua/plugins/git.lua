@@ -12,16 +12,16 @@ return {
         set.fillchars = set.fillchars + "diff:╱"
 
         -- Color overrides {{{
-        local current = vim.api.nvim_get_hl(0, { name = "DiffDelete" })
-        vim.api.nvim_set_hl(0, "DiffDelete", {
-          fg = "#37222c",
-          bg = current.bg,
-          bold = current.bold,
-          italic = current.italic,
-          underline = current.underline,
-          reverse = current.reverse,
-          blend = current.blend,
-        })
+        -- local current = vim.api.nvim_get_hl(0, { name = "DiffDelete" })
+        -- vim.api.nvim_set_hl(0, "DiffDelete", {
+        --   fg = "#37222c",
+        --   bg = current.bg,
+        --   bold = current.bold,
+        --   italic = current.italic,
+        --   underline = current.underline,
+        --   reverse = current.reverse,
+        --   blend = current.blend,
+        -- })
         -- }}}
       end,
       keys = {
@@ -47,7 +47,13 @@ return {
       },
       enabled = true,
       build = function() require("gitlab.server").build(true) end, -- Builds the Go binary
-      config = function() require("gitlab").setup {} end,
+      config = function()
+        require("gitlab").setup {
+          discussion_signs = {
+            virtual_text = true,
+          },
+        }
+      end,
     },
   },
 }
