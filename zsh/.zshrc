@@ -6,6 +6,10 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
+# if [ -z "$TMUX" ]; then
+#     exec tmux new-session -A -s workspace
+# fi
+
 # if user is root, disable warning about unsafe dirs
 if [[ "$USER" -eq "root" ]]; then
     ZSH_DISABLE_COMPFIX=true
@@ -124,6 +128,16 @@ nuke-docker() {
     docker volume prune
 }
 
+alias nex='docker compose exec node'
+alias nap='nex yarn test-api $1 --watch'
+alias napal='nex yarn test-api --watchAll'
+alias nup='nex yarn test $1 --watch'
+alias nupal='nex yarn test --watchAll'
+
+## Htb
+alias ipv6_enable="sudo sysctl net.ipv6.conf.all.disable_ipv6=0"
+alias ipv6_disable="sudo sysctl net.ipv6.conf.all.disable_ipv6=1"
+
 
 ## Kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
@@ -134,6 +148,7 @@ alias zshreload='source $HOME/.zshrc'
 
 ## Nvim
 alias nn='nvim'
+alias nnotes='cd ~/notes && nvim ~/notes/index.norg'
 
 ## ls (exa override)
 alias ls='exa --group-directories-first --icons'
@@ -144,6 +159,7 @@ alias la='exa -la --group-directories-first --icons'
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yag='yarn global add'
+alias yaii='sudo rm -rf node_modules/.yarn-integrity && yarn install'
 
 ## Pnpm
 alias pi="pnpm install"
@@ -178,6 +194,7 @@ alias pn='pnpm'
 export WORK_FOLDER="$HOME/Documents/Work"
 export VIACO_FOLDERS=("serverless-api" "react-admin" "webapp")
 export SYWAV2_FOLDERS=("sywatt" "sywack")
+export SYWAV1_FOLDERS=("sywatt" "sywack" "sywend")
 
 # Define task-command function
 task-command() {
@@ -226,12 +243,16 @@ resume-task() {
 # Define aliases
 alias viaco-develop-reset='develop-reset VIACO_FOLDERS'
 alias sywav2-develop-reset='develop-reset SYWAV2_FOLDERS'
+alias sywav1-develop-reset='develop-reset SYWAV1_FOLDERS'
 alias viaco-start-task='start-task VIACO_FOLDERS'
 alias sywav2-start-task='start-task SYWAV2_FOLDERS'
+alias sywav1-start-task='start-task SYWAV1_FOLDERS'
 alias viaco-resume-task='resume-task VIACO_FOLDERS'
 alias sywav2-resume-task='resume-task SYWAV2_FOLDERS'
+alias sywav1-resume-task='resume-task SYWAV1_FOLDERS'
 alias viaco-branches-prune='branches-prune VIACO_FOLDERS'
 alias sywav2-branches-prune='branches-prune SYWAV2_FOLDERS'
+alias sywav1-branches-prune='branches-prune SYWAV1_FOLDERS'
 
 ## Keyboard
 alias kbgen='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
@@ -316,6 +337,10 @@ if [ ! -d "$OHMYPOSH_HOME" ]; then
     oh-my-posh config export --output $OHMYPOSH_HOME/base.toml --format toml 
 fi
 eval "$(oh-my-posh init zsh --config $OHMYPOSH_HOME/base.toml)"
+
+function set_poshcontext() {
+    export TUN0=$(ip -o -f inet addr show  | grep tun0 | awk '{print $4}' | awk -F/ '{print $1}')
+}
 # }}}
 
 # Atuin {{{
