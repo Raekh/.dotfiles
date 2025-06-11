@@ -19,7 +19,6 @@ return {
 
         -- install formatters
         "stylua",
-        -- "prettierd",
         "eslint_d",
         "selene",
         "standardjs",
