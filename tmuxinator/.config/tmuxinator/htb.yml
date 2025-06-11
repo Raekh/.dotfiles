@@ -45,5 +45,5 @@ root: ~/htb
 # attach: false
 
 windows:
-  - vpn: sudo openvpn lab.ovpn
+  - vpn: sudo whoami && enable_ipv6 && sudo openvpn lab.ovpn
   - editor:
