@@ -135,8 +135,8 @@ alias nup='nex yarn test $1 --watch'
 alias nupal='nex yarn test --watchAll'
 
 ## Htb
-alias ipv6_enable="sudo sysctl net.ipv6.conf.all.disable_ipv6=0"
-alias ipv6_disable="sudo sysctl net.ipv6.conf.all.disable_ipv6=1"
+alias enable_ipv6="sudo sysctl net.ipv6.conf.all.disable_ipv6=0"
+alias disable_ipv6="sudo sysctl net.ipv6.conf.all.disable_ipv6=1"
 
 
 ## Kitty
@@ -294,10 +294,32 @@ alias audio-restart="systemctl --user restart pipewire.service"
 alias tidoudi="aplay /usr/share/sounds/sound-icons/prompt.wav 2>/dev/null &"
 # alias t='clear; tb '
 alias t='tmux'
+alias tks='tmux kill-session'
 alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
 alias bat='batcat'
 alias kilock='pkill -USR1 hyprlock'
 # }}}
+
+# clipboard
+way2zep() {
+    clippaste | xsel --display :99 --clipboard -i
+}
+zep2way() {
+    xsel --display :99 --clipboard -o | clipcopy
+}
+
+# htb
+init_htb_box() {
+    mkdir $1
+    cd $1
+    touch recon.norg
+    mkdir nmap gobuster www
+    tmux run-shell 'tmux attach-session -c "#{pane_current_path}" \; display-message "Updated tmux path!"'
+}
+
+xephyr-run() {
+    ~/xephyr-run.sh $1
+}
 
 # Environment Variables {{{
 export compositor_name="Hyprland"
@@ -319,7 +341,9 @@ export PATH=$PATH:$HOME/.config/yarn/global/node_modules/.bin
 export PATH=$PATH:$HOME/.ghcup/env
 export PATH=$PATH:$HOME/.ghcup/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/opt/john
 export PATH="$BUN_INSTALL/bin:$PATH"
 [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 if [ -d "$FNM_PATH" ]; then
@@ -358,5 +382,12 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Add to the end of ~/.zshrc
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.zshrc_env ] && source ~/.zshrc_env ]
