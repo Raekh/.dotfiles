@@ -14,9 +14,17 @@ return {
     -- Only insert new sources, do not replace the existing ones
     -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
-      -- Set a formatter
-      -- null_ls.builtins.formatting.stylua,
-      -- null_ls.builtins.formatting.prettier,
+      require("null-ls").builtins.formatting.prettier.with {
+        condition = function(utils)
+          return utils.root_has_file {
+            ".prettierrc",
+            "prettier.config.js",
+            ".prettierrc.json",
+            ".prettierrc.js",
+            ".prettierrc.config.json",
+          }
+        end,
+      },
     })
   end,
 }
