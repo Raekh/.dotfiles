@@ -294,7 +294,7 @@ alias audio-restart="systemctl --user restart pipewire.service"
 alias tidoudi="aplay /usr/share/sounds/sound-icons/prompt.wav 2>/dev/null &"
 # alias t='clear; tb '
 alias t='tmux'
-alias tks='tmux kill-session'
+alias tks='tmux kill-server'
 alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
 alias bat='batcat'
 alias kilock='pkill -USR1 hyprlock'
