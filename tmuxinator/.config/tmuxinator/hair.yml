@@ -1,7 +1,7 @@
-# /home/ostrogoth/.config/tmuxinator/back.yml
+# /home/ostrogoth/.config/tmuxinator/hair.yml
 
-name: sywont
-root: ~/Documents/Work/sywa-frontend/
+name: hair
+root: ~/Documents/Code/tsrouter-app/
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,6 +45,9 @@ root: ~/Documents/Work/sywa-frontend/
 # attach: false
 
 windows:
-  - docker: ./.startDev.expect
+  - run:
+      layout: main-vertical
+      panes:
+        - pn i && pn dev
+        - pn convex dev
   - editor:
-  - shell:
