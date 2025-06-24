@@ -47,7 +47,7 @@ return {
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
+        -- NOTE: `mapLeader` and `maplocalLeader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
       },
     },
@@ -55,6 +55,9 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      i = {
+        ["<C-J>"] = { "copilot#Accept(<Tab>)", silent = true, expr = true, script = true },
+      },
       n = {
         -- Disabled mappings {{{
         ["<C-q>"] = false,
@@ -195,11 +198,20 @@ return {
         ["<Leader>zdf"] = { "<cmd>Neotree diagnostics float<CR>", desc = "Float" },
         -- }}}
 
+        ["<leader>ah"] = { "<cmd>MCPHub<CR>", desc = "MCPHub" },
+        ["<leader>aa"] = { "<cmd>CodeCompanion<CR>", desc = "Code Companion" },
+        ["<leader>ac"] = { "<cmd>CodeCompanionCmd<CR>", desc = "Code Companion Command" },
+        ["<leader>aC"] = { "<cmd>CodeCompanionChat<CR>", desc = "Code Companion Chat" },
+        ["<leader>aA"] = { "<cmd>CodeCompanionActions<CR>", desc = "Code Companion Actions" },
         -- }}}
       },
       v = {
         [">"] = { ">gv" },
         ["<"] = { "<gv" },
+        -- ["<Leader>ai"] = { ":Gen<CR>", desc = "AI Generate" },
+        -- ["<Leader>ac"] = { ":Gen Chat<CR>", desc = "AI Chat" },
+        -- ["<Leader>ae"] = { ":Gen Enhance_Code<CR>", desc = "AI Enhance Code" },
+        -- ["<Leader>ar"] = { ":Gen Review_Code<CR>", desc = "AI Review Code" },
       },
     },
   },
