@@ -1,7 +1,7 @@
 -- vim:fileencoding=utf-8:foldmethod=marker
+--
 ---@type LazySpec
 return {
-
   -- Themes {{{
   "folke/tokyonight.nvim",
   -- }}}
@@ -123,6 +123,159 @@ return {
     -- Optional: Lazy load Incline
     event = "VeryLazy",
   },
+  {
+    "saghen/blink.cmp",
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "v0.*",
+    opts = {
+      keymap = { preset = "default" },
+      appearance = {
+        use_nvim_cmp_as_default = true,
+        nerd_font_variant = "mono",
+      },
+      signature = { enabled = true },
+    },
+  },
+  {
+    "fiqryq/wakastat.nvim",
+    config = function()
+      require("wakastat").setup {
+        args = { "--today" },
+        format = "Coding Time: %s",
+        update_interval = 300,
+      }
+    end,
+    dependencies = { "rebelot/heirline.nvim" },
+  },
+  { "wakatime/vim-wakatime" },
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, opts)
+      local status = require "astroui.status"
+
+      -- Create WakaTime component
+      local wakatime_component = {
+        provider = function() return " " .. require("wakastat").wakatime() .. " " end,
+        hl = { fg = "cyan", bg = "bg" },
+      }
+
+      -- Add to existing statusline
+      table.insert(opts.statusline, #opts.statusline, wakatime_component)
+
+      return opts
+    end,
+  },
+  {
+    "aspeddro/slides.nvim",
+    config = function() require("slides").setup {} end,
+  },
+  -- {
+  --   "jackplus-xyz/monaspace.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     style_map = {
+  --       -- Xenon - Slab Serif: documentation and annotations
+  --       bold = {
+  --         -- Todo comments only (Xenon)
+  --         ["@comment.todo"] = true,
+  --         Todo = true,
+  --       },
+  --       -- Radon - Handwritten font: tentative thoughts and comments
+  --       italic = {
+  --         -- Regular comments (Radon)
+  --         Comment = true,
+  --         SpecialComment = true,
+  --         ["@comment"] = true,
+  --         ["@comment.error"] = true,
+  --         ["@comment.warning"] = true,
+  --         ["@comment.hint"] = true,
+  --         ["@comment.info"] = true,
+  --         ["@lsp.type.comment"] = true,
+  --         ["@lsp.type.comment.c"] = true,
+  --         ["@lsp.type.comment.cpp"] = true,
+  --         markdownUrl = true,
+  --         htmlLink = true,
+  --         ["@markup.italic"] = true,
+  --         ["@markup.quote"] = true,
+  --         ["@string.special.url"] = true,
+  --         ["@string.special.path"] = true,
+  --         ["@markup.link"] = true,
+  --         ["@markup.link.url"] = true,
+  --         ["@markup.link.markdown_inline"] = true,
+  --         ["@markup.link.label.markdown_inline"] = true,
+  --         mkdInlineURL = true,
+  --         mkdLink = true,
+  --         mkdURL = true,
+  --         mkdLinkDef = true,
+  --         markdownLinkText = true,
+  --         ["@markup.math"] = true,
+  --         ["@markup.environment"] = true,
+  --         ["@markup.environment.name"] = true,
+  --       },
+  --       -- Krypton - Mechanical sans: UI elements, diagnostics, and system messages
+  --       bold_italic = {
+  --         -- Docstring comments (Krypton)
+  --         ["@comment.documentation"] = true,
+  --         ["@comment.note"] = true,
+  --         ["@string.documentation"] = true,
+  --         DiagnosticError = true,
+  --         DiagnosticHint = true,
+  --         DiagnosticInfo = true,
+  --         DiagnosticOk = true,
+  --         DiagnosticWarn = true,
+  --         DiagnosticDefaultError = true,
+  --         DiagnosticDefaultHint = true,
+  --         DiagnosticDefaultInfo = true,
+  --         DiagnosticDefaultOk = true,
+  --         DiagnosticDefaultWarn = true,
+  --         DiagnosticFloatingError = true,
+  --         DiagnosticFloatingHint = true,
+  --         DiagnosticFloatingInfo = true,
+  --         DiagnosticFloatingOk = true,
+  --         DiagnosticFloatingWarn = true,
+  --         DiagnosticSignError = true,
+  --         DiagnosticSignHint = true,
+  --         DiagnosticSignInfo = true,
+  --         DiagnosticSignOk = true,
+  --         DiagnosticSignWarn = true,
+  --         DiagnosticUnderlineError = true,
+  --         DiagnosticUnderlineHint = true,
+  --         DiagnosticUnderlineInfo = true,
+  --         DiagnosticUnderlineOk = true,
+  --         DiagnosticUnderlineWarn = true,
+  --         DiagnosticVirtualTextError = true,
+  --         DiagnosticVirtualTextHint = true,
+  --         DiagnosticVirtualTextInfo = true,
+  --         DiagnosticVirtualTextOk = true,
+  --         DiagnosticVirtualTextWarn = true,
+  --         ErrorMsg = true,
+  --         WarningMsg = true,
+  --         ModeMsg = true,
+  --         MoreMsg = true,
+  --         Question = true,
+  --         RedrawDebugNormal = true,
+  --         RedrawDebugClear = true,
+  --         RedrawDebugComposed = true,
+  --         RedrawDebugRecompose = true,
+  --         healthError = true,
+  --         healthSuccess = true,
+  --         healthWarning = true,
+  --         NvimInternalError = true,
+  --         FloatTitle = true,
+  --         WinBar = true,
+  --         WinBarNC = true,
+  --         StatusLine = true,
+  --         StatusLineNC = true,
+  --         StatusLineTerm = true,
+  --         StatusLineTermNC = true,
+  --         -- Copilot suggestions/completions
+  --         CopilotSuggestion = true,
+  --         CopilotGhostText = true,
+  --         CmpItemKindCopilot = true,
+  --       },
+  --     },
+  --   },
+  -- },
   -- }}}
   -- }}}
 }

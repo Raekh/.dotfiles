@@ -9,6 +9,7 @@ return {
   ---@type AstroLSPOpts
   opts = {
     -- Configuration table of features provided by AstroLSP
+    capabilities = require("blink.cmp").get_lsp_capabilities(),
     features = {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
