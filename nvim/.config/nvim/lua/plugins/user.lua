@@ -147,7 +147,10 @@ return {
     end,
     dependencies = { "rebelot/heirline.nvim" },
   },
-  { "wakatime/vim-wakatime" },
+  {
+    "wakatime/vim-wakatime",
+    lazy = true,
+  },
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
@@ -168,6 +171,18 @@ return {
   {
     "aspeddro/slides.nvim",
     config = function() require("slides").setup {} end,
+  },
+  {
+    "okuuva/auto-save.nvim",
+    opts = {
+      enabled = false,
+    },
+  },
+
+  {
+    dir = "~/Documents/Code/Comrade",
+    name = "comrade.nvim",
+    config = function() require("comrade").setup() end,
   },
   -- {
   --   "jackplus-xyz/monaspace.nvim",

@@ -104,6 +104,41 @@ return {
         end,
       },
       extensions = {
+        history = {
+          enabled = true,
+          opts = {
+            keymap = "gh",
+            auto_save = true,
+            expiration_days = 0,
+            picker = "snacks",
+            picker_keymaps = {
+              rename = { n = "r", i = "<M-r>" },
+              delete = { n = "d", i = "<M-d>" },
+              duplicate = { n = "<C-y>", i = "<C-y>" },
+            },
+            auto_generate_title = true,
+            delete_on_clearing_chat = true, -- Clear with gx
+            dir_to_save = vim.fn.stdpath "data" .. "/codecompanion_history",
+            enable_logging = true,
+            summary = {
+              create_summary_keymap = "gcs",
+              browse_summary_keymap = "gbs",
+              generation_opts = {
+                include_references = true,
+                include_tool_outputs = true,
+              },
+            },
+            memory = {
+              auto_create_memories_on_summary_generation = true,
+              vectorcode_exe = "vectorcode",
+              notify = true,
+              tool_opts = {
+                default_num = 10,
+              },
+              index_on_startup = false,
+            },
+          },
+        },
         mcphub = {
           callback = "mcphub.extensions.codecompanion",
           opts = {
@@ -130,6 +165,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
+      "ravitemer/codecompanion-history.nvim",
     },
   },
   {
@@ -140,6 +176,7 @@ return {
   },
   {
     "ravitemer/mcphub.nvim",
+    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
