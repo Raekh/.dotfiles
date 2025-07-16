@@ -198,11 +198,13 @@ return {
         ["<Leader>zdf"] = { "<cmd>Neotree diagnostics float<CR>", desc = "Float" },
         -- }}}
 
-        ["<leader>ah"] = { "<cmd>MCPHub<CR>", desc = "MCPHub" },
-        ["<leader>aa"] = { "<cmd>CodeCompanion<CR>", desc = "Code Companion" },
-        ["<leader>ac"] = { "<cmd>CodeCompanionCmd<CR>", desc = "Code Companion Command" },
-        ["<leader>aC"] = { "<cmd>CodeCompanionChat<CR>", desc = "Code Companion Chat" },
-        ["<leader>aA"] = { "<cmd>CodeCompanionActions<CR>", desc = "Code Companion Actions" },
+        ["<Leader>ah"] = { "<cmd>MCPHub<CR>", desc = "MCPHub" },
+        ["<Leader>aa"] = { "<cmd>CodeCompanion<CR>", desc = "Code Companion" },
+        ["<Leader>ac"] = { "<cmd>CodeCompanionCmd<CR>", desc = "Code Companion Command" },
+        ["<Leader>aC"] = { "<cmd>CodeCompanionChat<CR>", desc = "Code Companion Chat" },
+        ["<Leader>aA"] = { "<cmd>CodeCompanionActions<CR>", desc = "Code Companion Actions" },
+
+        ["<Leader>ue"] = { "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
         -- }}}
       },
       v = {
