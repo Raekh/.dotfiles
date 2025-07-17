@@ -89,6 +89,12 @@ return {
         },
         -- }}}
         -- Git {{{
+        -- Gitlab.nvim {{{
+        ["glh"] = {
+          "<CMD>lua require('gitlab').move_to_discussion_tree_from_diagnostic()<CR>",
+          desc = "Move to discussion",
+        },
+        -- }}}
         -- Diffview {{{
         ["<Leader>D"] = { name = "Diffview" },
 

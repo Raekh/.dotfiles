@@ -15,7 +15,7 @@ return {
     lazy = false,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
-      "MeanderingProgrammer/markdown.nvim",
+      -- "MeanderingProgrammer/markdown.nvim",
     },
     opts = {
       preview = {
