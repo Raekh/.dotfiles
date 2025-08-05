@@ -173,6 +173,7 @@ alias pag="pnpm add -g"
 alias changeMEP='git log --no-merges --pretty=oneline --abbrev-commit --no-decorate origin/master..origin/develop | sed "s/^\(\w\)* //"'
 alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short"
 alias gg='lazygit'
+alias gast='git log -1 --pretty=format:"%s" | clipcopy'
 
 ## Tmuxinator
 alias mux='tmuxinator'
