@@ -187,11 +187,6 @@ return {
     keys = { { "<leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
     lazy = false,
   },
-  {
-    dir = "~/Documents/Code/Comrade",
-    name = "comrade.nvim",
-    config = function() require("comrade").setup() end,
-  },
   -- {
   --   "jackplus-xyz/monaspace.nvim",
   --   lazy = false,
