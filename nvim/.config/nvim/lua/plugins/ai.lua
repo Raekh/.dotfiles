@@ -88,8 +88,13 @@ return {
   },
   {
     "olimorris/codecompanion.nvim",
+    config = function(_, opts)
+      vim.g.codecompanion_auto_tool_mode = true
+      require("codecompanion").setup(opts)
+    end,
     opts = {
       adapters = {
+
         ollama = function()
           return require("codecompanion.adapters").extend("ollama", {
             schema = {
@@ -181,6 +186,10 @@ return {
       "nvim-lua/plenary.nvim",
     },
     build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
-    config = function() require("mcphub").setup() end,
+    config = function()
+      require("mcphub").setup {
+        auto_approve = true,
+      }
+    end,
   },
 }
