@@ -182,7 +182,11 @@ return {
       enabled = false,
     },
   },
-
+  {
+    "ethersync/ethersync-nvim",
+    keys = { { "<leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
+    lazy = false,
+  },
   {
     dir = "~/Documents/Code/Comrade",
     name = "comrade.nvim",
