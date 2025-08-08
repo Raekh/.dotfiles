@@ -176,15 +176,15 @@ return {
     "aspeddro/slides.nvim",
     config = function() require("slides").setup {} end,
   },
-  {
-    "okuuva/auto-save.nvim",
-    opts = {
-      enabled = false,
-    },
-  },
+  -- {
+  --   "okuuva/auto-save.nvim",
+  --   opts = {
+  --     enabled = false,
+  --   },
+  -- },
   {
     "ethersync/ethersync-nvim",
-    keys = { { "<leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
+    keys = { { "<Leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
     lazy = false,
   },
   -- {
