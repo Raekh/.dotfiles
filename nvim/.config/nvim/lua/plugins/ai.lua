@@ -91,6 +91,7 @@ return {
     config = function(_, opts)
       vim.g.codecompanion_auto_tool_mode = true
       require("codecompanion").setup(opts)
+      require("plugins.codecompanion.fidget-spinner"):init()
     end,
     opts = {
       adapters = {
@@ -103,6 +104,15 @@ return {
               },
               num_ctx = {
                 default = 20000,
+              },
+            },
+          })
+        end,
+        copilot = function()
+          return require("codecompanion.adapters").extend("copilot", {
+            schema = {
+              model = {
+                default = "gpt-5", -- Use GPT-5 if available
               },
             },
           })
@@ -161,6 +171,10 @@ return {
       strategies = {
         chat = {
           adapter = "copilot",
+          roles = {
+            user = "Raekh",
+          },
+          model = "gpt-5", -- Use GPT-5 if available
           tools = {
             opts = {
               auto_submit_errors = true,
@@ -168,7 +182,13 @@ return {
             },
           },
         },
-        inline = { adapter = "copilot" },
+        inline = {
+          adapter = "copilot",
+          roles = {
+            user = "Raekh",
+          },
+          model = "gpt-5", -- Use GPT-5 if available
+        },
       },
       opts = {
         log_level = "DEBUG",
@@ -179,6 +199,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
       "ravitemer/codecompanion-history.nvim",
+      "j-hui/fidget.nvim",
     },
   },
   {
