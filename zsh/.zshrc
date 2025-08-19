@@ -392,3 +392,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.zshrc_env ] && source ~/.zshrc_env ]
+
+. "$HOME/.atuin/bin/env"
