@@ -140,34 +140,50 @@ return {
       signature = { enabled = true },
     },
   },
-  {
-    "fiqryq/wakastat.nvim",
-    config = function()
-      require("wakastat").setup {
-        args = { "--today" },
-        format = "Coding Time: %s",
-        update_interval = 300,
-      }
-    end,
-    dependencies = { "rebelot/heirline.nvim" },
-  },
-  {
-    "wakatime/vim-wakatime",
-    lazy = true,
-  },
+  -- {
+  --   "fiqryq/wakastat.nvim",
+  --   event = "VeryLazy",
+  --   cmd = { "WakastatRefresh", "WakastatStatus" },
+  --   opts = {
+  --     args = { "--today" }, -- or "--week", "--month"
+  --     format = "Today Coding Time: %s", -- %s replaced with time
+  --     update_interval = 300, -- seconds between updates
+  --     enable_timer = true,
+  --   },
+  --   config = function(_, opts) require("wakastat").setup(opts) end,
+  --
+  --   specs = {
+  --     {
+  --       "rebelot/heirline.nvim",
+  --       optional = true,
+  --       opts = function(_, opts)
+  --         opts.statusline = opts.statusline or {}
+  --         table.insert(opts.statusline, 5, { -- insert at position 5
+  --           provider = function() return " " .. require("wakastat").status() .. " " end,
+  --           hl = "Wakastat",
+  --           update = { "User", pattern = "WakastatUpdated" },
+  --         })
+  --       end,
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "wakatime/vim-wakatime",
+  --   lazy = true,
+  -- },
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local status = require "astroui.status"
 
       -- Create WakaTime component
-      local wakatime_component = {
-        provider = function() return " " .. require("wakastat").wakatime() .. " " end,
-        hl = { fg = "cyan", bg = "bg" },
-      }
+      -- local wakatime_component = {
+      --   provider = function() return " " .. require("wakastat").wakatime() .. " " end,
+      --   hl = { fg = "cyan", bg = "bg" },
+      -- }
 
       -- Add to existing statusline
-      table.insert(opts.statusline, #opts.statusline, wakatime_component)
+      -- table.insert(opts.statusline, #opts.statusline, wakatime_component)
 
       return opts
     end,
@@ -186,6 +202,21 @@ return {
     "ethersync/ethersync-nvim",
     keys = { { "<Leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
     lazy = false,
+  },
+  {
+    "Owen-Dechow/videre.nvim",
+    cmd = "Videre",
+    dependencies = {
+      "Owen-Dechow/graph_view_yaml_parser", -- Optional: add YAML support
+      "Owen-Dechow/graph_view_toml_parser", -- Optional: add TOML support
+      "a-usr/xml2lua.nvim", -- Optional | Experimental: add XML support
+    },
+    opts = {
+      round_units = false,
+      simple_statusline = true, -- If you are just starting out with Videre,
+      --   setting this to `false` will give you
+      --   descriptions of available keymaps.
+    },
   },
   -- {
   --   "jackplus-xyz/monaspace.nvim",
