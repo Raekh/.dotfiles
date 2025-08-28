@@ -95,28 +95,27 @@ return {
     end,
     opts = {
       adapters = {
-
-        ollama = function()
-          return require("codecompanion.adapters").extend("ollama", {
-            schema = {
-              model = {
-                default = "qwen3:latest",
-              },
-              num_ctx = {
-                default = 20000,
-              },
-            },
-          })
-        end,
-        copilot = function()
-          return require("codecompanion.adapters").extend("copilot", {
-            schema = {
-              model = {
-                default = "gpt-5", -- Use GPT-5 if available
-              },
-            },
-          })
-        end,
+        -- ollama = function()
+        --   return require("codecompanion.adapters").extend("ollama", {
+        --     schema = {
+        --       model = {
+        --         default = "qwen3:latest",
+        --       },
+        --       num_ctx = {
+        --         default = 20000,
+        --       },
+        --     },
+        --   })
+        -- end,
+        -- copilot = function()
+        --   return require("codecompanion.adapters").extend("copilot", {
+        --     schema = {
+        --       model = {
+        --         default = "gpt-5", -- Use GPT-5 if available
+        --       },
+        --     },
+        --   })
+        -- end,
       },
       extensions = {
         history = {
