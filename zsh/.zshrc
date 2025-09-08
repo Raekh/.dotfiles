@@ -160,6 +160,7 @@ alias ya='yarn add'
 alias yad='yarn add -D'
 alias yag='yarn global add'
 alias yaii='sudo rm -rf node_modules/.yarn-integrity && yarn install'
+alias yui='yarn upgrade-interactive'
 
 ## Pnpm
 alias pi="pnpm install"
@@ -174,6 +175,8 @@ alias changeMEP='git log --no-merges --pretty=oneline --abbrev-commit --no-decor
 alias giraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short"
 alias gg='lazygit'
 alias gast='git log -1 --pretty=format:"%s" | clipcopy'
+alias gune='git branch -vv | grep "gone]" | awk "{print $1}" | xargs git branch -D'
+alias gang='git log --no-merges --pretty=oneline --abbrev-commit --no-decorate origin/$(git branch -r | grep -E "origin/(main|master)" | sed -n "s/.*origin\///p" | head -n1)..origin/develop'
 
 ## Tmuxinator
 alias mux='tmuxinator'
