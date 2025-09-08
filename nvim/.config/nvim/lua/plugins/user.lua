@@ -216,6 +216,30 @@ return {
       simple_statusline = true, -- If you are just starting out with Videre,
       --   setting this to `false` will give you
       --   descriptions of available keymaps.
+      --,
+      --,
+      keymaps = {
+        -- Expanding collapsed areas
+        expand = "E",
+        -- Collapse expanded areas
+        collapse = "E",
+        -- Jump to linked unit
+        link_forward = "L",
+        -- Jump back to unit parent
+        link_backward = "H",
+        -- Jump down a unit
+        link_down = "J",
+        -- Jump up a unit
+        link_up = "K",
+        -- Set current unit as root
+        set_as_root = "R",
+        -- Aliased to first priority available keymap
+        quick_action = "<CR>",
+        -- Close the window
+        close_window = "q",
+        -- Open the help menu
+        help = "g?",
+      },
     },
   },
   -- {
