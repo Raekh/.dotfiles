@@ -45,6 +45,7 @@ root: ~/Documents/Work/sywa-frontend/
 # attach: false
 
 windows:
-  - docker: ./.startDev.expect
+  # - docker: ./.startDev.expect
+  - docker: npm run serve
   - editor:
   - shell:
