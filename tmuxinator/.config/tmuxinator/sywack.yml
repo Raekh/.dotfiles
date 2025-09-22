@@ -45,6 +45,6 @@ root: ~/Documents/Work/sywack/
 # attach: false
 
 windows:
-  - docker: dc up
+  - docker: make up && dc up
   - editor:
   - shell:
