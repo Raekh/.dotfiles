@@ -92,6 +92,7 @@ return {
       vim.g.codecompanion_yolo_mode = true
       require("codecompanion").setup(opts)
       require("plugins.codecompanion.fidget-spinner"):init()
+      require "plugins.codecompanion.eldritch"
     end,
     opts = {
       adapters = {
