@@ -4,6 +4,19 @@
 return {
   -- Themes {{{
   "folke/tokyonight.nvim",
+  {
+    "olivercederborg/poimandres.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("poimandres").setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+  },
+  "nyoom-engineering/oxocarbon.nvim",
   -- }}}
 
   -- Misc/QOL {{{
@@ -245,6 +258,27 @@ return {
   {
     "R-Camacho/sandbox.nvim",
     opts = {},
+  },
+  {
+    "bennypowers/nvim-regexplainer",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "MunifTanjim/nui.nvim",
+      "edluffy/hologram.nvim",
+    },
+    opts = {
+      mode = "graphical",
+      display = "popup",
+
+      graphical = {
+        generation_width = 1200,
+        generation_height = 800,
+      },
+
+      deps = {
+        auto_install = true,
+      },
+    },
   },
   -- }}}
   -- }}}
