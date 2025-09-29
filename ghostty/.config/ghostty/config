@@ -26,7 +26,7 @@ confirm-close-surface = false
 # }}}
 
 # Shaders {{{
-custom-shader-animation = always
+# custom-shader-animation = always
 
 # custom-shader = "shaders/animated-gradient-shader.glsl"
 # custom-shader = "shaders/bettercrt.glsl"
