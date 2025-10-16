@@ -280,6 +280,17 @@ return {
       },
     },
   },
+  {
+    "Equilibris/nx.nvim",
+    dependencies = {
+      -- telescope
+      "nvim-telescope/telescope.nvim",
+    },
+    opts = {
+      -- See below for config options
+      nx_cmd_root = "npx nx",
+    },
+  },
   -- }}}
   -- }}}
 }
