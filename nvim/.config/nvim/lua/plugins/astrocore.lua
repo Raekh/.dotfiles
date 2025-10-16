@@ -110,6 +110,10 @@ return {
         -- }}}
         -- LSP {{{
         ["<Leader>lt"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+        ["<Leader>ln"] = {
+          "<cmd>Telescope nx actions<CR>",
+          desc = "Nx: Actions",
+        },
         -- }}}
         -- Neorg {{{
         ["<Leader>N"] = { name = "Neorg" },

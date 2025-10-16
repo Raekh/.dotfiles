@@ -95,14 +95,6 @@ return {
           end,
         },
         -- Typescript-tools
-        ["<Leader>m"] = { desc = "Typescript" },
-        ["<Leader>mu"] = { "<CMD>TSToolsRemoveUnusedImports<CR>", desc = "Remove unused imports" },
-        ["<Leader>mU"] = { "<CMD>TSToolsRemoveUnused<CR>", desc = "Remove unused" },
-        ["<Leader>ma"] = { "<CMD>TSToolsFixAll<CR>", desc = "Fix all" },
-        ["<Leader>ms"] = { "<CMD>TSToolsSortImports<CR>", desc = "Sort imports" },
-        ["<Leader>mo"] = { "<CMD>TSToolsOrganizeImports<CR>", desc = "Organize imports" },
-        ["<Leader>mM"] = { "<CMD>TSToolsAddMissingImports<CR>", desc = "Add missing imports" },
-        ["<Leader>mm"] = { "<CMD>TSToolsGoToSourceDefinition<CR>", desc = "Go to source definition" },
         ---@diagnostic disable-next-line: undefined-global
         ["<Leader>mr"] = { function() Snacks.picker.lsp_references() end, desc = "Search references" },
         ["<Leader>mR"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename symbol" },
