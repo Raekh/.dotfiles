@@ -205,10 +205,10 @@ return {
         -- }}}
 
         ["<Leader>ah"] = { "<cmd>MCPHub<CR>", desc = "MCPHub" },
-        ["<Leader>aa"] = { "<cmd>CodeCompanion<CR>", desc = "Code Companion" },
-        ["<Leader>ac"] = { "<cmd>CodeCompanionCmd<CR>", desc = "Code Companion Command" },
-        ["<Leader>aC"] = { "<cmd>CodeCompanionChat<CR>", desc = "Code Companion Chat" },
-        ["<Leader>aA"] = { "<cmd>CodeCompanionActions<CR>", desc = "Code Companion Actions" },
+        -- ["<Leader>aa"] = { "<cmd>CodeCompanion<CR>", desc = "Code Companion" },
+        -- ["<Leader>ac"] = { "<cmd>CodeCompanionCmd<CR>", desc = "Code Companion Command" },
+        -- ["<Leader>aC"] = { "<cmd>CodeCompanionChat<CR>", desc = "Code Companion Chat" },
+        -- ["<Leader>aA"] = { "<cmd>CodeCompanionActions<CR>", desc = "Code Companion Actions" },
 
         ["<Leader>ue"] = { "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
         -- }}}
