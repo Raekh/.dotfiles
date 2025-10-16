@@ -1,7 +1,7 @@
-# /home/ostrogoth/.config/tmuxinator/sywack.yml
+# /home/ostrogoth/.config/tmuxinator/slip.yml
 
-name: sywack
-root: ~/Documents/Work/sywack/
+name: slip
+root: ~/Documents/Work/mono-slip/
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,6 +45,9 @@ root: ~/Documents/Work/sywack/
 # attach: false
 
 windows:
-  - docker: make up && ld
+  - docker:
+      layout: main-vertical
+      panes:
+        - make up && ld
   - editor:
   - shell:
