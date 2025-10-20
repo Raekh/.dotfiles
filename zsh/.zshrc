@@ -107,6 +107,10 @@ source $ZSH/oh-my-zsh.sh
 alias fu='sudo --preserve-env'
 alias fus='sudo --preserve-env zsh'
 
+alias cpugetavail='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors'
+alias cpushowcurrent='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+alias cpusethigh='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+
 ## Docker
 alias dc='docker compose'
 alias 'docker-compose'='docker compose'
