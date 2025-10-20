@@ -11,12 +11,16 @@ return {
       if not opts.keymap then opts.keymap = {} end
       opts.keymap["<Tab>"] = {
         "snippet_forward",
+        "select_next",
+        "fallback",
+      }
+      opts.keymap["<C-J>"] = {
         function()
           if vim.g.ai_accept then return vim.g.ai_accept() end
         end,
         "fallback",
       }
-      opts.keymap["<S-Tab>"] = { "snippet_backward", "fallback" }
+      opts.keymap["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" }
     end,
   },
   {
@@ -155,19 +159,19 @@ return {
     -- Optional: Lazy load Incline
     event = "VeryLazy",
   },
-  {
-    "saghen/blink.cmp",
-    dependencies = "rafamadriz/friendly-snippets",
-    version = "v0.*",
-    opts = {
-      keymap = { preset = "default" },
-      appearance = {
-        use_nvim_cmp_as_default = true,
-        nerd_font_variant = "mono",
-      },
-      signature = { enabled = true },
-    },
-  },
+  -- {
+  --   "saghen/blink.cmp",
+  --   dependencies = "rafamadriz/friendly-snippets",
+  --   version = "v0.*",
+  --   opts = {
+  --     keymap = { preset = "default" },
+  --     appearance = {
+  --       use_nvim_cmp_as_default = true,
+  --       nerd_font_variant = "mono",
+  --     },
+  --     signature = { enabled = true },
+  --   },
+  -- },
   -- {
   --   "fiqryq/wakastat.nvim",
   --   event = "VeryLazy",

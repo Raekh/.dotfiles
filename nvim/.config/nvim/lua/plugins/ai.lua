@@ -16,7 +16,7 @@ return {
         },
       },
       nes = {
-        enabled = true,
+        enabled = false,
       },
     },
     specs = {
