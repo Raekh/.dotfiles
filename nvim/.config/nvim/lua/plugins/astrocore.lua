@@ -56,7 +56,18 @@ return {
     mappings = {
       -- first key is the mode
       i = {
-        ["<C-J>"] = { "copilot#Accept(<Tab>)", silent = true, expr = true, script = true },
+        -- ["<C-J>"] = {
+        --   function()
+        --     if require("copilot.suggestion").is_visible() then
+        --       require("copilot.suggestion").accept()
+        --     else
+        --       return "<C-J>"
+        --     end
+        --   end,
+        --   silent = true,
+        --   expr = true,
+        --   script = true,
+        -- },
       },
       n = {
         -- Disabled mappings {{{
