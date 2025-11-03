@@ -248,6 +248,8 @@ resume-task() {
     task-command folders "$command"
 }
 
+alias reinstall-teams='sudo apt remove teams-for-linux -y && sudo apt install teams-for-linux -y'
+
 # Define aliases
 alias viaco-develop-reset='develop-reset VIACO_FOLDERS'
 alias sywav2-develop-reset='develop-reset SYWAV2_FOLDERS'
