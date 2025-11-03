@@ -13,7 +13,6 @@ return {
         "lua-language-server",
         "angular-language-server",
         "eslint-lsp",
-        "gitlab-ci-ls",
         "json-lsp",
         "lemminx",
 
@@ -25,8 +24,6 @@ return {
 
         -- install debuggers
         "debugpy",
-        "chrome-debug-adapter",
-        "node-debug2-adapter",
 
         -- install any other package
         "tree-sitter-cli",
