@@ -401,3 +401,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.zshrc_env ] && source ~/.zshrc_env ]
+
+# opencode
+export PATH=/home/raekh/.opencode/bin:$PATH
