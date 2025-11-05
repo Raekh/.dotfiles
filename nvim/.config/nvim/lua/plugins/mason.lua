@@ -15,6 +15,7 @@ return {
         "eslint-lsp",
         "json-lsp",
         "lemminx",
+        "tailwindcss-language-server",
 
         -- install formatters
         "stylua",
