@@ -16,7 +16,7 @@ font-family = "Atlassian Mono"
 # font-family-italic = "Monaspace Radon"
 # font-family-bold-italic = "Monaspace Krypton"
 
-font-size = 13
+font-size = 11
 font-thicken = true
 
 bold-is-bright = false
