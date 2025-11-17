@@ -48,7 +48,7 @@ windows:
   - docker:
       layout: main-vertical
       panes:
-        - cd ~/Documents/Work/root-mf/ && dc up -d && ld
-        - dc start toolbox && make storybook
+        - make start
+        - make storybook
   - editor:
   - shell:
