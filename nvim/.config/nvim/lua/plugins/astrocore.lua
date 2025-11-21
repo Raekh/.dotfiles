@@ -117,6 +117,7 @@ return {
         ["<Leader>Dh"] = { "<CMD>DiffviewFileHistory<CR>", desc = "Diffview: File history" },
         ["<Leader>DH"] = { "<CMD>DiffviewFileHistory %<CR>", desc = "Diffview: Current file history" },
         ["<Leader>Dt"] = { "<CMD>DiffviewToggleFiles<CR>", desc = "Diffview: Toggle files" },
+        ["<Leader>Dm"] = { "<cmd>!git mergetool --tool=meld %<CR>", desc = "Resolve conflicts with Meld" },
         -- }}}
         -- }}}
         -- LSP {{{
