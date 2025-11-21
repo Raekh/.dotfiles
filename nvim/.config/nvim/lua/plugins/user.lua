@@ -310,6 +310,20 @@ return {
       nx_cmd_root = "npx nx",
     },
   },
+  {
+    "gisketch/triforce.nvim",
+    dependencies = {
+      "nvzone/volt",
+    },
+    config = function()
+      require("triforce").setup {
+        -- Optional: Add your configuration here
+        keymap = {
+          show_profile = "<Leader>Tp", -- Open profile with <leader>tp
+        },
+      }
+    end,
+  },
   -- }}}
   -- }}}
 }
