@@ -142,6 +142,9 @@ alias nupal='nex yarn test --watchAll'
 alias enable_ipv6="sudo sysctl net.ipv6.conf.all.disable_ipv6=0"
 alias disable_ipv6="sudo sysctl net.ipv6.conf.all.disable_ipv6=1"
 
+## Bluetooth
+alias mouse='bluetoothctl connect C3:26:84:5A:B3:EB'
+
 
 ## Kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
