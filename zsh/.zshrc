@@ -143,15 +143,19 @@ alias enable_ipv6="sudo sysctl net.ipv6.conf.all.disable_ipv6=0"
 alias disable_ipv6="sudo sysctl net.ipv6.conf.all.disable_ipv6=1"
 
 ## Bluetooth
-alias mouse='bluetoothctl connect C3:26:84:5A:B3:EB'
+# no sudo, we want the GUI to see the dots in case the keyboard is messing up
+alias btr='service bluetooth restart' 
+alias mouse-on='bluetoothctl connect C3:26:84:5A:B3:EB'
+alias mouse-off='bluetoothctl disconnect C3:26:84:5A:B3:EB'
+alias mouse-reconnect='mouse-off && mouse-off && mouse-on'
 
 
 ## Kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
 
 ## Zsh
-alias zshconf='nvim $HOME/.zshrc'
-alias zshreload='source $HOME/.zshrc'
+alias zc='nvim $HOME/.zshrc'
+alias zr='source $HOME/.zshrc'
 
 ## Nvim
 alias nn='nvim'
