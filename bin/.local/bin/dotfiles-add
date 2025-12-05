@@ -1,0 +1,198 @@
+#!/usr/bin/env bash
+#
+# dotfiles-add - Add a config to stow-managed dotfiles
+#
+# Usage: dotfiles-add [SOURCE_PATH] [PACKAGE_NAME]
+#
+
+set -euo pipefail
+
+DOTFILES_DIR="${DOTFILES:-$HOME/.dotfiles}"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
+
+error() {
+    echo -e "${RED}error:${NC} $1" >&2
+    exit 1
+}
+
+warn() {
+    echo -e "${YELLOW}warning:${NC} $1" >&2
+}
+
+info() {
+    echo -e "${BLUE}::${NC} $1"
+}
+
+success() {
+    echo -e "${GREEN}success:${NC} $1"
+}
+
+# Expand path to absolute, resolving ~ and relative paths
+expand_path() {
+    local path="$1"
+    # Expand ~ to $HOME
+    path="${path/#\~/$HOME}"
+    # Convert to absolute path
+    if [[ "$path" != /* ]]; then
+        path="$(pwd)/$path"
+    fi
+    # Normalize path (resolve . and ..)
+    path="$(cd "$(dirname "$path")" 2>/dev/null && pwd)/$(basename "$path")" || echo "$path"
+    echo "$path"
+}
+
+# Check if path is under home directory and return relative path from home
+get_home_relative_path() {
+    local path="$1"
+    if [[ "$path" == "$HOME"/* ]]; then
+        echo "${path#$HOME/}"
+    else
+        echo ""
+    fi
+}
+
+# Prompt for input with a default value
+prompt() {
+    local message="$1"
+    local default="$2"
+    local result
+
+    if [[ -n "$default" ]]; then
+        read -rp "$message [$default]: " result
+        echo "${result:-$default}"
+    else
+        read -rp "$message: " result
+        echo "$result"
+    fi
+}
+
+# Main logic
+main() {
+    local source_path="${1:-}"
+    local package_name="${2:-}"
+
+    # Check dotfiles directory exists
+    if [[ ! -d "$DOTFILES_DIR" ]]; then
+        error "Dotfiles directory not found: $DOTFILES_DIR"
+    fi
+
+    # Get source path
+    if [[ -z "$source_path" ]]; then
+        source_path=$(prompt "Source path (file or directory to add)" "")
+    fi
+
+    if [[ -z "$source_path" ]]; then
+        error "Source path is required"
+    fi
+
+    source_path=$(expand_path "$source_path")
+
+    # Validate source exists
+    if [[ ! -e "$source_path" ]]; then
+        error "Source does not exist: $source_path"
+    fi
+
+    # Check source is under home directory
+    local relative_path
+    relative_path=$(get_home_relative_path "$source_path")
+    if [[ -z "$relative_path" ]]; then
+        error "Source must be under home directory: $source_path"
+    fi
+
+    # Check source is not already a symlink (probably already stowed)
+    if [[ -L "$source_path" ]]; then
+        local link_target
+        link_target=$(readlink -f "$source_path")
+        if [[ "$link_target" == "$DOTFILES_DIR"/* ]]; then
+            error "Source is already a symlink to dotfiles: $source_path -> $link_target"
+        else
+            warn "Source is a symlink: $source_path -> $link_target"
+        fi
+    fi
+
+    # Suggest package name from source
+    local suggested_name
+    suggested_name=$(basename "$source_path")
+    # Remove leading dot for suggestion
+    suggested_name="${suggested_name#.}"
+
+    # For .config/X paths, suggest X as the name
+    if [[ "$relative_path" == .config/* ]]; then
+        suggested_name=$(echo "$relative_path" | cut -d'/' -f2)
+    fi
+
+    # Get package name
+    if [[ -z "$package_name" ]]; then
+        package_name=$(prompt "Package name" "$suggested_name")
+    fi
+
+    if [[ -z "$package_name" ]]; then
+        error "Package name is required"
+    fi
+
+    # Validate package name (alphanumeric, dash, underscore)
+    if [[ ! "$package_name" =~ ^[a-zA-Z0-9_-]+$ ]]; then
+        error "Invalid package name. Use only letters, numbers, dashes, and underscores."
+    fi
+
+    # Check package doesn't already exist
+    local package_dir="$DOTFILES_DIR/$package_name"
+    if [[ -d "$package_dir" ]]; then
+        error "Package already exists: $package_dir"
+    fi
+
+    # Determine target path inside the stow package
+    local target_path="$package_dir/$relative_path"
+    local target_parent
+    target_parent=$(dirname "$target_path")
+
+    # Show preview
+    echo ""
+    echo -e "${BOLD}Dry-run preview:${NC}"
+    echo -e "  Source:      ${YELLOW}$source_path${NC}"
+    echo -e "  Package:     ${GREEN}$package_name${NC}"
+    echo -e "  Target:      ${BLUE}$target_path${NC}"
+    echo -e "  Stow command: ${BOLD}stow $package_name${NC} (from $DOTFILES_DIR)"
+    echo ""
+
+    # Confirm
+    read -rp "Proceed? [y/N] " confirm
+    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+        echo "Aborted."
+        exit 0
+    fi
+
+    echo ""
+
+    # Create target directory structure
+    info "Creating directory structure..."
+    mkdir -p "$target_parent"
+
+    # Move source to target
+    info "Moving $source_path to $target_path..."
+    mv "$source_path" "$target_path"
+
+    # Run stow
+    info "Running stow..."
+    if ! (cd "$DOTFILES_DIR" && stow "$package_name"); then
+        # Rollback on failure
+        warn "Stow failed, rolling back..."
+        mv "$target_path" "$source_path"
+        rmdir -p "$target_parent" 2>/dev/null || true
+        rmdir "$package_dir" 2>/dev/null || true
+        error "Stow failed. Original files restored."
+    fi
+
+    echo ""
+    success "Added $package_name to dotfiles!"
+    echo -e "  ${BLUE}$source_path${NC} -> ${GREEN}$target_path${NC}"
+}
+
+main "$@"
