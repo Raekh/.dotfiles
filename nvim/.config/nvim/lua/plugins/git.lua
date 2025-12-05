@@ -4,12 +4,21 @@ return {
   {
     {
       -- Best git diff tool to exist on the planet
-      "sindrets/diffview.nvim",
+      -- Using local fork with hunk_links feature
+      dir = "/home/raekh/Documents/Code/diffview-graphs/diffview.nvim",
+      name = "diffview.nvim",
       lazy = false,
       config = function()
         local set = vim.opt -- set options
         -- set.fillchars = set.fillchars + "diff:╱"
         set.fillchars = set.fillchars + "diff:╱"
+
+        require("diffview").setup {
+          hunk_links = {
+            enabled = true,
+            style = "round", -- "round", "hard", "simple", or "block"
+          },
+        }
 
         -- Color overrides {{{
         -- local current = vim.api.nvim_get_hl(0, { name = "DiffDelete" })
