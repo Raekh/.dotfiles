@@ -325,8 +325,10 @@ return {
     end,
   },
   {
-    dir = vim.fn.expand "~/Documents/Code/echo.nvim",
-    name = "echo.nvim",
+    "melMass/echo.nvim",
+    enabled = false,
+    -- dir = vim.fn.expand "~/Documents/Code/echo.nvim",
+    -- name = "echo.nvim",
     config = function(_, opts) require("echo").setup(opts) end,
     opts = {
       demo = true,
