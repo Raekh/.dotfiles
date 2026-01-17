@@ -411,3 +411,5 @@ eval "$(pyenv virtualenv-init -)"
 
 # opencode
 export PATH=/home/raekh/.opencode/bin:$PATH
+
+. "$HOME/.atuin/bin/env"
