@@ -112,17 +112,41 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     cmd = "VectorCode", -- if you're lazy-loading VectorCode
   },
+  -- {
+  --   "ravitemer/mcphub.nvim",
+  --   lazy = true,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
+  --   config = function()
+  --     require("mcphub").setup {
+  --       auto_approve = true,
+  --     }
+  --   end,
+  -- },
   {
-    "ravitemer/mcphub.nvim",
-    lazy = true,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
+    "Nkr1shna/truffle.nvim",
+    opts = {
+      side = "right",
+      size = "30%",
+      -- start_insert = true,
+      mappings = {
+        toggle = "<Leader>'o",
+        send_selection = "<Leader>'S",
+        send_file = "<Leader>'f",
+        next_profile = "<Leader>']",
+        prev_profile = "<Leader>'[",
+      },
+      profiles = {
+        opencode = {
+          command = "opencode",
+          default = true,
+        },
+        crush = {
+          command = "crush",
+        },
+      },
     },
-    build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
-    config = function()
-      require("mcphub").setup {
-        auto_approve = true,
-      }
-    end,
   },
 }
