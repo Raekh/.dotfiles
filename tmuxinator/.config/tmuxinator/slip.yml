@@ -48,7 +48,7 @@ windows:
   - docker:
       layout: main-vertical
       panes:
-        - make start && make storybook && ld
-        - ./run-storybook.exp
+        - make start && ld
+        - 
   - editor:
   - shell:
