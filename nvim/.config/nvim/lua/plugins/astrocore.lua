@@ -220,13 +220,14 @@ return {
         ["<Leader>zdf"] = { "<cmd>Neotree diagnostics float<CR>", desc = "Float" },
         -- }}}
 
-        ["<Leader>ah"] = { "<cmd>MCPHub<CR>", desc = "MCPHub" },
-        -- ["<Leader>aa"] = { "<cmd>CodeCompanion<CR>", desc = "Code Companion" },
-        -- ["<Leader>ac"] = { "<cmd>CodeCompanionCmd<CR>", desc = "Code Companion Command" },
-        -- ["<Leader>aC"] = { "<cmd>CodeCompanionChat<CR>", desc = "Code Companion Chat" },
-        -- ["<Leader>aA"] = { "<cmd>CodeCompanionActions<CR>", desc = "Code Companion Actions" },
-
         ["<Leader>ue"] = { "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
+
+        ["<Leader>vv"] = { "<Plug>(VaultView)", desc = "Open VaultView" },
+
+        ["<Leader>^"] = {
+          function() require("plugins.custom.show_type").show_type() end,
+          desc = "Show type (virtual text)",
+        },
         -- }}}
       },
       v = {
