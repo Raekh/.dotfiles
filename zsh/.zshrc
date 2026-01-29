@@ -110,6 +110,7 @@ alias fus='sudo --preserve-env zsh'
 alias cpugetavail='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors'
 alias cpushowcurrent='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpusethigh='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+alias cpusetlow='echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 
 ## Docker
 alias dc='docker compose'
@@ -119,17 +120,8 @@ alias unmake-dc='sed -i "s/docker compose/docker-compose/g" Makefile'
 alias dokill='docker ps -q | xargs docker kill'
 alias ld='lazydocker'
 nuke-docker() {
-    docker network prune
-    docker system prune
-    docker volume prune
-    docker stop `docker ps -qa`
-    docker rm `docker ps -qa`
-    docker rmi -f `docker images -qa `
-    docker volume rm $(docker volume ls -q)
-    docker network rm `docker network ls -q`
-    docker network prune
-    docker system prune
-    docker volume prune
+    dokill
+    docker system prune --all --volumes -f
 }
 
 alias nex='docker compose exec node'
@@ -152,6 +144,9 @@ alias mouse-reconnect='mouse-off && mouse-off && mouse-on'
 
 ## Kitty
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
+
+## Ghostty
+alias gonf='nvim $HOME/.config/ghostty/config'
 
 ## Zsh
 alias zc='nvim $HOME/.zshrc'
