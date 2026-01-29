@@ -1,10 +1,10 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 
 # Fonts {{{
-# font-family = "IBM Plex Mono"
+font-family = "IBM Plex Mono"
 # font-family = "OperatorMono Regular"
 
-font-family = "Atlassian Mono"
+# font-family = "Atlassian Mono"
 #
 # font-family = "Monaspace Neon"
 # font-family = "Monaspace Xenon"
