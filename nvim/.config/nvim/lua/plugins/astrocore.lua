@@ -220,6 +220,9 @@ return {
         ["<Leader>zdf"] = { "<cmd>Neotree diagnostics float<CR>", desc = "Float" },
         -- }}}
 
+        ["<M-o>"] = { "<CMD>lua vim.lsp.buf.format()<CR>:w<CR>" },
+        ["<M-e>"] = { ":e<CR>" },
+
         ["<Leader>ue"] = { "<cmd>ASToggle<CR>", desc = "Toggle autosave" },
 
         ["<Leader>vv"] = { "<Plug>(VaultView)", desc = "Open VaultView" },
