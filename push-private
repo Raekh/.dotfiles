@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+#
+# Push changes to private config files back to dotfiles-private repo
+#
+
+PRIVATE_REPO="Raekh/dotfiles-private"
+DOTFILES_DIR="${DOTFILES:-$HOME/.dotfiles}"
+
+# Files to sync (paths relative to repo root)
+PRIVATE_FILES=(
+    "opencode/.config/opencode/opencode.jsonc"
+)
+
+echo "Pushing private config files to $PRIVATE_REPO..."
+
+# Check if we can reach GitHub
+if ! gh auth status &>/dev/null; then
+    echo "Error: Not authenticated with GitHub"
+    exit 1
+fi
+
+# Create temp directory for cloning
+TEMP_DIR=$(mktemp -d)
+trap "rm -rf $TEMP_DIR" EXIT
+
+# Clone the private repo
+if ! gh repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --quiet 2>/dev/null; then
+    echo "Error: Could not clone private repo"
+    exit 1
+fi
+
+# Copy each private file to the temp repo
+changed=false
+for file in "${PRIVATE_FILES[@]}"; do
+    src="$DOTFILES_DIR/$file"
+    dest="$TEMP_DIR/$file"
+    
+    if [[ -f "$src" ]]; then
+        mkdir -p "$(dirname "$dest")"
+        if ! cmp -s "$src" "$dest" 2>/dev/null; then
+            cp "$src" "$dest"
+            echo "  Updated: $file"
+            changed=true
+        else
+            echo "  Unchanged: $file"
+        fi
+    else
+        echo "  Warning: $file not found in dotfiles"
+    fi
+done
+
+if [[ "$changed" == "false" ]]; then
+    echo ""
+    echo "No changes to push."
+    exit 0
+fi
+
+# Commit and push
+cd "$TEMP_DIR"
+git add -A
+
+# Get commit message
+if command -v gum &>/dev/null; then
+    msg=$(gum input --placeholder "Commit message (or press enter for default)")
+elif [[ -x "$HOME/go/bin/gum" ]]; then
+    msg=$("$HOME/go/bin/gum" input --placeholder "Commit message (or press enter for default)")
+fi
+
+if [[ -z "$msg" ]]; then
+    msg="Update private config files"
+fi
+
+git commit -m "$msg"
+git push
+
+echo ""
+echo "Private config files pushed successfully!"
