@@ -266,6 +266,10 @@ alias viaco-branches-prune='branches-prune VIACO_FOLDERS'
 alias sywav2-branches-prune='branches-prune SYWAV2_FOLDERS'
 alias sywav1-branches-prune='branches-prune SYWAV1_FOLDERS'
 
+# Slip
+## NCIS: nuke, clean, install, start.
+alias ncis='dc kill && make clean && make install && make start'
+
 ## Keyboard
 alias kbgen='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
 alias dvo='$HOME/Documents/Code/keyboard/kbgen_dvorak && setxkbmap real-prog-dvorak -option caps:escape && xset r rate 280 30'
