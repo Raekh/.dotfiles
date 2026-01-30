@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+#
+# Install git hooks for dotfiles repo
+#
+
+DOTFILES_DIR="${DOTFILES:-$HOME/.dotfiles}"
+HOOKS_DIR="$DOTFILES_DIR/.git/hooks"
+
+echo "Installing git hooks..."
+
+# Create post-merge hook
+cat > "$HOOKS_DIR/post-merge" << 'EOF'
+#!/usr/bin/env bash
+#
+# Post-merge hook: Sync private config files from dotfiles-private repo
+#
+
+PRIVATE_REPO="Raekh/dotfiles-private"
+DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+
+# Files to sync (paths relative to repo root)
+PRIVATE_FILES=(
+    "opencode/.config/opencode/opencode.jsonc"
+)
+
+echo "Syncing private config files..."
+
+# Check if we can reach GitHub
+if ! gh auth status &>/dev/null; then
+    echo "Warning: Not authenticated with GitHub, skipping private file sync"
+    exit 0
+fi
+
+# Create temp directory for cloning
+TEMP_DIR=$(mktemp -d)
+trap "rm -rf $TEMP_DIR" EXIT
+
+# Clone the private repo (shallow clone for speed)
+if ! gh repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --depth 1 --quiet 2>/dev/null; then
+    echo "Warning: Could not clone private repo, skipping sync"
+    exit 0
+fi
+
+# Copy each private file
+for file in "${PRIVATE_FILES[@]}"; do
+    src="$TEMP_DIR/$file"
+    dest="$DOTFILES_DIR/$file"
+    
+    if [[ -f "$src" ]]; then
+        # Ensure destination directory exists
+        mkdir -p "$(dirname "$dest")"
+        cp "$src" "$dest"
+        echo "  Synced: $file"
+    else
+        echo "  Warning: $file not found in private repo"
+    fi
+done
+
+echo "Private config sync complete!"
+EOF
+
+chmod +x "$HOOKS_DIR/post-merge"
+echo "  Installed: post-merge hook"
+
+# Run the hook immediately to sync private files
+echo ""
+echo "Running initial sync..."
+"$HOOKS_DIR/post-merge"

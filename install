@@ -1,9 +1,147 @@
 #!/usr/bin/env zsh
 
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
-    do
-        stow -D $folder
-        stow $folder
+
+# Install git hooks and sync private files
+./setup-hooks
+
+# Function to check if a package is already stowed
+# Returns 0 if stowed (symlinks point to dotfiles), 1 otherwise
+is_stowed() {
+    local pkg="$1"
+    local pkg_path="$DOTFILES/$pkg"
+    
+    # Get immediate children of the package (what stow actually links)
+    local children=($(ls -A "$pkg_path" 2>/dev/null))
+    
+    if [[ ${#children[@]} -eq 0 ]]; then
+        return 1
+    fi
+    
+    # Check each top-level item in the package
+    for child in "${children[@]}"; do
+        local home_path="$HOME/$child"
+        
+        # Check if it's a symlink pointing to our dotfiles
+        if [[ -L "$home_path" ]]; then
+            local target=$(readlink "$home_path" 2>/dev/null)
+            # Handle both absolute and relative symlinks
+            if [[ "$target" == *"$pkg/$child"* ]] || [[ "$target" == *".dotfiles/$pkg/"* ]]; then
+                return 0
+            fi
+        fi
+        
+        # For .config dirs, stow links the subdirectory, not .config itself
+        if [[ "$child" == ".config" ]]; then
+            local config_children=($(ls -A "$pkg_path/.config" 2>/dev/null))
+            for config_child in "${config_children[@]}"; do
+                local config_path="$HOME/.config/$config_child"
+                if [[ -L "$config_path" ]]; then
+                    local target=$(readlink "$config_path" 2>/dev/null)
+                    if [[ "$target" == *"$pkg/.config/$config_child"* ]] || [[ "$target" == *".dotfiles/$pkg/"* ]]; then
+                        return 0
+                    fi
+                fi
+            done
+        fi
+        
+        # For .local dirs, check nested structure
+        if [[ "$child" == ".local" ]]; then
+            local local_children=($(find "$pkg_path/.local" -mindepth 2 -maxdepth 2 -type d 2>/dev/null))
+            for local_child in "${local_children[@]}"; do
+                local rel="${local_child#$pkg_path/}"
+                local local_path="$HOME/$rel"
+                if [[ -L "$local_path" ]]; then
+                    local target=$(readlink "$local_path" 2>/dev/null)
+                    if [[ "$target" == *"$pkg/"* ]] || [[ "$target" == *".dotfiles/$pkg/"* ]]; then
+                        return 0
+                    fi
+                fi
+            done
+        fi
     done
+    
+    return 1
+}
+
+# Check if gum is installed (also check go bin path)
+GUM_CMD="gum"
+if ! command -v gum &> /dev/null; then
+    if [[ -x "$HOME/go/bin/gum" ]]; then
+        GUM_CMD="$HOME/go/bin/gum"
+    fi
+fi
+
+if ! command -v $GUM_CMD &> /dev/null && [[ ! -x "$GUM_CMD" ]]; then
+    echo "gum is not installed. Install it for interactive selection:"
+    echo "  brew install gum"
+    echo "  pacman -S gum"
+    echo "  go install github.com/charmbracelet/gum@latest"
+    echo ""
+    echo "Falling back to STOW_FOLDERS env variable..."
+    
+    if [[ -z "$STOW_FOLDERS" ]]; then
+        echo "Error: STOW_FOLDERS not set and gum not available"
+        popd
+        exit 1
+    fi
+    
+    folders=$(echo $STOW_FOLDERS | sed "s/,/ /g")
+else
+    # Get all stow packages (directories excluding hidden and special ones)
+    packages=($(ls -d */ 2>/dev/null | sed 's/\/$//' | grep -v '^\.' | sort))
+    
+    if [[ ${#packages[@]} -eq 0 ]]; then
+        echo "No stow packages found"
+        popd
+        exit 1
+    fi
+    
+    # Build list of pre-selected (already stowed) packages
+    preselected=()
+    echo "Scanning for already stowed packages..."
+    for pkg in "${packages[@]}"; do
+        if is_stowed "$pkg"; then
+            preselected+=("$pkg")
+        fi
+    done
+    
+    if [[ ${#preselected[@]} -gt 0 ]]; then
+        echo "Found ${#preselected[@]} already stowed: ${preselected[*]}"
+    fi
+    echo ""
+    
+    echo "Select packages to stow (space to select, enter to confirm):"
+    echo ""
+    
+    # Build --selected arguments for gum
+    selected_args=()
+    for pkg in "${preselected[@]}"; do
+        selected_args+=("--selected=$pkg")
+    done
+    
+    # Use gum choose with multi-select, pre-selecting already stowed packages
+    selected=$($GUM_CMD choose --no-limit --height=20 --cursor-prefix="[ ] " --selected-prefix="[x] " "${selected_args[@]}" "${packages[@]}")
+    
+    if [[ -z "$selected" ]]; then
+        echo "No packages selected, exiting."
+        popd
+        exit 0
+    fi
+    
+    folders=$selected
+fi
+
+# Stow selected packages
+echo ""
+echo "Stowing packages..."
+for folder in ${(f)folders}; do
+    echo "  $folder"
+    stow -D $folder 2>/dev/null
+    stow $folder
+done
+
+echo ""
+echo "Done!"
 popd

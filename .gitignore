@@ -1,3 +1,6 @@
 /nvim/.config/nvim/plugin/packer_compiled.lua
 
 Hyprland/.config/hypr/wallust/wallust-hyprland.conf
+
+# Private config files (synced from dotfiles-private)
+opencode/.config/opencode/opencode.jsonc
