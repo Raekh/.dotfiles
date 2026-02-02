@@ -9,6 +9,13 @@ DOTFILES_DIR="${DOTFILES:-$HOME/.dotfiles}"
 # Files to sync (paths relative to repo root)
 PRIVATE_FILES=(
     "opencode/.config/opencode/opencode.jsonc"
+    "zsh/.zshrc_env"
+)
+
+# Files that live in $HOME but should be synced to a repo path
+# Format: "source_in_home:dest_in_repo"
+HOME_FILES=(
+    ".zshrc_env:zsh/.zshrc_env"
 )
 
 echo "Pushing private config files to $PRIVATE_REPO..."
@@ -29,18 +36,26 @@ if ! gh repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --quiet 2>/dev/null; then
     exit 1
 fi
 
-# Copy each private file to the temp repo
-changed=false
+# Find gum binary
+GUM=""
+if command -v gum &>/dev/null; then
+    GUM="gum"
+elif [[ -x "$HOME/go/bin/gum" ]]; then
+    GUM="$HOME/go/bin/gum"
+fi
+
+# Check which files have changes
+changed_files=()
+
+# Check PRIVATE_FILES (relative to DOTFILES_DIR)
 for file in "${PRIVATE_FILES[@]}"; do
     src="$DOTFILES_DIR/$file"
     dest="$TEMP_DIR/$file"
     
     if [[ -f "$src" ]]; then
-        mkdir -p "$(dirname "$dest")"
         if ! cmp -s "$src" "$dest" 2>/dev/null; then
-            cp "$src" "$dest"
-            echo "  Updated: $file"
-            changed=true
+            changed_files+=("$file")
+            echo "  Changed: $file"
         else
             echo "  Unchanged: $file"
         fi
@@ -49,21 +64,72 @@ for file in "${PRIVATE_FILES[@]}"; do
     fi
 done
 
-if [[ "$changed" == "false" ]]; then
+# Check HOME_FILES (source in $HOME, dest in repo)
+declare -A home_file_map
+for entry in "${HOME_FILES[@]}"; do
+    home_path="${entry%%:*}"
+    repo_path="${entry##*:}"
+    home_file_map["$repo_path"]="$HOME/$home_path"
+    
+    src="$HOME/$home_path"
+    dest="$TEMP_DIR/$repo_path"
+    
+    if [[ -f "$src" ]]; then
+        if ! cmp -s "$src" "$dest" 2>/dev/null; then
+            changed_files+=("$repo_path")
+            echo "  Changed: $repo_path (from ~/$home_path)"
+        else
+            echo "  Unchanged: $repo_path"
+        fi
+    else
+        echo "  Warning: ~/$home_path not found"
+    fi
+done
+
+if [[ ${#changed_files[@]} -eq 0 ]]; then
     echo ""
     echo "No changes to push."
     exit 0
 fi
+
+# Let user select which files to push
+selected_files=()
+if [[ -n "$GUM" ]]; then
+    echo ""
+    mapfile -t selected_files < <($GUM choose --no-limit --selected="${changed_files[*]}" "${changed_files[@]}")
+    
+    if [[ ${#selected_files[@]} -eq 0 ]]; then
+        echo "No files selected. Aborting."
+        exit 0
+    fi
+else
+    # No gum, use all changed files
+    selected_files=("${changed_files[@]}")
+fi
+
+# Copy selected files to the temp repo
+echo ""
+echo "Pushing selected files:"
+for file in "${selected_files[@]}"; do
+    # Check if it's a HOME_FILE or PRIVATE_FILE
+    if [[ -n "${home_file_map[$file]}" ]]; then
+        src="${home_file_map[$file]}"
+    else
+        src="$DOTFILES_DIR/$file"
+    fi
+    dest="$TEMP_DIR/$file"
+    mkdir -p "$(dirname "$dest")"
+    cp "$src" "$dest"
+    echo "  → $file"
+done
 
 # Commit and push
 cd "$TEMP_DIR"
 git add -A
 
 # Get commit message
-if command -v gum &>/dev/null; then
-    msg=$(gum input --placeholder "Commit message (or press enter for default)")
-elif [[ -x "$HOME/go/bin/gum" ]]; then
-    msg=$("$HOME/go/bin/gum" input --placeholder "Commit message (or press enter for default)")
+if [[ -n "$GUM" ]]; then
+    msg=$($GUM input --placeholder "Commit message (or press enter for default)")
 fi
 
 if [[ -z "$msg" ]]; then
