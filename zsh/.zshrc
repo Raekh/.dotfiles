@@ -150,6 +150,7 @@ alias gonf='nvim $HOME/.config/ghostty/config'
 
 ## Zsh
 alias zc='nvim $HOME/.zshrc'
+alias ze='source $HOME/.zshrc_env'
 alias zr='source $HOME/.zshrc'
 
 ## Nvim
@@ -379,7 +380,7 @@ fi
 eval "$(oh-my-posh init zsh --config $OHMYPOSH_HOME/base.toml)"
 
 function set_poshcontext() {
-    export TUN0=$(ip -o -f inet addr show  | grep tun0 | awk '{print $4}' | awk -F/ '{print $1}')
+    export TUN0=$(ip -o -f inet addr show  | grep -w tun0 | awk '{print $4}' | awk -F/ '{print $1}')
 }
 # }}}
 
