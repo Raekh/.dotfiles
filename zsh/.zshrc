@@ -111,6 +111,12 @@ alias cpugetavail='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_go
 alias cpushowcurrent='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpusethigh='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpusetlow='echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+alias swapsethigh='sudo sysctl -w vm.swappiness=10'
+alias swapsetlow='sudo sysctl -w vm.swappiness=60'
+alias swapshowcurrent='cat /proc/sys/vm/swappiness'
+alias perfsethigh='cpusethigh && swapsethigh'
+alias perfsetlow='cpusetlow && swapsetlow'
+alias perfshowcurrent='echo "CPU: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor), Swap: $(cat /proc/sys/vm/swappiness)"'
 
 ## Docker
 alias dc='docker compose'
@@ -312,9 +318,13 @@ alias tidoudi="aplay /usr/share/sounds/sound-icons/prompt.wav 2>/dev/null &"
 # alias t='clear; tb '
 alias t='tmux'
 alias tks='tmux kill-server'
-alias vexw='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
+alias vexw='free -h && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null && free -h'
 alias bat='batcat'
 alias kilock='pkill -USR1 hyprlock'
+
+# Disk cleanup
+alias diskclean='echo "Before:" && df -h / | tail -1 && rm -rf ~/.cache/uv ~/.cache/ms-playwright ~/.cache/puppeteer ~/.cache/Cypress ~/.cache/JetBrains ~/.local/share/Trash/* ~/.local/share/nvim.bak && npm cache clean --force 2>/dev/null && echo "After:" && df -h / | tail -1'
+alias diskclean-dry='du -sh ~/.cache/uv ~/.cache/ms-playwright ~/.cache/puppeteer ~/.cache/Cypress ~/.cache/JetBrains ~/.local/share/Trash ~/.local/share/nvim.bak ~/.npm 2>/dev/null; echo "---"; echo "Total reclaimable (approx):" && du -sc ~/.cache/uv ~/.cache/ms-playwright ~/.cache/puppeteer ~/.cache/Cypress ~/.cache/JetBrains ~/.local/share/Trash ~/.local/share/nvim.bak ~/.npm 2>/dev/null | tail -1'
 # }}}
 
 # clipboard
