@@ -1,0 +1,32 @@
+{
+  "$schema": "https://oh-my-opencode.ai/config.json",
+  "agents": {
+    "sisyphus": {
+      "model": "github-copilot/claude-opus-4.5"
+    },
+    "oracle": {
+      "model": "github-copilot/gpt-5.2"
+    },
+    "librarian": {
+      "model": "github-copilot/claude-sonnet-4.5"
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "github-copilot/gemini-3-pro-preview"
+    },
+    "document-writer": {
+      "model": "github-copilot/gemini-3-flash-preview"
+    },
+    "multimodal-looker": {
+      "model": "github-copilot/gemini-3-flash-preview"
+    },
+    "explore": {
+      "model": "github-copilot/grok-code-fast-1"
+    },
+    "hephaestus": {
+      "model": "github-copilot/gpt-5.2-codex"
+    },
+    "prometheus": {
+      "model": "github-copilot/gpt-5.2"
+    }
+  }
+}
