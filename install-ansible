@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+
+detect_os() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "$ID" in
+            ubuntu|debian|pop|linuxmint|elementary)
+                echo "debian"
+                ;;
+            arch|manjaro|endeavouros|garuda)
+                echo "arch"
+                ;;
+            *)
+                if [ -n "${ID_LIKE:-}" ]; then
+                    case "$ID_LIKE" in
+                        *debian*|*ubuntu*)
+                            echo "debian"
+                            ;;
+                        *arch*)
+                            echo "arch"
+                            ;;
+                        *)
+                            echo "unknown"
+                            ;;
+                    esac
+                else
+                    echo "unknown"
+                fi
+                ;;
+        esac
+    else
+        echo "unknown"
+    fi
+}
+
+install_ansible() {
+    if command -v ansible-playbook &> /dev/null; then
+        echo "Ansible already installed"
+        return
+    fi
+
+    local os_type="$1"
+    case "$os_type" in
+        debian)
+            echo "Installing Ansible via apt..."
+            sudo apt update && sudo apt install -y ansible
+            ;;
+        arch)
+            echo "Installing Ansible via pacman..."
+            sudo pacman -S --noconfirm ansible
+            ;;
+        *)
+            echo "Unsupported OS. Install ansible manually."
+            exit 1
+            ;;
+    esac
+}
+
+setup_repo() {
+    cd "$DOTFILES"
+    git config core.hooksPath .githooks
+    git submodule update --init --recursive
+}
+
+run_playbook() {
+    local os_type="$1"
+    local playbook="playbook-${os_type}.yml"
+
+    if [ ! -f "$DOTFILES/ansible/$playbook" ]; then
+        echo "Playbook not found: $playbook"
+        exit 1
+    fi
+
+    echo "Running Ansible playbook for $os_type..."
+    cd "$DOTFILES/ansible"
+    ansible-playbook "$playbook" --ask-become-pass
+}
+
+main() {
+    local os_type
+    os_type=$(detect_os)
+
+    if [ "$os_type" = "unknown" ]; then
+        echo "Could not detect OS type. Supported: Debian/Ubuntu, Arch Linux"
+        exit 1
+    fi
+
+    echo "Detected OS type: $os_type"
+    setup_repo
+    install_ansible "$os_type"
+    run_playbook "$os_type"
+}
+
+main
