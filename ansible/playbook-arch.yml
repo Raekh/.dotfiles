@@ -1,0 +1,350 @@
+---
+- name: Setup development environment (Arch Linux)
+  hosts: localhost
+  connection: local
+  become: false
+
+  vars:
+    user_name: "{{ ansible_user_id }}"
+    user_home: "{{ ansible_env.HOME }}"
+    dotfiles_path: "{{ user_home }}/.dotfiles"
+    neovim_version: "stable"
+    python_version: "3.12.0"
+    install_ghostty: true
+    install_haskell: true
+    cargo_home: "{{ user_home }}/.cargo"
+    cargo_bin: "{{ cargo_home }}/bin"
+    go_root: "/usr/local/go"
+    go_path: "{{ user_home }}/go"
+    go_bin: "{{ go_path }}/bin"
+    pyenv_root: "{{ user_home }}/.pyenv"
+    bob_path: "{{ user_home }}/.local/share/bob"
+    local_bin: "{{ user_home }}/.local/bin"
+
+  pre_tasks:
+    - name: Update pacman cache
+      become: true
+      community.general.pacman:
+        update_cache: true
+
+  tasks:
+    # ===================
+    # Base packages
+    # ===================
+    - name: Install base packages
+      become: true
+      community.general.pacman:
+        name:
+          - git
+          - curl
+          - wget
+          - unzip
+          - base-devel
+          - stow
+          - ca-certificates
+          - gnupg
+          - make
+          - cmake
+          - pkgconf
+          - openssl
+          - fuse2
+          - jq
+        state: present
+
+    - name: Ensure local bin directory exists
+      ansible.builtin.file:
+        path: "{{ local_bin }}"
+        state: directory
+        mode: "0755"
+
+    # ===================
+    # Rust
+    # ===================
+    - name: Check if rustup is installed
+      ansible.builtin.stat:
+        path: "{{ cargo_home }}/bin/rustup"
+      register: rustup_installed
+
+    - name: Install rustup via pacman
+      become: true
+      community.general.pacman:
+        name: rustup
+        state: present
+      when: not rustup_installed.stat.exists
+
+    - name: Initialize rustup default toolchain
+      ansible.builtin.command:
+        cmd: rustup default stable
+      environment:
+        PATH: "{{ ansible_env.PATH }}:/usr/bin"
+      when: not rustup_installed.stat.exists
+      changed_when: true
+
+    # ===================
+    # Go
+    # ===================
+    - name: Install Go
+      become: true
+      community.general.pacman:
+        name: go
+        state: present
+
+    - name: Ensure go bin directory exists
+      ansible.builtin.file:
+        path: "{{ go_bin }}"
+        state: directory
+        mode: "0755"
+
+    # ===================
+    # Haskell
+    # ===================
+    - name: Check if ghcup is installed
+      ansible.builtin.stat:
+        path: "{{ user_home }}/.ghcup/bin/ghcup"
+      register: ghcup_installed
+
+    - name: Download ghcup installer
+      ansible.builtin.get_url:
+        url: https://get-ghcup.haskell.org
+        dest: /tmp/ghcup.sh
+        mode: "0755"
+      when:
+        - install_haskell
+        - not ghcup_installed.stat.exists
+
+    - name: Install ghcup
+      ansible.builtin.shell:
+        cmd: BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_MINIMAL=1 /tmp/ghcup.sh
+      when:
+        - install_haskell
+        - not ghcup_installed.stat.exists
+      changed_when: true
+
+    - name: Cleanup ghcup installer
+      ansible.builtin.file:
+        path: /tmp/ghcup.sh
+        state: absent
+
+    # ===================
+    # Python (pyenv)
+    # ===================
+    - name: Install pyenv dependencies
+      become: true
+      community.general.pacman:
+        name:
+          - openssl
+          - zlib
+          - bzip2
+          - readline
+          - sqlite
+          - ncurses
+          - xz
+          - tk
+          - libxml2
+          - xmlsec
+          - libffi
+        state: present
+
+    - name: Check if pyenv is installed
+      ansible.builtin.stat:
+        path: "{{ pyenv_root }}/bin/pyenv"
+      register: pyenv_installed
+
+    - name: Clone pyenv repository
+      ansible.builtin.git:
+        repo: https://github.com/pyenv/pyenv.git
+        dest: "{{ pyenv_root }}"
+        depth: 1
+      when: not pyenv_installed.stat.exists
+
+    - name: Ensure pyenv directory is owned by user
+      ansible.builtin.file:
+        path: "{{ pyenv_root }}"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        recurse: true
+      become: true
+
+    - name: Check if pyenv-virtualenv is installed
+      ansible.builtin.stat:
+        path: "{{ pyenv_root }}/plugins/pyenv-virtualenv"
+      register: pyenv_virtualenv_installed
+
+    - name: Clone pyenv-virtualenv plugin
+      ansible.builtin.git:
+        repo: https://github.com/pyenv/pyenv-virtualenv.git
+        dest: "{{ pyenv_root }}/plugins/pyenv-virtualenv"
+        depth: 1
+      when: not pyenv_virtualenv_installed.stat.exists
+
+    - name: Install Python version via pyenv
+      ansible.builtin.shell:
+        cmd: "{{ pyenv_root }}/bin/pyenv install -s {{ python_version }}"
+      environment:
+        PYENV_ROOT: "{{ pyenv_root }}"
+      changed_when: false
+
+    # ===================
+    # Node.js
+    # ===================
+    - name: Install pnpm via pacman
+      become: true
+      community.general.pacman:
+        name: pnpm
+        state: present
+
+    - name: Check if bun is installed
+      ansible.builtin.stat:
+        path: "{{ user_home }}/.bun/bin/bun"
+      register: bun_installed
+
+    - name: Install bun
+      ansible.builtin.shell:
+        cmd: curl -fsSL https://bun.sh/install | bash
+      when: not bun_installed.stat.exists
+      changed_when: true
+
+    # ===================
+    # Shell (zsh)
+    # ===================
+    - name: Install zsh
+      become: true
+      community.general.pacman:
+        name: zsh
+        state: present
+
+    - name: Check if oh-my-zsh is installed
+      ansible.builtin.stat:
+        path: "{{ user_home }}/.oh-my-zsh"
+      register: ohmyzsh_installed
+
+    - name: Install oh-my-zsh
+      ansible.builtin.shell:
+        cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+      when: not ohmyzsh_installed.stat.exists
+      changed_when: true
+
+    - name: Check if zsh-history-substring-search plugin exists
+      ansible.builtin.stat:
+        path: "{{ user_home }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
+      register: zsh_history_plugin
+
+    - name: Install zsh-history-substring-search plugin
+      ansible.builtin.git:
+        repo: https://github.com/zsh-users/zsh-history-substring-search.git
+        dest: "{{ user_home }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
+        depth: 1
+      when: not zsh_history_plugin.stat.exists
+
+    - name: Install atuin via pacman
+      become: true
+      community.general.pacman:
+        name: atuin
+        state: present
+
+    - name: Check if oh-my-posh is installed
+      ansible.builtin.stat:
+        path: "{{ local_bin }}/oh-my-posh"
+      register: ohmyposh_installed
+
+    - name: Install oh-my-posh
+      ansible.builtin.shell:
+        cmd: curl -s https://ohmyposh.dev/install.sh | bash -s -- -d {{ local_bin }}
+      when: not ohmyposh_installed.stat.exists
+      changed_when: true
+
+    - name: Set zsh as default shell
+      become: true
+      ansible.builtin.user:
+        name: "{{ user_name }}"
+        shell: /usr/bin/zsh
+
+    # ===================
+    # Neovim
+    # ===================
+    - name: Check if bob is installed
+      ansible.builtin.stat:
+        path: "{{ cargo_bin }}/bob"
+      register: bob_installed
+
+    - name: Install bob via cargo
+      ansible.builtin.command:
+        cmd: "{{ cargo_bin }}/cargo install bob-nvim"
+      environment:
+        PATH: "{{ cargo_bin }}:{{ ansible_env.PATH }}"
+      when: not bob_installed.stat.exists
+      changed_when: true
+
+    - name: Check if nvim is installed via bob
+      ansible.builtin.stat:
+        path: "{{ bob_path }}/nvim-bin/nvim"
+      register: nvim_installed
+
+    - name: Install neovim via bob
+      ansible.builtin.command:
+        cmd: "{{ cargo_bin }}/bob use {{ neovim_version }}"
+      environment:
+        PATH: "{{ cargo_bin }}:{{ ansible_env.PATH }}"
+      when: not nvim_installed.stat.exists
+      changed_when: true
+
+    # ===================
+    # Terminal (tmux, ghostty)
+    # ===================
+    - name: Install tmux
+      become: true
+      community.general.pacman:
+        name: tmux
+        state: present
+
+    - name: Check if TPM is installed
+      ansible.builtin.stat:
+        path: "{{ user_home }}/.tmux/plugins/tpm"
+      register: tpm_installed
+
+    - name: Install TPM (Tmux Plugin Manager)
+      ansible.builtin.git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: "{{ user_home }}/.tmux/plugins/tpm"
+        depth: 1
+      when: not tpm_installed.stat.exists
+
+    - name: Install tmuxinator
+      become: true
+      community.general.pacman:
+        name: tmuxinator
+        state: present
+
+    - name: Install ghostty
+      become: true
+      community.general.pacman:
+        name: ghostty
+        state: present
+      when: install_ghostty
+
+    # ===================
+    # CLI Tools
+    # ===================
+    - name: Install exa
+      become: true
+      community.general.pacman:
+        name: exa
+        state: present
+
+    - name: Install gum
+      become: true
+      community.general.pacman:
+        name: gum
+        state: present
+
+    - name: Install lazygit
+      become: true
+      community.general.pacman:
+        name: lazygit
+        state: present
+
+    - name: Install lazydocker
+      become: true
+      community.general.pacman:
+        name: lazydocker
+        state: present
