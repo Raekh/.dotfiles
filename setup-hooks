@@ -6,6 +6,10 @@
 DOTFILES_DIR="${DOTFILES:-$HOME/.dotfiles}"
 HOOKS_DIR="$DOTFILES_DIR/.git/hooks"
 
+echo "Configuring git settings..."
+git -C "$DOTFILES_DIR" config submodule.recurse true
+echo "  Enabled: submodule.recurse"
+
 echo "Installing git hooks..."
 
 # Create post-merge hook
