@@ -118,6 +118,18 @@ alias perfsethigh='cpusethigh && swapsethigh'
 alias perfsetlow='cpusetlow && swapsetlow'
 alias perfshowcurrent='echo "CPU: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor), Swap: $(cat /proc/sys/vm/swappiness)"'
 
+## System monitoring
+alias sysinfo='echo "=== CPU ===" && lscpu | grep -E "Model name|CPU\(s\)|MHz" && echo "\n=== Memory ===" && free -h && echo "\n=== Disk ===" && df -h / && echo "\n=== Governor ===" && cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "\n=== Swappiness ===" && cat /proc/sys/vm/swappiness && echo "\n=== Top 5 Memory ===" && ps aux --sort=-%mem | head -6 && echo "\n=== Docker ===" && docker ps --format "table {{.Names}}\t{{.Status}}" 2>/dev/null'
+alias memhogs='ps aux --sort=-%mem | head -15'
+alias cpuhogs='ps aux --sort=-%cpu | head -15'
+alias iohogs='sudo iotop -oPa -n 3 2>/dev/null || echo "Install iotop: sudo apt install iotop"'
+alias logtrim='sudo journalctl --vacuum-size=200M && echo "Done."'
+
+## Service quick-start/stop (for disabled-at-boot services)
+svcstart() { sudo systemctl start "$@" && echo "✓ $@ started"; }
+svcstop() { sudo systemctl stop "$@" && echo "✓ $@ stopped"; }
+svcstatus() { systemctl status "$@" --no-pager; }
+
 ## Docker
 alias dc='docker compose'
 alias 'docker-compose'='docker compose'
@@ -125,6 +137,8 @@ alias make-dc='sed -i "s/docker-compose/docker compose/g" Makefile'
 alias unmake-dc='sed -i "s/docker compose/docker-compose/g" Makefile'
 alias dokill='docker ps -q | xargs docker kill'
 alias ld='lazydocker'
+alias dockclean='docker system prune -f && docker volume prune -f && echo "Docker cleaned."'
+alias dockstats='docker stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"'
 nuke-docker() {
     dokill
     docker system prune --all --volumes -f
@@ -158,6 +172,8 @@ alias gonf='nvim $HOME/.config/ghostty/config'
 alias zc='nvim $HOME/.zshrc'
 alias ze='source $HOME/.zshrc_env'
 alias zr='source $HOME/.zshrc'
+
+alias gc="nvim ~/.config/ghostty/config"
 
 ## Nvim
 alias nn='nvim'
@@ -205,6 +221,10 @@ alias kwa='tmuxinator list | grep -v tmuxinator | xargs -n 1 tmuxinator stop'
 
 ## Node stuff
 alias pn='pnpm'
+
+## Dbeaver
+# Get all DBeaver connections 
+alias get-db-connections='openssl aes-128-cbc -d -K babb4a9f774ab853c96c2d653dfe544a -iv 00000000000000000000000000000000 -in /home/raekh/.local/share/DBeaverData/workspace6/General/.dbeaver/credentials-config.json | dd bs=1 skip=16 2>/dev/null'
 
 ## Viaco
 # Define environment variables
@@ -273,9 +293,14 @@ alias viaco-branches-prune='branches-prune VIACO_FOLDERS'
 alias sywav2-branches-prune='branches-prune SYWAV2_FOLDERS'
 alias sywav1-branches-prune='branches-prune SYWAV1_FOLDERS'
 
+alias jj='jiratui'
+alias ju='jiratui ui'
+
 # Slip
 ## NCIS: nuke, clean, install, start.
 alias ncis='dc kill && make clean && make install && make start'
+## NRR: nuke, rebuild, restart
+alias nrr='dc kill && make rebuild && make restart'
 
 ## Keyboard
 alias kbgen='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
@@ -295,6 +320,7 @@ alias wgup='sudo wg-quick up wg0'
 alias wgdown='sudo wg-quick down wg0'
 
 ## Miscellaneous
+alias gimme="sudo chown -R $USER:$USER ."
 eskill() {
     ps -ax | grep eslint | grep -v grep | awk '{print $1}' | xargs kill -9
 }
@@ -305,6 +331,7 @@ picom-kill() {
     ps -ax | grep /usr/bin/picom | grep -v grep | awk '{print $1}' | xargs kill -9
 }
 alias dixit='disown %1; exit'
+alias screenfix="refresh-switch low && sleep 2 && refresh-switch high"
 
 fuck-limits() {
     sudo ifconfig $1 down
@@ -327,6 +354,8 @@ alias diskclean='echo "Before:" && df -h / | tail -1 && rm -rf ~/.cache/uv ~/.ca
 alias diskclean-dry='du -sh ~/.cache/uv ~/.cache/ms-playwright ~/.cache/puppeteer ~/.cache/Cypress ~/.cache/JetBrains ~/.local/share/Trash ~/.local/share/nvim.bak ~/.npm 2>/dev/null; echo "---"; echo "Total reclaimable (approx):" && du -sc ~/.cache/uv ~/.cache/ms-playwright ~/.cache/puppeteer ~/.cache/Cypress ~/.cache/JetBrains ~/.local/share/Trash ~/.local/share/nvim.bak ~/.npm 2>/dev/null | tail -1'
 # }}}
 
+# Opencode
+
 # clipboard
 way2zep() {
     clippaste | xsel --display :99 --clipboard -i
@@ -343,6 +372,8 @@ init_htb_box() {
     mkdir nmap gobuster www
     tmux run-shell 'tmux attach-session -c "#{pane_current_path}" \; display-message "Updated tmux path!"'
 }
+
+alias takareport="MONGO_URI=$TAKA_CONNECTION_STRING taka-report"
 
 xephyr-run() {
     ~/xephyr-run.sh $1
@@ -421,5 +452,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # opencode
 export PATH=/home/raekh/.opencode/bin:$PATH
+alias oc="opencode"
 
 . "$HOME/.atuin/bin/env"
