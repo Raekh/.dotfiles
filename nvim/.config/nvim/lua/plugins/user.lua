@@ -231,8 +231,11 @@ return {
   --   },
   -- },
   {
-    "ethersync/ethersync-nvim",
-    keys = { { "<Leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
+    "teamtype/teamtype-nvim",
+    keys = {
+      { "<Leader>Ej", "<cmd>TeamtypeJumpToCursor<cr>" },
+      { "<Leader>Ef", "<cmd>TeamtypeFollow<cr>" },
+    },
     lazy = false,
   },
   {
@@ -300,15 +303,12 @@ return {
     },
   },
   {
-    "Equilibris/nx.nvim",
-    dependencies = {
-      -- telescope
-      "nvim-telescope/telescope.nvim",
-    },
-    opts = {
-      -- See below for config options
-      nx_cmd_root = "npx nx",
-    },
+    "perryrh0dan/nx.nvim",
+    -- dependencies = {
+    --   -- telescope
+    --   "nvim-telescope/telescope.nvim",
+    -- },
+    -- config = true,
   },
   {
     "gisketch/triforce.nvim",
@@ -321,6 +321,16 @@ return {
         keymap = {
           show_profile = "<Leader>Tp", -- Open profile with <leader>tp
         },
+      }
+    end,
+  },
+  {
+    "Rtarun3606k/TakaTime",
+    lazy = false,
+    config = function()
+      -- Optional: Enable debug mode if you run into issues
+      require("taka-time").setup {
+        debug = false,
       }
     end,
   },

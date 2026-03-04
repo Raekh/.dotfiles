@@ -5,7 +5,7 @@ return {
     {
       -- Best git diff tool to exist on the planet
       -- Using local fork with hunk_links feature
-      "sindrets/diffview.nvim",
+      "dlyongemallo/diffview.nvim",
       -- dir = "/home/raekh/Documents/Code/diffview-graphs/diffview.nvim",
       -- name = "diffview.nvim",
       lazy = false,
