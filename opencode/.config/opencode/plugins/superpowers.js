@@ -1,1 +1,0 @@
-/home/raekh/.config/opencode/superpowers/.opencode/plugins/superpowers.js
