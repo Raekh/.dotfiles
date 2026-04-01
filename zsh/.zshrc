@@ -170,6 +170,7 @@ alias gonf='nvim $HOME/.config/ghostty/config'
 
 ## Zsh
 alias zc='nvim $HOME/.zshrc'
+alias zce='nvim $HOME/.zshrc_env'
 alias ze='source $HOME/.zshrc_env'
 alias zr='source $HOME/.zshrc'
 
@@ -301,6 +302,7 @@ alias ju='jiratui ui'
 alias ncis='dc kill && make clean && make install && make start'
 ## NRR: nuke, rebuild, restart
 alias nrr='dc kill && make rebuild && make restart'
+alias nr='dc kill && make restart'
 
 ## Keyboard
 alias kbgen='$HOME/Documents/Code/keyboard/kbgen_dvorak && xset r rate 250 50'
@@ -372,8 +374,6 @@ init_htb_box() {
     mkdir nmap gobuster www
     tmux run-shell 'tmux attach-session -c "#{pane_current_path}" \; display-message "Updated tmux path!"'
 }
-
-alias takareport="MONGO_URI=$TAKA_CONNECTION_STRING taka-report"
 
 xephyr-run() {
     ~/xephyr-run.sh $1
