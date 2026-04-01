@@ -21,6 +21,13 @@ cat > "$HOOKS_DIR/post-merge" << 'EOF'
 
 PRIVATE_REPO="Raekh/dotfiles-private"
 DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+GH_CMD=(gh)
+
+if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+    if ! gh repo view "$PRIVATE_REPO" &>/dev/null && env -u GITHUB_TOKEN gh repo view "$PRIVATE_REPO" &>/dev/null; then
+        GH_CMD=(env -u GITHUB_TOKEN gh)
+    fi
+fi
 
 # Files to sync (paths relative to repo root)
 PRIVATE_FILES=(
@@ -30,7 +37,7 @@ PRIVATE_FILES=(
 echo "Syncing private config files..."
 
 # Check if we can reach GitHub
-if ! gh auth status &>/dev/null; then
+if ! "${GH_CMD[@]}" auth status &>/dev/null; then
     echo "Warning: Not authenticated with GitHub, skipping private file sync"
     exit 0
 fi
@@ -40,7 +47,7 @@ TEMP_DIR=$(mktemp -d)
 trap "rm -rf $TEMP_DIR" EXIT
 
 # Clone the private repo (shallow clone for speed)
-if ! gh repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --depth 1 --quiet 2>/dev/null; then
+if ! "${GH_CMD[@]}" repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --depth 1 --quiet 2>/dev/null; then
     echo "Warning: Could not clone private repo, skipping sync"
     exit 0
 fi

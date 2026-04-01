@@ -3,13 +3,23 @@
 # Push changes to private config files back to dotfiles-private repo
 #
 
+set -euo pipefail
+
 PRIVATE_REPO="Raekh/dotfiles-private"
 DOTFILES_DIR="${DOTFILES:-$HOME/.dotfiles}"
+GH_CMD=(gh)
+GIT_CMD=(git)
+
+if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+    if ! gh repo view "$PRIVATE_REPO" &>/dev/null && env -u GITHUB_TOKEN gh repo view "$PRIVATE_REPO" &>/dev/null; then
+        GH_CMD=(env -u GITHUB_TOKEN gh)
+        GIT_CMD=(env -u GITHUB_TOKEN git)
+    fi
+fi
 
 # Files to sync (paths relative to repo root)
 PRIVATE_FILES=(
     "opencode/.config/opencode/opencode.jsonc"
-    "zsh/.zshrc_env"
 )
 
 # Files that live in $HOME but should be synced to a repo path
@@ -18,29 +28,75 @@ HOME_FILES=(
     ".zshrc_env:zsh/.zshrc_env"
 )
 
+usage() {
+    cat <<'EOF'
+Usage: push-private [options]
+
+Options:
+  -m, --message <msg>  Commit message to use
+  -y, --yes            Skip interactive prompts and use all changed files
+  -h, --help           Show this help
+EOF
+}
+
+msg="${PUSH_PRIVATE_MESSAGE:-}"
+assume_yes=false
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -m|--message)
+            shift
+            if [[ $# -eq 0 ]]; then
+                echo "Error: missing value for --message" >&2
+                exit 1
+            fi
+            msg="$1"
+            ;;
+        -y|--yes)
+            assume_yes=true
+            ;;
+        -h|--help)
+            usage
+            exit 0
+            ;;
+        *)
+            echo "Error: unknown option: $1" >&2
+            usage >&2
+            exit 1
+            ;;
+    esac
+    shift
+done
+
 echo "Pushing private config files to $PRIVATE_REPO..."
 
-# Check if we can reach GitHub
-if ! gh auth status &>/dev/null; then
-    echo "Error: Not authenticated with GitHub"
+# Check dependencies/auth
+if ! command -v gh &>/dev/null; then
+    echo "Error: gh is not installed or not in PATH" >&2
+    exit 1
+fi
+
+if ! "${GH_CMD[@]}" auth status &>/dev/null; then
+    echo "Error: Not authenticated with GitHub" >&2
     exit 1
 fi
 
 # Create temp directory for cloning
-TEMP_DIR=$(mktemp -d)
-trap "rm -rf $TEMP_DIR" EXIT
+TEMP_ROOT=$(mktemp -d)
+TEMP_DIR="$TEMP_ROOT/repo"
+trap 'rm -rf "$TEMP_ROOT"' EXIT
 
 # Clone the private repo
-if ! gh repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --quiet 2>/dev/null; then
-    echo "Error: Could not clone private repo"
+if ! "${GH_CMD[@]}" repo clone "$PRIVATE_REPO" "$TEMP_DIR" -- --quiet; then
+    echo "Error: Could not clone private repo" >&2
     exit 1
 fi
 
 # Find gum binary
 GUM=""
-if command -v gum &>/dev/null; then
+if [[ -t 0 && -t 1 ]] && command -v gum &>/dev/null; then
     GUM="gum"
-elif [[ -x "$HOME/go/bin/gum" ]]; then
+elif [[ -t 0 && -t 1 ]] && [[ -x "$HOME/go/bin/gum" ]]; then
     GUM="$HOME/go/bin/gum"
 fi
 
@@ -94,9 +150,9 @@ fi
 
 # Let user select which files to push
 selected_files=()
-if [[ -n "$GUM" ]]; then
+if [[ -n "$GUM" ]] && [[ "$assume_yes" != true ]]; then
     echo ""
-    mapfile -t selected_files < <($GUM choose --no-limit --selected="${changed_files[*]}" "${changed_files[@]}")
+    mapfile -t selected_files < <("$GUM" choose --no-limit --selected="*" "${changed_files[@]}")
     
     if [[ ${#selected_files[@]} -eq 0 ]]; then
         echo "No files selected. Aborting."
@@ -112,7 +168,7 @@ echo ""
 echo "Pushing selected files:"
 for file in "${selected_files[@]}"; do
     # Check if it's a HOME_FILE or PRIVATE_FILE
-    if [[ -n "${home_file_map[$file]}" ]]; then
+    if [[ -n "${home_file_map[$file]:-}" ]]; then
         src="${home_file_map[$file]}"
     else
         src="$DOTFILES_DIR/$file"
@@ -124,20 +180,32 @@ for file in "${selected_files[@]}"; do
 done
 
 # Commit and push
-cd "$TEMP_DIR"
-git add -A
+"${GIT_CMD[@]}" -C "$TEMP_DIR" add -A
+
+if [[ -z "$("${GIT_CMD[@]}" -C "$TEMP_DIR" status --short)" ]]; then
+    echo ""
+    echo "No staged changes to commit."
+    exit 0
+fi
 
 # Get commit message
-if [[ -n "$GUM" ]]; then
-    msg=$($GUM input --placeholder "Commit message (or press enter for default)")
+if [[ -z "$msg" && -n "$GUM" ]] && [[ "$assume_yes" != true ]]; then
+    msg=$("$GUM" input --placeholder "Commit message (or press enter for default)")
 fi
 
 if [[ -z "$msg" ]]; then
     msg="Update private config files"
 fi
 
-git commit -m "$msg"
-git push
+if ! "${GIT_CMD[@]}" -C "$TEMP_DIR" commit -m "$msg"; then
+    echo "Error: git commit failed" >&2
+    exit 1
+fi
+
+if ! "${GIT_CMD[@]}" -C "$TEMP_DIR" push; then
+    echo "Error: git push failed" >&2
+    exit 1
+fi
 
 echo ""
 echo "Private config files pushed successfully!"
