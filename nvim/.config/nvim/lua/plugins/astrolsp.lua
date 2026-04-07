@@ -9,7 +9,6 @@ return {
   ---@type AstroLSPOpts
   opts = {
     -- Configuration table of features provided by AstroLSP
-    capabilities = require("blink.cmp").get_lsp_capabilities(),
     features = {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
@@ -45,6 +44,9 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      ["*"] = {
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
+      },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       tailwindcss = {
         settings = {

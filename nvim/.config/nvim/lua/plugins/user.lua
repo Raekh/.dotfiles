@@ -5,7 +5,7 @@ return {
   -- Themes {{{
   "folke/tokyonight.nvim",
   {
-    "Saghen/blink.cmp",
+    "saghen/blink.cmp",
     optional = true,
     opts = function(_, opts)
       if not opts.keymap then opts.keymap = {} end
@@ -45,7 +45,7 @@ return {
   { "kylechui/nvim-surround", lazy = false, config = true }, -- adds yssr commands
   { "wellle/targets.vim", event = "BufRead" }, -- adds more targets for select, substitute, c and d operators
   {
-    "echasnovski/mini.align",
+    "nvim-mini/mini.align",
     config = true,
   },
   {
