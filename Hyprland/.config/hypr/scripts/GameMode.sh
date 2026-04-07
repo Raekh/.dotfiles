@@ -20,7 +20,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
     notify-send -e -u low -i "$notif" "gamemode enabled. All animations off"
     exit
 else
-	swww-daemon && swww img "$HOME/.config/rofi/.current_wallpaper" &
+	swww-daemon && swww img --resize fit --fill-color 0E0E0E "$HOME/.config/rofi/.current_wallpaper" &
 	sleep 0.1
 	${SCRIPTSDIR}/WallustSwww.sh
 	sleep 0.5
@@ -28,4 +28,4 @@ else
     notify-send -e -u normal -i "$notif" "gamemode disabled. All animations normal"
     exit
 fi
-hyprctl reload
+$HOME/.config/hypr/scripts/MonitorProfiles.sh --apply >/dev/null 2>&1
