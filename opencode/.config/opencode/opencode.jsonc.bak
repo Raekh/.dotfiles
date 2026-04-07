@@ -1,0 +1,113 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": "allow",
+  "theme": "samaritan-light",
+  "plugin": [
+    "opencode-pty",
+    "./plugin/notificator.js",
+    "@mohak34/opencode-notifier@latest",
+    "file:///tmp/bunx-1000-oh-my-opencode-slim@latest/node_modules/oh-my-opencode-slim/dist/index.js"
+  ],
+  "instructions": [
+    "./plugin/shell-strategy/shell_strategy.md"
+  ],
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "{env:OPENCODE_CONTEXT_KEY}"
+      ],
+      "enabled": true
+    },
+    "figma": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@tothienbao6a0/figma-mcp-server",
+        "--figma-api-key={env:FIGMA_API_KEY}",
+        "--stdio"
+      ],
+      "enabled": true
+    },
+    "railsblueprint": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@railsblueprint/blueprint-mcp@latest"
+      ],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
+    },
+    "browser-control": {
+      "type": "local",
+      "command": [
+        "node",
+        "/home/raekh/Documents/Code/browser-control-mcp/mcp-server/dist/server.js"
+      ],
+      "enabled": true,
+      "environment": {
+        "EXTENSION_SECRET": "$OPENCODE_BROWSERCONTROL_KEY",
+        "EXTENSION_PORT": "8089"
+      }
+    },
+    "tmux": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "tmux-mcp",
+        "--shell-type=zsh"
+      ],
+      "enabled": true
+    },
+    "neovim": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-neovim-server"
+      ],
+      "environment": {
+        "ALLOW_SHELL_COMMANDS": "true",
+        "NVIM_SOCKET_PATH": "/tmp/nvim"
+      },
+      "enabled": true
+    },
+    "jira": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "mcp-atlassian",
+        "--jira-url",
+        "https://viaco-net.atlassian.net",
+        "--jira-username",
+        "{env:JIRA_EMAIL}",
+        "--jira-token",
+        "{env:JIRA_API_TOKEN}"
+      ],
+      "enabled": true
+    }
+  },
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  }
+}
