@@ -1,0 +1,35 @@
+# Samaritan — Ghostty terminal theme
+# Inspired by the Samaritan AI system from Person of Interest.
+# Monochromatic palette: red, white, black, shades of gray.
+# No green, yellow, blue, cyan, purple, or orange — those are Machine colors.
+# Red is used sparingly (ANSI red + cursor); all other "colors" map to grays.
+
+# --- ANSI Normal (0-7) ---
+palette = 0=#111114
+palette = 1=#ff0000
+palette = 2=#888888
+palette = 3=#aaaaaa
+palette = 4=#666666
+palette = 5=#cc0000
+palette = 6=#999999
+palette = 7=#e0e0e0
+
+# --- ANSI Bright (8-15) ---
+palette = 8=#3a3a3e
+palette = 9=#ff3333
+palette = 10=#aaaaaa
+palette = 11=#cccccc
+palette = 12=#888888
+palette = 13=#ff0000
+palette = 14=#bbbbbb
+palette = 15=#ffffff
+
+# --- Core ---
+background = 1a1a1e
+foreground = e0e0e0
+cursor-color = ff0000
+cursor-text = 1a1a1e
+
+# --- Selection ---
+selection-background = 3a1a1a
+selection-foreground = ffffff

@@ -20,7 +20,7 @@ font-family = "Iosevka Term SS15"
 # font-family-bold-italic = "Monaspace Krypton"
 
 # font-size = 11
-font-size = 13
+font-size = 12
 font-thicken = true
 
 bold-is-bright = false
@@ -31,7 +31,7 @@ confirm-close-surface = false
 # }}}
 
 # Shaders {{{
-# custom-shader-animation = always
+custom-shader-animation = always
 
 # custom-shader = "shaders/animated-gradient-shader.glsl"
 # custom-shader = "shaders/bettercrt.glsl"
@@ -66,12 +66,14 @@ confirm-close-surface = false
 # custom-shader = "shaders/underwater.glsl"
 # custom-shader = "shaders/water.glsl"
 # custom-shader = "shaders/topographic.glsl"
-custom-shader = "shaders/topo2.glsl"
+custom-shader = "shaders/samaritan-grid.glsl"
+# custom-shader = "shaders/topo2.glsl"
 # custom-shader = "shaders/glitchy_soft.glsl"
 # }}}
 
 # Theme {{{
 # theme = "tokyonight_moon"
 # theme = "Eldritch"
-theme = "Poimandres"
+theme = "Samaritan"
+# theme = "Poimandres"
 # }}}
