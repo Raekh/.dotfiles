@@ -53,6 +53,14 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
       },
     },
+    treesitter = {
+      ensure_installed = {
+        "lua",
+        "vim",
+        -- add more arguments for adding more treesitter parsers
+      },
+      highlight = true,
+    },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
@@ -123,7 +131,7 @@ return {
         -- }}}
         -- }}}
         -- LSP {{{
-        ["<Leader>lt"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+        ["<Leader>lt"] = { "<cmd>lsp restart<cr>", desc = "Restart LSP" },
         ["<Leader>ln"] = {
           "<cmd>Telescope nx actions<CR>",
           desc = "Nx: Actions",
