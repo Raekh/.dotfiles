@@ -87,5 +87,24 @@
         "opencode/big-pickle"
       ]
     }
+  },
+  "council": {
+    "master": {
+      "model": "github-copilot/gpt-5.4"
+    },
+    "default_preset": "default",
+    "presets": {
+      "default": {
+        "reviewer": {
+          "model": "github-copilot/gpt-5.4-mini"
+        },
+        "coder": {
+          "model": "github-copilot/gpt-5.2-codex"
+        }
+      }
+    },
+    "master_fallback": [
+      "github-copilot/gpt-5.4-mini"
+    ]
   }
 }
