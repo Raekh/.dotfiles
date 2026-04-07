@@ -68,7 +68,7 @@ main() {
             kitty -e nvim "$HOME/.config/nvim/lua/plugins/"
             ;;
         15)
-            kitty -e kanshi reload
+            kitty -e sh -lc '$HOME/.config/hypr/scripts/MonitorProfiles.sh --apply; hyprctl monitors all'
             ;;
         *)
             ;;

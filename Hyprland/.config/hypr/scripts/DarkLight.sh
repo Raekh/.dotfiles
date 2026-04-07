@@ -25,7 +25,7 @@ pkill swaybg
 swww query || swww-daemon
 
 # Set swww options
-swww="swww img"
+swww="swww img --resize fit --fill-color 0E0E0E"
 effect="--transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2"
 
 # Determine current theme mode
@@ -223,4 +223,3 @@ sleep 0.3
 notify-send -u normal -i "$notif" "Themes in $next_mode Mode"
 
 exit 0
-

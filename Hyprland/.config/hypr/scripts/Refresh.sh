@@ -26,9 +26,9 @@ done
 ags -q
 
 sleep 0.3
-# Relaunch waybar
-# waybar &
-exec-once = QT_SCALE_FACTOR_ROUNDING_POLICY=Round quickshell --path /opt/ctos/bar.qml &
+# Relaunch Samaritan bar (quickshell)
+pkill -f "quickshell --path /opt/ctos/bar.qml" >/dev/null 2>&1
+QT_SCALE_FACTOR_ROUNDING_POLICY=Round quickshell --path /opt/ctos/bar.qml &
 
 # relaunch swaync
 sleep 0.5
