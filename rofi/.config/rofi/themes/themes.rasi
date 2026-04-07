@@ -1,7 +1,7 @@
 configuration {
   width: 1000;
   modi: "window,run,drun";
-  font: "Fira Code 15";
+  font: "JetBrainsMono Nerd Font 15";
 }
 
 * {
@@ -9,14 +9,14 @@ configuration {
   margin: 0;
   padding: 0;
   spacing: 0;
-  background-color: #111116;
-  text-color: #d9dad9;
-  heighlight-color: #1b1b24;
+  background-color: #0E0E0E;
+  text-color: #e0e0e0;
+  heighlight-color: #1a1a1a;
 }
 
 window {
-  border: 2px;
-  border-radius: 5px;
+  border: 1px;
+  border-radius: 0px;
   transparency: "real";
   border-color: #333333;
 }
@@ -38,10 +38,10 @@ entry {
 element {
   padding: 15 0 15 0;
   text-color: @text-color;
-  border-radius: 5;
+  border-radius: 0;
 }
 
 element selected {
-  text-color: #e4ea97;
-  background-color: @heighlight-color;
+  text-color: #0E0E0E;
+  background-color: #ff0000;
 }
