@@ -8,7 +8,7 @@
   "presets": {
     "dynamic": {
       "oracle": {
-        "model": "github-copilot/gpt-5.2-codex",
+        "model": "github-copilot/gpt-5.4",
         "variant": "high",
         "skills": [],
         "mcps": []
@@ -23,13 +23,13 @@
         ]
       },
       "fixer": {
-        "model": "github-copilot/gpt-5.2-codex",
+        "model": "github-copilot/gpt-5.4",
         "variant": "low",
         "skills": [],
         "mcps": []
       },
       "designer": {
-        "model": "github-copilot/gpt-5.2-codex",
+        "model": "github-copilot/gpt-5.4",
         "variant": "medium",
         "skills": [
           "agent-browser"
@@ -37,7 +37,7 @@
         "mcps": []
       },
       "librarian": {
-        "model": "github-copilot/gpt-5.2-codex",
+        "model": "github-copilot/gpt-5.4",
         "variant": "low",
         "skills": [],
         "mcps": [
@@ -47,7 +47,7 @@
         ]
       },
       "explorer": {
-        "model": "github-copilot/gpt-5.2-codex",
+        "model": "github-copilot/gpt-5.4",
         "variant": "low",
         "skills": [],
         "mcps": []
@@ -60,30 +60,30 @@
     "timeoutMs": 15000,
     "chains": {
       "oracle": [
-        "github-copilot/gpt-5.2-codex",
+        "github-copilot/gpt-5.4",
         "github-copilot/gpt-5.1-codex-mini",
         "opencode/big-pickle"
       ],
       "orchestrator": [
-        "github-copilot/gpt-5.2-codex",
+        "github-copilot/gpt-5.4",
         "github-copilot/gpt-5.1-codex-mini",
         "opencode/big-pickle"
       ],
       "fixer": [
-        "github-copilot/gpt-5.2-codex",
+        "github-copilot/gpt-5.4",
         "opencode/big-pickle"
       ],
       "designer": [
-        "github-copilot/gpt-5.2-codex",
+        "github-copilot/gpt-5.4",
         "github-copilot/gpt-5.1-codex-mini",
         "opencode/big-pickle"
       ],
       "librarian": [
-        "github-copilot/gpt-5.2-codex",
+        "github-copilot/gpt-5.4",
         "opencode/big-pickle"
       ],
       "explorer": [
-        "github-copilot/gpt-5.2-codex",
+        "github-copilot/gpt-5.4",
         "opencode/big-pickle"
       ]
     }
@@ -99,7 +99,7 @@
           "model": "github-copilot/gpt-5.4-mini"
         },
         "coder": {
-          "model": "github-copilot/gpt-5.2-codex"
+          "model": "github-copilot/gpt-5.4"
         }
       }
     },
