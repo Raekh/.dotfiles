@@ -1,0 +1,1656 @@
+0 verbose cli /home/raekh/.local/share/fnm/node-versions/v22.13.0/installation/bin/node /home/raekh/.local/share/fnm/node-versions/v22.13.0/installation/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@11.0.0
+2 info using node@v22.13.0
+3 silly config load:file:/home/raekh/.local/share/fnm/node-versions/v22.13.0/installation/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/raekh/.dotfiles/opencode/.config/opencode/.npmrc
+5 silly config load:file:/home/raekh/.npmrc
+6 silly config load:file:/home/raekh/.local/share/fnm/node-versions/v22.13.0/installation/etc/npmrc
+7 verbose title npm exec oh-my-opencode --help
+8 verbose argv "exec" "--yes" "--cache" "/home/raekh/.config/opencode/.npm-cache" "--package" "oh-my-opencode" "--" "oh-my-opencode" "--help"
+9 verbose logfile logs-max:10 dir:/home/raekh/.config/opencode/.npm-cache/_logs/2026-04-13T17_07_50_166Z-
+10 verbose logfile /home/raekh/.config/opencode/.npm-cache/_logs/2026-04-13T17_07_50_166Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+14 http fetch GET 200 https://registry.npmjs.org/oh-my-opencode 147ms (cache revalidated)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 verbose shrinkwrap failed to load node_modules/.package-lock.json missing from lockfile: node_modules/accepts
+17 silly idealTree buildDeps
+18 silly fetch manifest oh-my-opencode@3.17.1
+19 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode cache-miss
+20 http cache https://registry.npmjs.org/oh-my-opencode 4ms (cache hit)
+21 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode set size:619260 disposed:false
+22 silly placeDep ROOT oh-my-opencode@3.17.1 OK for:  want: 3.17.1
+23 silly fetch manifest @ast-grep/cli@^0.41.1
+24 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli cache-miss
+25 silly fetch manifest @ast-grep/napi@^0.41.1
+26 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi cache-miss
+27 silly fetch manifest @clack/prompts@^0.11.0
+28 silly packumentCache full:https://registry.npmjs.org/@clack%2fprompts cache-miss
+29 silly fetch manifest @code-yeongyu/comment-checker@^0.7.0
+30 silly packumentCache full:https://registry.npmjs.org/@code-yeongyu%2fcomment-checker cache-miss
+31 silly fetch manifest @modelcontextprotocol/sdk@^1.25.2
+32 silly packumentCache full:https://registry.npmjs.org/@modelcontextprotocol%2fsdk cache-miss
+33 silly fetch manifest @opencode-ai/plugin@^1.4.0
+34 silly packumentCache full:https://registry.npmjs.org/@opencode-ai%2fplugin cache-miss
+35 silly fetch manifest @opencode-ai/sdk@^1.4.0
+36 silly packumentCache full:https://registry.npmjs.org/@opencode-ai%2fsdk cache-miss
+37 silly fetch manifest commander@^14.0.2
+38 silly packumentCache full:https://registry.npmjs.org/commander cache-miss
+39 silly fetch manifest detect-libc@^2.0.0
+40 silly packumentCache full:https://registry.npmjs.org/detect-libc cache-miss
+41 silly fetch manifest diff@^8.0.3
+42 silly packumentCache full:https://registry.npmjs.org/diff cache-miss
+43 silly fetch manifest js-yaml@^4.1.1
+44 silly packumentCache full:https://registry.npmjs.org/js-yaml cache-miss
+45 silly fetch manifest jsonc-parser@^3.3.1
+46 silly packumentCache full:https://registry.npmjs.org/jsonc-parser cache-miss
+47 silly fetch manifest picocolors@^1.1.1
+48 silly packumentCache full:https://registry.npmjs.org/picocolors cache-miss
+49 silly fetch manifest picomatch@^4.0.2
+50 silly packumentCache full:https://registry.npmjs.org/picomatch cache-miss
+51 silly fetch manifest posthog-node@^5.29.2
+52 silly packumentCache full:https://registry.npmjs.org/posthog-node cache-miss
+53 silly fetch manifest vscode-jsonrpc@^8.2.0
+54 silly packumentCache full:https://registry.npmjs.org/vscode-jsonrpc cache-miss
+55 silly fetch manifest zod@^4.3.0
+56 silly packumentCache full:https://registry.npmjs.org/zod cache-miss
+57 silly fetch manifest oh-my-opencode-darwin-arm64@3.17.1
+58 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-darwin-arm64 cache-miss
+59 silly fetch manifest oh-my-opencode-darwin-x64@3.17.1
+60 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-darwin-x64 cache-miss
+61 http cache https://registry.npmjs.org/@ast-grep%2fcli 12ms (cache hit)
+62 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli set size:331018 disposed:false
+63 silly fetch manifest oh-my-opencode-darwin-x64-baseline@3.17.1
+64 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-darwin-x64-baseline cache-miss
+65 http cache https://registry.npmjs.org/@clack%2fprompts 17ms (cache hit)
+66 silly packumentCache full:https://registry.npmjs.org/@clack%2fprompts set size:155508 disposed:false
+67 silly fetch manifest oh-my-opencode-linux-arm64@3.17.1
+68 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-arm64 cache-miss
+69 http cache https://registry.npmjs.org/commander 20ms (cache hit)
+70 silly packumentCache full:https://registry.npmjs.org/commander set size:306325 disposed:false
+71 silly fetch manifest oh-my-opencode-linux-arm64-musl@3.17.1
+72 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-arm64-musl cache-miss
+73 http cache https://registry.npmjs.org/detect-libc 25ms (cache hit)
+74 silly packumentCache full:https://registry.npmjs.org/detect-libc set size:47861 disposed:false
+75 silly fetch manifest oh-my-opencode-linux-x64@3.17.1
+76 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64 cache-miss
+77 http cache https://registry.npmjs.org/@ast-grep%2fnapi 28ms (cache hit)
+78 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi set size:482376 disposed:false
+79 silly fetch manifest oh-my-opencode-linux-x64-baseline@3.17.1
+80 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64-baseline cache-miss
+81 http cache https://registry.npmjs.org/@modelcontextprotocol%2fsdk 36ms (cache hit)
+82 silly packumentCache full:https://registry.npmjs.org/@modelcontextprotocol%2fsdk set size:295652 disposed:false
+83 silly fetch manifest oh-my-opencode-linux-x64-musl@3.17.1
+84 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64-musl cache-miss
+85 http cache https://registry.npmjs.org/@code-yeongyu%2fcomment-checker 40ms (cache hit)
+86 silly packumentCache full:https://registry.npmjs.org/@code-yeongyu%2fcomment-checker set size:15220 disposed:false
+87 silly fetch manifest oh-my-opencode-linux-x64-musl-baseline@3.17.1
+88 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64-musl-baseline cache-miss
+89 http cache https://registry.npmjs.org/picocolors 40ms (cache hit)
+90 silly packumentCache full:https://registry.npmjs.org/picocolors set size:16648 disposed:false
+91 silly fetch manifest oh-my-opencode-windows-x64@3.17.1
+92 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-windows-x64 cache-miss
+93 http cache https://registry.npmjs.org/jsonc-parser 43ms (cache hit)
+94 silly packumentCache full:https://registry.npmjs.org/jsonc-parser set size:99919 disposed:false
+95 silly fetch manifest oh-my-opencode-windows-x64-baseline@3.17.1
+96 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-windows-x64-baseline cache-miss
+97 http cache https://registry.npmjs.org/js-yaml 45ms (cache hit)
+98 silly packumentCache full:https://registry.npmjs.org/js-yaml set size:152232 disposed:false
+99 http cache https://registry.npmjs.org/posthog-node 47ms (cache hit)
+100 silly packumentCache full:https://registry.npmjs.org/posthog-node set size:627730 disposed:false
+101 http cache https://registry.npmjs.org/oh-my-opencode-darwin-arm64 53ms (cache hit)
+102 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-darwin-arm64 set size:104383 disposed:false
+103 http cache https://registry.npmjs.org/diff 55ms (cache hit)
+104 silly packumentCache full:https://registry.npmjs.org/diff set size:154400 disposed:false
+105 http cache https://registry.npmjs.org/picomatch 56ms (cache hit)
+106 silly packumentCache full:https://registry.npmjs.org/picomatch set size:126376 disposed:false
+107 http cache https://registry.npmjs.org/zod 62ms (cache hit)
+108 silly packumentCache full:https://registry.npmjs.org/zod set size:3489329 disposed:false
+109 http cache https://registry.npmjs.org/@opencode-ai%2fplugin 101ms (cache hit)
+110 silly packumentCache full:https://registry.npmjs.org/@opencode-ai%2fplugin set size:11228834 disposed:false
+111 http cache https://registry.npmjs.org/@opencode-ai%2fsdk 154ms (cache hit)
+112 silly packumentCache full:https://registry.npmjs.org/@opencode-ai%2fsdk set size:13156942 disposed:false
+113 http cache https://registry.npmjs.org/oh-my-opencode-darwin-x64 208ms (cache hit)
+114 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-darwin-x64 set size:103371 disposed:false
+115 http cache https://registry.npmjs.org/vscode-jsonrpc 214ms (cache hit)
+116 silly packumentCache full:https://registry.npmjs.org/vscode-jsonrpc set size:384137 disposed:false
+117 http cache https://registry.npmjs.org/oh-my-opencode-darwin-x64-baseline 205ms (cache hit)
+118 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-darwin-x64-baseline set size:35447 disposed:false
+119 http cache https://registry.npmjs.org/oh-my-opencode-linux-x64 195ms (cache hit)
+120 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64 set size:104009 disposed:false
+121 http cache https://registry.npmjs.org/oh-my-opencode-linux-arm64-musl 198ms (cache hit)
+122 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-arm64-musl set size:106300 disposed:false
+123 http cache https://registry.npmjs.org/oh-my-opencode-linux-x64-musl-baseline 181ms (cache hit)
+124 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64-musl-baseline set size:36375 disposed:false
+125 http cache https://registry.npmjs.org/oh-my-opencode-linux-x64-baseline 192ms (cache hit)
+126 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64-baseline set size:35653 disposed:false
+127 http cache https://registry.npmjs.org/oh-my-opencode-windows-x64 180ms (cache hit)
+128 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-windows-x64 set size:103225 disposed:false
+129 http cache https://registry.npmjs.org/oh-my-opencode-linux-arm64 204ms (cache hit)
+130 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-arm64 set size:104176 disposed:false
+131 http cache https://registry.npmjs.org/oh-my-opencode-windows-x64-baseline 179ms (cache hit)
+132 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-windows-x64-baseline set size:35678 disposed:false
+133 http cache https://registry.npmjs.org/oh-my-opencode-linux-x64-musl 185ms (cache hit)
+134 silly packumentCache full:https://registry.npmjs.org/oh-my-opencode-linux-x64-musl set size:105335 disposed:false
+135 silly fetch manifest @cfworker/json-schema@^4.1.1
+136 silly packumentCache full:https://registry.npmjs.org/@cfworker%2fjson-schema cache-miss
+137 http cache https://registry.npmjs.org/@cfworker%2fjson-schema 2ms (cache hit)
+138 silly packumentCache full:https://registry.npmjs.org/@cfworker%2fjson-schema set size:144207 disposed:false
+139 silly fetch manifest @opentui/core@>=0.1.97
+140 silly packumentCache full:https://registry.npmjs.org/@opentui%2fcore cache-miss
+141 http cache https://registry.npmjs.org/@opentui%2fcore 2ms (cache hit)
+142 silly packumentCache full:https://registry.npmjs.org/@opentui%2fcore set size:474955 disposed:false
+143 silly fetch manifest web-tree-sitter@0.25.10
+144 silly packumentCache full:https://registry.npmjs.org/web-tree-sitter cache-miss
+145 http cache https://registry.npmjs.org/web-tree-sitter 1ms (cache hit)
+146 silly packumentCache full:https://registry.npmjs.org/web-tree-sitter set size:179853 disposed:false
+147 silly fetch manifest @types/emscripten@^1.40.0
+148 silly packumentCache full:https://registry.npmjs.org/@types%2femscripten cache-miss
+149 http cache https://registry.npmjs.org/@types%2femscripten 1ms (cache hit)
+150 silly packumentCache full:https://registry.npmjs.org/@types%2femscripten set size:73380 disposed:false
+151 silly fetch manifest @opentui/solid@>=0.1.97
+152 silly packumentCache full:https://registry.npmjs.org/@opentui%2fsolid cache-miss
+153 http cache https://registry.npmjs.org/@opentui%2fsolid 1ms (cache hit)
+154 silly packumentCache full:https://registry.npmjs.org/@opentui%2fsolid set size:381780 disposed:false
+155 silly fetch manifest solid-js@1.9.11
+156 silly packumentCache full:https://registry.npmjs.org/solid-js cache-miss
+157 http cache https://registry.npmjs.org/solid-js 4ms (cache hit)
+158 silly packumentCache full:https://registry.npmjs.org/solid-js set size:2134716 disposed:false
+159 silly fetch manifest rxjs@^7.0.0
+160 silly packumentCache full:https://registry.npmjs.org/rxjs cache-miss
+161 http cache https://registry.npmjs.org/rxjs 6ms (cache hit)
+162 silly packumentCache full:https://registry.npmjs.org/rxjs set size:980097 disposed:false
+163 silly placeDep ROOT @ast-grep/cli@0.41.1 OK for: oh-my-opencode@3.17.1 want: ^0.41.1
+164 silly placeDep ROOT @ast-grep/napi@0.41.1 OK for: oh-my-opencode@3.17.1 want: ^0.41.1
+165 silly placeDep ROOT @clack/prompts@0.11.0 OK for: oh-my-opencode@3.17.1 want: ^0.11.0
+166 silly placeDep ROOT @code-yeongyu/comment-checker@0.7.0 OK for: oh-my-opencode@3.17.1 want: ^0.7.0
+167 silly placeDep ROOT @modelcontextprotocol/sdk@1.29.0 OK for: oh-my-opencode@3.17.1 want: ^1.25.2
+168 silly placeDep ROOT @opencode-ai/plugin@1.4.3 OK for: oh-my-opencode@3.17.1 want: ^1.4.0
+169 silly placeDep ROOT @opencode-ai/sdk@1.4.3 OK for: oh-my-opencode@3.17.1 want: ^1.4.0
+170 silly placeDep ROOT commander@14.0.3 OK for: oh-my-opencode@3.17.1 want: ^14.0.2
+171 silly placeDep ROOT detect-libc@2.1.2 OK for: oh-my-opencode@3.17.1 want: ^2.0.0
+172 silly placeDep ROOT diff@8.0.4 OK for: oh-my-opencode@3.17.1 want: ^8.0.3
+173 silly placeDep ROOT js-yaml@4.1.1 OK for: oh-my-opencode@3.17.1 want: ^4.1.1
+174 silly placeDep ROOT jsonc-parser@3.3.1 OK for: oh-my-opencode@3.17.1 want: ^3.3.1
+175 silly placeDep ROOT oh-my-opencode-darwin-arm64@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+176 silly placeDep ROOT oh-my-opencode-darwin-x64@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+177 silly placeDep ROOT oh-my-opencode-darwin-x64-baseline@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+178 silly placeDep ROOT oh-my-opencode-linux-arm64@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+179 silly placeDep ROOT oh-my-opencode-linux-arm64-musl@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+180 silly placeDep ROOT oh-my-opencode-linux-x64@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+181 silly placeDep ROOT oh-my-opencode-linux-x64-baseline@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+182 silly placeDep ROOT oh-my-opencode-linux-x64-musl@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+183 silly placeDep ROOT oh-my-opencode-linux-x64-musl-baseline@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+184 silly placeDep ROOT oh-my-opencode-windows-x64@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+185 silly placeDep ROOT oh-my-opencode-windows-x64-baseline@3.17.1 OK for: oh-my-opencode@3.17.1 want: 3.17.1
+186 silly placeDep ROOT picocolors@1.1.1 OK for: oh-my-opencode@3.17.1 want: ^1.1.1
+187 silly placeDep ROOT picomatch@4.0.4 OK for: oh-my-opencode@3.17.1 want: ^4.0.2
+188 silly placeDep ROOT posthog-node@5.29.2 OK for: oh-my-opencode@3.17.1 want: ^5.29.2
+189 silly placeDep ROOT vscode-jsonrpc@8.2.1 OK for: oh-my-opencode@3.17.1 want: ^8.2.0
+190 silly placeDep ROOT zod@4.3.6 OK for: oh-my-opencode@3.17.1 want: ^4.3.0
+191 silly fetch manifest detect-libc@2.1.2
+192 silly packumentCache full:https://registry.npmjs.org/detect-libc cache-hit
+193 silly fetch manifest @ast-grep/cli-darwin-x64@0.41.1
+194 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-darwin-x64 cache-miss
+195 silly fetch manifest @ast-grep/cli-darwin-arm64@0.41.1
+196 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-darwin-arm64 cache-miss
+197 silly fetch manifest @ast-grep/cli-linux-x64-gnu@0.41.1
+198 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-linux-x64-gnu cache-miss
+199 silly fetch manifest @ast-grep/cli-win32-x64-msvc@0.41.1
+200 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-win32-x64-msvc cache-miss
+201 silly fetch manifest @ast-grep/cli-linux-arm64-gnu@0.41.1
+202 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-linux-arm64-gnu cache-miss
+203 silly fetch manifest @ast-grep/cli-win32-ia32-msvc@0.41.1
+204 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-win32-ia32-msvc cache-miss
+205 silly fetch manifest @ast-grep/cli-win32-arm64-msvc@0.41.1
+206 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-win32-arm64-msvc cache-miss
+207 silly fetch manifest @ast-grep/napi-darwin-x64@0.41.1
+208 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-darwin-x64 cache-miss
+209 silly fetch manifest @ast-grep/napi-darwin-arm64@0.41.1
+210 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-darwin-arm64 cache-miss
+211 silly fetch manifest @ast-grep/napi-linux-x64-gnu@0.41.1
+212 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-x64-gnu cache-miss
+213 silly fetch manifest @ast-grep/napi-linux-x64-musl@0.41.1
+214 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-x64-musl cache-miss
+215 silly fetch manifest @ast-grep/napi-win32-x64-msvc@0.41.1
+216 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-win32-x64-msvc cache-miss
+217 silly fetch manifest @ast-grep/napi-linux-arm64-gnu@0.41.1
+218 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-arm64-gnu cache-miss
+219 silly fetch manifest @ast-grep/napi-win32-ia32-msvc@0.41.1
+220 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-win32-ia32-msvc cache-miss
+221 silly fetch manifest @ast-grep/napi-linux-arm64-musl@0.41.1
+222 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-arm64-musl cache-miss
+223 silly fetch manifest @ast-grep/napi-win32-arm64-msvc@0.41.1
+224 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-win32-arm64-msvc cache-miss
+225 silly fetch manifest picocolors@^1.0.0
+226 silly packumentCache full:https://registry.npmjs.org/picocolors cache-hit
+227 silly fetch manifest sisteransi@^1.0.5
+228 silly packumentCache full:https://registry.npmjs.org/sisteransi cache-miss
+229 silly fetch manifest @clack/core@0.5.0
+230 silly packumentCache full:https://registry.npmjs.org/@clack%2fcore cache-miss
+231 silly fetch manifest @hono/node-server@^1.19.9
+232 silly packumentCache full:https://registry.npmjs.org/@hono%2fnode-server cache-miss
+233 http cache https://registry.npmjs.org/@ast-grep%2fcli-linux-x64-gnu 10ms (cache hit)
+234 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-linux-x64-gnu set size:292960 disposed:false
+235 silly fetch manifest ajv@^8.17.1
+236 silly packumentCache full:https://registry.npmjs.org/ajv cache-miss
+237 http cache https://registry.npmjs.org/@ast-grep%2fnapi-darwin-arm64 11ms (cache hit)
+238 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-darwin-arm64 set size:297871 disposed:false
+239 silly fetch manifest ajv-formats@^3.0.1
+240 silly packumentCache full:https://registry.npmjs.org/ajv-formats cache-miss
+241 http cache https://registry.npmjs.org/@ast-grep%2fcli-darwin-arm64 14ms (cache hit)
+242 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-darwin-arm64 set size:291323 disposed:false
+243 silly fetch manifest content-type@^1.0.5
+244 silly packumentCache full:https://registry.npmjs.org/content-type cache-miss
+245 http cache https://registry.npmjs.org/@ast-grep%2fcli-darwin-x64 15ms (cache hit)
+246 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-darwin-x64 set size:289283 disposed:false
+247 silly fetch manifest cors@^2.8.5
+248 silly packumentCache full:https://registry.npmjs.org/cors cache-miss
+249 http cache https://registry.npmjs.org/@ast-grep%2fnapi-linux-x64-gnu 16ms (cache hit)
+250 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-x64-gnu set size:301223 disposed:false
+251 silly fetch manifest cross-spawn@^7.0.5
+252 silly packumentCache full:https://registry.npmjs.org/cross-spawn cache-miss
+253 http cache https://registry.npmjs.org/@ast-grep%2fcli-win32-arm64-msvc 17ms (cache hit)
+254 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-win32-arm64-msvc set size:196331 disposed:false
+255 silly fetch manifest eventsource@^3.0.2
+256 silly packumentCache full:https://registry.npmjs.org/eventsource cache-miss
+257 http cache https://registry.npmjs.org/@ast-grep%2fcli-linux-arm64-gnu 19ms (cache hit)
+258 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-linux-arm64-gnu set size:197806 disposed:false
+259 silly fetch manifest eventsource-parser@^3.0.0
+260 silly packumentCache full:https://registry.npmjs.org/eventsource-parser cache-miss
+261 http cache https://registry.npmjs.org/@ast-grep%2fcli-win32-x64-msvc 21ms (cache hit)
+262 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-win32-x64-msvc set size:288401 disposed:false
+263 silly fetch manifest express@^5.2.1
+264 silly packumentCache full:https://registry.npmjs.org/express cache-miss
+265 http cache https://registry.npmjs.org/@ast-grep%2fnapi-linux-x64-musl 21ms (cache hit)
+266 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-x64-musl set size:147534 disposed:false
+267 silly fetch manifest express-rate-limit@^8.2.1
+268 silly packumentCache full:https://registry.npmjs.org/express-rate-limit cache-miss
+269 http cache https://registry.npmjs.org/@clack%2fcore 21ms (cache hit)
+270 silly packumentCache full:https://registry.npmjs.org/@clack%2fcore set size:130929 disposed:false
+271 silly fetch manifest hono@^4.11.4
+272 silly packumentCache full:https://registry.npmjs.org/hono cache-miss
+273 http cache https://registry.npmjs.org/@ast-grep%2fnapi-linux-arm64-musl 23ms (cache hit)
+274 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-arm64-musl set size:108112 disposed:false
+275 silly fetch manifest jose@^6.1.3
+276 silly packumentCache full:https://registry.npmjs.org/jose cache-miss
+277 http cache https://registry.npmjs.org/@ast-grep%2fcli-win32-ia32-msvc 24ms (cache hit)
+278 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fcli-win32-ia32-msvc set size:195571 disposed:false
+279 silly fetch manifest json-schema-typed@^8.0.2
+280 silly packumentCache full:https://registry.npmjs.org/json-schema-typed cache-miss
+281 http cache https://registry.npmjs.org/@ast-grep%2fnapi-linux-arm64-gnu 25ms (cache hit)
+282 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-linux-arm64-gnu set size:161407 disposed:false
+283 silly fetch manifest pkce-challenge@^5.0.0
+284 silly packumentCache full:https://registry.npmjs.org/pkce-challenge cache-miss
+285 http cache https://registry.npmjs.org/@ast-grep%2fnapi-win32-ia32-msvc 27ms (cache hit)
+286 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-win32-ia32-msvc set size:271778 disposed:false
+287 silly fetch manifest raw-body@^3.0.0
+288 silly packumentCache full:https://registry.npmjs.org/raw-body cache-miss
+289 http cache https://registry.npmjs.org/@ast-grep%2fnapi-darwin-x64 29ms (cache hit)
+290 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-darwin-x64 set size:282827 disposed:false
+291 silly fetch manifest zod@^3.25 || ^4.0
+292 silly packumentCache full:https://registry.npmjs.org/zod cache-miss
+293 http cache https://registry.npmjs.org/@ast-grep%2fnapi-win32-x64-msvc 31ms (cache hit)
+294 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-win32-x64-msvc set size:299378 disposed:false
+295 silly fetch manifest zod-to-json-schema@^3.25.1
+296 silly packumentCache full:https://registry.npmjs.org/zod-to-json-schema cache-miss
+297 http cache https://registry.npmjs.org/@ast-grep%2fnapi-win32-arm64-msvc 33ms (cache hit)
+298 silly packumentCache full:https://registry.npmjs.org/@ast-grep%2fnapi-win32-arm64-msvc set size:272856 disposed:false
+299 silly fetch manifest zod@4.1.8
+300 silly packumentCache full:https://registry.npmjs.org/zod cache-miss
+301 http cache https://registry.npmjs.org/sisteransi 34ms (cache hit)
+302 silly packumentCache full:https://registry.npmjs.org/sisteransi set size:23215 disposed:false
+303 silly fetch manifest @opencode-ai/sdk@1.4.3
+304 silly packumentCache full:https://registry.npmjs.org/@opencode-ai%2fsdk cache-miss
+305 http cache https://registry.npmjs.org/@hono%2fnode-server 34ms (cache hit)
+306 silly packumentCache full:https://registry.npmjs.org/@hono%2fnode-server set size:238032 disposed:false
+307 silly fetch manifest cross-spawn@7.0.6
+308 silly packumentCache full:https://registry.npmjs.org/cross-spawn cache-miss
+309 http cache https://registry.npmjs.org/cross-spawn 33ms (cache hit)
+310 silly packumentCache full:https://registry.npmjs.org/cross-spawn set size:109066 disposed:false
+311 silly fetch manifest argparse@^2.0.1
+312 silly packumentCache full:https://registry.npmjs.org/argparse cache-miss
+313 http cache https://registry.npmjs.org/content-type 37ms (cache hit)
+314 silly packumentCache full:https://registry.npmjs.org/content-type set size:17311 disposed:false
+315 silly fetch manifest @posthog/core@1.25.2
+316 silly packumentCache full:https://registry.npmjs.org/@posthog%2fcore cache-miss
+317 http cache https://registry.npmjs.org/eventsource 34ms (cache hit)
+318 silly packumentCache full:https://registry.npmjs.org/eventsource set size:128214 disposed:false
+319 http cache https://registry.npmjs.org/ajv-formats 42ms (cache hit)
+320 silly packumentCache full:https://registry.npmjs.org/ajv-formats set size:141264 disposed:false
+321 http cache https://registry.npmjs.org/cors 40ms (cache hit)
+322 silly packumentCache full:https://registry.npmjs.org/cors set size:77956 disposed:false
+323 http cache https://registry.npmjs.org/eventsource-parser 38ms (cache hit)
+324 silly packumentCache full:https://registry.npmjs.org/eventsource-parser set size:66053 disposed:false
+325 http cache https://registry.npmjs.org/json-schema-typed 33ms (cache hit)
+326 silly packumentCache full:https://registry.npmjs.org/json-schema-typed set size:26165 disposed:false
+327 http cache https://registry.npmjs.org/zod-to-json-schema 27ms (cache hit)
+328 silly packumentCache full:https://registry.npmjs.org/zod-to-json-schema set size:309584 disposed:false
+329 http cache https://registry.npmjs.org/ajv 56ms (cache hit)
+330 silly packumentCache full:https://registry.npmjs.org/ajv set size:1120197 disposed:false
+331 http cache https://registry.npmjs.org/express-rate-limit 51ms (cache hit)
+332 silly packumentCache full:https://registry.npmjs.org/express-rate-limit set size:422563 disposed:false
+333 http cache https://registry.npmjs.org/express 56ms (cache hit)
+334 silly packumentCache full:https://registry.npmjs.org/express set size:801257 disposed:false
+335 http cache https://registry.npmjs.org/raw-body 55ms (cache hit)
+336 silly packumentCache full:https://registry.npmjs.org/raw-body set size:117822 disposed:false
+337 http cache https://registry.npmjs.org/jose 62ms (cache hit)
+338 silly packumentCache full:https://registry.npmjs.org/jose set size:1407632 disposed:false
+339 http cache https://registry.npmjs.org/zod 61ms (cache hit)
+340 silly packumentCache full:https://registry.npmjs.org/zod set size:3489329 disposed:false
+341 http cache https://registry.npmjs.org/zod 81ms (cache hit)
+342 silly packumentCache full:https://registry.npmjs.org/zod set size:3489329 disposed:false
+343 http cache https://registry.npmjs.org/hono 110ms (cache hit)
+344 silly packumentCache full:https://registry.npmjs.org/hono set size:5582815 disposed:false
+345 http cache https://registry.npmjs.org/cross-spawn 123ms (cache hit)
+346 silly packumentCache full:https://registry.npmjs.org/cross-spawn set size:109066 disposed:false
+347 silly packumentCache full:https://registry.npmjs.org/cross-spawn dispose
+348 http cache https://registry.npmjs.org/pkce-challenge 135ms (cache hit)
+349 silly packumentCache full:https://registry.npmjs.org/pkce-challenge set size:37734 disposed:false
+350 http cache https://registry.npmjs.org/@opencode-ai%2fsdk 144ms (cache hit)
+351 silly packumentCache full:https://registry.npmjs.org/@opencode-ai%2fsdk set size:13156942 disposed:false
+352 http cache https://registry.npmjs.org/argparse 176ms (cache hit)
+353 silly packumentCache full:https://registry.npmjs.org/argparse set size:49266 disposed:false
+354 http cache https://registry.npmjs.org/@posthog%2fcore 176ms (cache hit)
+355 silly packumentCache full:https://registry.npmjs.org/@posthog%2fcore set size:197899 disposed:false
+356 silly placeDep ROOT @ast-grep/cli-darwin-arm64@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+357 silly placeDep ROOT @ast-grep/cli-darwin-x64@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+358 silly placeDep ROOT @ast-grep/cli-linux-arm64-gnu@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+359 silly placeDep ROOT @ast-grep/cli-linux-x64-gnu@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+360 silly placeDep ROOT @ast-grep/cli-win32-arm64-msvc@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+361 silly placeDep ROOT @ast-grep/cli-win32-ia32-msvc@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+362 silly placeDep ROOT @ast-grep/cli-win32-x64-msvc@0.41.1 OK for: @ast-grep/cli@0.41.1 want: 0.41.1
+363 silly placeDep ROOT @ast-grep/napi-darwin-arm64@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+364 silly placeDep ROOT @ast-grep/napi-darwin-x64@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+365 silly placeDep ROOT @ast-grep/napi-linux-arm64-gnu@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+366 silly placeDep ROOT @ast-grep/napi-linux-arm64-musl@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+367 silly placeDep ROOT @ast-grep/napi-linux-x64-gnu@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+368 silly placeDep ROOT @ast-grep/napi-linux-x64-musl@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+369 silly placeDep ROOT @ast-grep/napi-win32-arm64-msvc@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+370 silly placeDep ROOT @ast-grep/napi-win32-ia32-msvc@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+371 silly placeDep ROOT @ast-grep/napi-win32-x64-msvc@0.41.1 OK for: @ast-grep/napi@0.41.1 want: 0.41.1
+372 silly placeDep ROOT @clack/core@0.5.0 OK for: @clack/prompts@0.11.0 want: 0.5.0
+373 silly placeDep ROOT sisteransi@1.0.5 OK for: @clack/prompts@0.11.0 want: ^1.0.5
+374 silly placeDep ROOT @hono/node-server@1.19.14 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^1.19.9
+375 silly placeDep ROOT hono@4.12.12 OK for: @hono/node-server@1.19.14 want: ^4
+376 silly placeDep ROOT ajv@8.18.0 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^8.17.1
+377 silly placeDep ROOT ajv-formats@3.0.1 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^3.0.1
+378 silly placeDep ROOT content-type@1.0.5 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^1.0.5
+379 silly placeDep ROOT cors@2.8.6 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^2.8.5
+380 silly placeDep ROOT cross-spawn@7.0.6 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^7.0.5
+381 silly placeDep ROOT eventsource@3.0.7 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^3.0.2
+382 silly placeDep ROOT eventsource-parser@3.0.6 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^3.0.0
+383 silly placeDep ROOT express@5.2.1 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^5.2.1
+384 silly placeDep ROOT express-rate-limit@8.3.2 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^8.2.1
+385 silly placeDep ROOT jose@6.2.2 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^6.1.3
+386 silly placeDep ROOT json-schema-typed@8.0.2 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^8.0.2
+387 silly placeDep ROOT pkce-challenge@5.0.1 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^5.0.0
+388 silly placeDep ROOT raw-body@3.0.2 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^3.0.0
+389 silly placeDep ROOT zod-to-json-schema@3.25.2 OK for: @modelcontextprotocol/sdk@1.29.0 want: ^3.25.1
+390 silly fetch manifest fast-uri@^3.0.1
+391 silly packumentCache full:https://registry.npmjs.org/fast-uri cache-miss
+392 silly fetch manifest fast-deep-equal@^3.1.3
+393 silly packumentCache full:https://registry.npmjs.org/fast-deep-equal cache-miss
+394 silly fetch manifest require-from-string@^2.0.2
+395 silly packumentCache full:https://registry.npmjs.org/require-from-string cache-miss
+396 silly fetch manifest json-schema-traverse@^1.0.0
+397 silly packumentCache full:https://registry.npmjs.org/json-schema-traverse cache-miss
+398 silly fetch manifest object-assign@^4
+399 silly packumentCache full:https://registry.npmjs.org/object-assign cache-miss
+400 silly fetch manifest vary@^1
+401 silly packumentCache full:https://registry.npmjs.org/vary cache-miss
+402 silly fetch manifest which@^2.0.1
+403 silly packumentCache full:https://registry.npmjs.org/which cache-miss
+404 silly fetch manifest path-key@^3.1.0
+405 silly packumentCache full:https://registry.npmjs.org/path-key cache-miss
+406 silly fetch manifest shebang-command@^2.0.0
+407 silly packumentCache full:https://registry.npmjs.org/shebang-command cache-miss
+408 silly fetch manifest eventsource-parser@^3.0.1
+409 silly packumentCache full:https://registry.npmjs.org/eventsource-parser cache-hit
+410 silly fetch manifest qs@^6.14.0
+411 silly packumentCache full:https://registry.npmjs.org/qs cache-miss
+412 silly fetch manifest depd@^2.0.0
+413 silly packumentCache full:https://registry.npmjs.org/depd cache-miss
+414 silly fetch manifest etag@^1.8.1
+415 silly packumentCache full:https://registry.npmjs.org/etag cache-miss
+416 silly fetch manifest once@^1.4.0
+417 silly packumentCache full:https://registry.npmjs.org/once cache-miss
+418 silly fetch manifest send@^1.1.0
+419 silly packumentCache full:https://registry.npmjs.org/send cache-miss
+420 silly fetch manifest vary@^1.1.2
+421 silly packumentCache full:https://registry.npmjs.org/vary cache-miss
+422 silly fetch manifest debug@^4.4.0
+423 silly packumentCache full:https://registry.npmjs.org/debug cache-miss
+424 silly fetch manifest fresh@^2.0.0
+425 silly packumentCache full:https://registry.npmjs.org/fresh cache-miss
+426 silly fetch manifest cookie@^0.7.1
+427 silly packumentCache full:https://registry.npmjs.org/cookie cache-miss
+428 silly fetch manifest router@^2.2.0
+429 silly packumentCache full:https://registry.npmjs.org/router cache-miss
+430 http cache https://registry.npmjs.org/require-from-string 10ms (cache hit)
+431 silly packumentCache full:https://registry.npmjs.org/require-from-string set size:15128 disposed:false
+432 silly fetch manifest accepts@^2.0.0
+433 silly packumentCache full:https://registry.npmjs.org/accepts cache-miss
+434 http cache https://registry.npmjs.org/path-key 11ms (cache hit)
+435 silly packumentCache full:https://registry.npmjs.org/path-key set size:16975 disposed:false
+436 silly fetch manifest type-is@^2.0.1
+437 silly packumentCache full:https://registry.npmjs.org/type-is cache-miss
+438 http cache https://registry.npmjs.org/vary 12ms (cache hit)
+439 silly packumentCache full:https://registry.npmjs.org/vary set size:16018 disposed:false
+440 silly fetch manifest parseurl@^1.3.3
+441 silly packumentCache full:https://registry.npmjs.org/parseurl cache-miss
+442 http cache https://registry.npmjs.org/fast-uri 12ms (cache hit)
+443 silly packumentCache full:https://registry.npmjs.org/fast-uri set size:61472 disposed:false
+444 silly fetch manifest statuses@^2.0.1
+445 silly packumentCache full:https://registry.npmjs.org/statuses cache-miss
+446 http cache https://registry.npmjs.org/fast-deep-equal 13ms (cache hit)
+447 silly packumentCache full:https://registry.npmjs.org/fast-deep-equal set size:48634 disposed:false
+448 silly fetch manifest encodeurl@^2.0.0
+449 silly packumentCache full:https://registry.npmjs.org/encodeurl cache-miss
+450 http cache https://registry.npmjs.org/json-schema-traverse 14ms (cache hit)
+451 silly packumentCache full:https://registry.npmjs.org/json-schema-traverse set size:23537 disposed:false
+452 silly fetch manifest mime-types@^3.0.0
+453 silly packumentCache full:https://registry.npmjs.org/mime-types cache-miss
+454 http cache https://registry.npmjs.org/etag 14ms (cache hit)
+455 silly packumentCache full:https://registry.npmjs.org/etag set size:30032 disposed:false
+456 silly fetch manifest proxy-addr@^2.0.7
+457 silly packumentCache full:https://registry.npmjs.org/proxy-addr cache-miss
+458 http cache https://registry.npmjs.org/which 16ms (cache hit)
+459 silly packumentCache full:https://registry.npmjs.org/which set size:67747 disposed:false
+460 silly fetch manifest body-parser@^2.2.1
+461 silly packumentCache full:https://registry.npmjs.org/body-parser cache-miss
+462 http cache https://registry.npmjs.org/depd 16ms (cache hit)
+463 silly packumentCache full:https://registry.npmjs.org/depd set size:40182 disposed:false
+464 silly fetch manifest escape-html@^1.0.3
+465 silly packumentCache full:https://registry.npmjs.org/escape-html cache-miss
+466 http cache https://registry.npmjs.org/once 16ms (cache hit)
+467 silly packumentCache full:https://registry.npmjs.org/once set size:11752 disposed:false
+468 silly fetch manifest http-errors@^2.0.0
+469 silly packumentCache full:https://registry.npmjs.org/http-errors cache-miss
+470 http cache https://registry.npmjs.org/send 17ms (cache hit)
+471 silly packumentCache full:https://registry.npmjs.org/send set size:152810 disposed:false
+472 silly fetch manifest on-finished@^2.4.1
+473 silly packumentCache full:https://registry.npmjs.org/on-finished cache-miss
+474 http cache https://registry.npmjs.org/fresh 18ms (cache hit)
+475 silly packumentCache full:https://registry.npmjs.org/fresh set size:25427 disposed:false
+476 silly fetch manifest finalhandler@^2.1.0
+477 silly packumentCache full:https://registry.npmjs.org/finalhandler cache-miss
+478 http cache https://registry.npmjs.org/shebang-command 20ms (cache hit)
+479 silly packumentCache full:https://registry.npmjs.org/shebang-command set size:8525 disposed:false
+480 silly fetch manifest range-parser@^1.2.1
+481 silly packumentCache full:https://registry.npmjs.org/range-parser cache-miss
+482 http cache https://registry.npmjs.org/qs 21ms (cache hit)
+483 silly packumentCache full:https://registry.npmjs.org/qs set size:353582 disposed:false
+484 silly fetch manifest serve-static@^2.2.0
+485 silly packumentCache full:https://registry.npmjs.org/serve-static cache-miss
+486 http cache https://registry.npmjs.org/cookie 22ms (cache hit)
+487 silly packumentCache full:https://registry.npmjs.org/cookie set size:72891 disposed:false
+488 silly fetch manifest cookie-signature@^1.2.1
+489 silly packumentCache full:https://registry.npmjs.org/cookie-signature cache-miss
+490 http cache https://registry.npmjs.org/router 23ms (cache hit)
+491 silly packumentCache full:https://registry.npmjs.org/router set size:116499 disposed:false
+492 silly fetch manifest merge-descriptors@^2.0.0
+493 silly packumentCache full:https://registry.npmjs.org/merge-descriptors cache-miss
+494 http cache https://registry.npmjs.org/object-assign 26ms (cache hit)
+495 silly packumentCache full:https://registry.npmjs.org/object-assign set size:28988 disposed:false
+496 silly fetch manifest content-disposition@^1.0.0
+497 silly packumentCache full:https://registry.npmjs.org/content-disposition cache-miss
+498 http cache https://registry.npmjs.org/debug 26ms (cache hit)
+499 silly packumentCache full:https://registry.npmjs.org/debug set size:195840 disposed:false
+500 silly fetch manifest ip-address@10.1.0
+501 silly packumentCache full:https://registry.npmjs.org/ip-address cache-miss
+502 http cache https://registry.npmjs.org/vary 28ms (cache hit)
+503 silly packumentCache full:https://registry.npmjs.org/vary set size:16018 disposed:false
+504 silly packumentCache full:https://registry.npmjs.org/vary dispose
+505 silly fetch manifest bytes@~3.1.2
+506 silly packumentCache full:https://registry.npmjs.org/bytes cache-miss
+507 http cache https://registry.npmjs.org/accepts 25ms (cache hit)
+508 silly packumentCache full:https://registry.npmjs.org/accepts set size:77054 disposed:false
+509 silly fetch manifest unpipe@~1.0.0
+510 silly packumentCache full:https://registry.npmjs.org/unpipe cache-miss
+511 http cache https://registry.npmjs.org/type-is 26ms (cache hit)
+512 silly packumentCache full:https://registry.npmjs.org/type-is set size:86196 disposed:false
+513 silly fetch manifest iconv-lite@~0.7.0
+514 silly packumentCache full:https://registry.npmjs.org/iconv-lite cache-miss
+515 http cache https://registry.npmjs.org/parseurl 26ms (cache hit)
+516 silly packumentCache full:https://registry.npmjs.org/parseurl set size:24148 disposed:false
+517 silly fetch manifest http-errors@~2.0.1
+518 silly packumentCache full:https://registry.npmjs.org/http-errors cache-miss
+519 http cache https://registry.npmjs.org/encodeurl 25ms (cache hit)
+520 silly packumentCache full:https://registry.npmjs.org/encodeurl set size:12296 disposed:false
+521 http cache https://registry.npmjs.org/statuses 26ms (cache hit)
+522 silly packumentCache full:https://registry.npmjs.org/statuses set size:37117 disposed:false
+523 http cache https://registry.npmjs.org/body-parser 24ms (cache hit)
+524 silly packumentCache full:https://registry.npmjs.org/body-parser set size:216830 disposed:false
+525 http cache https://registry.npmjs.org/proxy-addr 27ms (cache hit)
+526 silly packumentCache full:https://registry.npmjs.org/proxy-addr set size:61619 disposed:false
+527 http cache https://registry.npmjs.org/escape-html 25ms (cache hit)
+528 silly packumentCache full:https://registry.npmjs.org/escape-html set size:7345 disposed:false
+529 http cache https://registry.npmjs.org/http-errors 24ms (cache hit)
+530 silly packumentCache full:https://registry.npmjs.org/http-errors set size:71987 disposed:false
+531 http cache https://registry.npmjs.org/range-parser 23ms (cache hit)
+532 silly packumentCache full:https://registry.npmjs.org/range-parser set size:22228 disposed:false
+533 http cache https://registry.npmjs.org/finalhandler 23ms (cache hit)
+534 silly packumentCache full:https://registry.npmjs.org/finalhandler set size:79291 disposed:false
+535 http cache https://registry.npmjs.org/merge-descriptors 18ms (cache hit)
+536 silly packumentCache full:https://registry.npmjs.org/merge-descriptors set size:16527 disposed:false
+537 http cache https://registry.npmjs.org/on-finished 25ms (cache hit)
+538 silly packumentCache full:https://registry.npmjs.org/on-finished set size:23212 disposed:false
+539 http cache https://registry.npmjs.org/content-disposition 18ms (cache hit)
+540 silly packumentCache full:https://registry.npmjs.org/content-disposition set size:36665 disposed:false
+541 http cache https://registry.npmjs.org/mime-types 30ms (cache hit)
+542 silly packumentCache full:https://registry.npmjs.org/mime-types set size:139110 disposed:false
+543 http cache https://registry.npmjs.org/ip-address 17ms (cache hit)
+544 silly packumentCache full:https://registry.npmjs.org/ip-address set size:135050 disposed:false
+545 http cache https://registry.npmjs.org/cookie-signature 23ms (cache hit)
+546 silly packumentCache full:https://registry.npmjs.org/cookie-signature set size:21777 disposed:false
+547 http cache https://registry.npmjs.org/bytes 19ms (cache hit)
+548 silly packumentCache full:https://registry.npmjs.org/bytes set size:37018 disposed:false
+549 http cache https://registry.npmjs.org/serve-static 25ms (cache hit)
+550 silly packumentCache full:https://registry.npmjs.org/serve-static set size:150391 disposed:false
+551 http cache https://registry.npmjs.org/iconv-lite 13ms (cache hit)
+552 silly packumentCache full:https://registry.npmjs.org/iconv-lite set size:120557 disposed:false
+553 http cache https://registry.npmjs.org/http-errors 13ms (cache hit)
+554 silly packumentCache full:https://registry.npmjs.org/http-errors set size:71987 disposed:false
+555 silly packumentCache full:https://registry.npmjs.org/http-errors dispose
+556 http cache https://registry.npmjs.org/unpipe 15ms (cache hit)
+557 silly packumentCache full:https://registry.npmjs.org/unpipe set size:3609 disposed:false
+558 silly placeDep node_modules/@opencode-ai/plugin zod@4.1.8 OK for: @opencode-ai/plugin@1.4.3 want: 4.1.8
+559 silly placeDep ROOT fast-deep-equal@3.1.3 OK for: ajv@8.18.0 want: ^3.1.3
+560 silly placeDep ROOT fast-uri@3.1.0 OK for: ajv@8.18.0 want: ^3.0.1
+561 silly placeDep ROOT json-schema-traverse@1.0.0 OK for: ajv@8.18.0 want: ^1.0.0
+562 silly placeDep ROOT require-from-string@2.0.2 OK for: ajv@8.18.0 want: ^2.0.2
+563 silly placeDep ROOT object-assign@4.1.1 OK for: cors@2.8.6 want: ^4
+564 silly placeDep ROOT vary@1.1.2 OK for: cors@2.8.6 want: ^1
+565 silly placeDep ROOT path-key@3.1.1 OK for: cross-spawn@7.0.6 want: ^3.1.0
+566 silly placeDep ROOT shebang-command@2.0.0 OK for: cross-spawn@7.0.6 want: ^2.0.0
+567 silly placeDep ROOT which@2.0.2 OK for: cross-spawn@7.0.6 want: ^2.0.1
+568 silly fetch manifest shebang-regex@^3.0.0
+569 silly packumentCache full:https://registry.npmjs.org/shebang-regex cache-miss
+570 silly fetch manifest isexe@^2.0.0
+571 silly packumentCache full:https://registry.npmjs.org/isexe cache-miss
+572 http cache https://registry.npmjs.org/shebang-regex 2ms (cache hit)
+573 silly packumentCache full:https://registry.npmjs.org/shebang-regex set size:9763 disposed:false
+574 http cache https://registry.npmjs.org/isexe 2ms (cache hit)
+575 silly packumentCache full:https://registry.npmjs.org/isexe set size:31756 disposed:false
+576 silly placeDep ROOT accepts@2.0.0 OK for: express@5.2.1 want: ^2.0.0
+577 silly placeDep ROOT body-parser@2.2.2 OK for: express@5.2.1 want: ^2.2.1
+578 silly placeDep ROOT content-disposition@1.1.0 OK for: express@5.2.1 want: ^1.0.0
+579 silly placeDep ROOT cookie@0.7.2 OK for: express@5.2.1 want: ^0.7.1
+580 silly placeDep ROOT cookie-signature@1.2.2 OK for: express@5.2.1 want: ^1.2.1
+581 silly placeDep ROOT debug@4.4.3 OK for: express@5.2.1 want: ^4.4.0
+582 silly placeDep ROOT depd@2.0.0 OK for: express@5.2.1 want: ^2.0.0
+583 silly placeDep ROOT encodeurl@2.0.0 OK for: express@5.2.1 want: ^2.0.0
+584 silly placeDep ROOT escape-html@1.0.3 OK for: express@5.2.1 want: ^1.0.3
+585 silly placeDep ROOT etag@1.8.1 OK for: express@5.2.1 want: ^1.8.1
+586 silly placeDep ROOT finalhandler@2.1.1 OK for: express@5.2.1 want: ^2.1.0
+587 silly placeDep ROOT fresh@2.0.0 OK for: express@5.2.1 want: ^2.0.0
+588 silly placeDep ROOT http-errors@2.0.1 OK for: express@5.2.1 want: ^2.0.0
+589 silly placeDep ROOT merge-descriptors@2.0.0 OK for: express@5.2.1 want: ^2.0.0
+590 silly placeDep ROOT mime-types@3.0.2 OK for: express@5.2.1 want: ^3.0.0
+591 silly placeDep ROOT on-finished@2.4.1 OK for: express@5.2.1 want: ^2.4.1
+592 silly placeDep ROOT once@1.4.0 OK for: express@5.2.1 want: ^1.4.0
+593 silly placeDep ROOT parseurl@1.3.3 OK for: express@5.2.1 want: ^1.3.3
+594 silly placeDep ROOT proxy-addr@2.0.7 OK for: express@5.2.1 want: ^2.0.7
+595 silly placeDep ROOT qs@6.15.1 OK for: express@5.2.1 want: ^6.14.0
+596 silly placeDep ROOT range-parser@1.2.1 OK for: express@5.2.1 want: ^1.2.1
+597 silly placeDep ROOT router@2.2.0 OK for: express@5.2.1 want: ^2.2.0
+598 silly placeDep ROOT send@1.2.1 OK for: express@5.2.1 want: ^1.1.0
+599 silly placeDep ROOT serve-static@2.2.1 OK for: express@5.2.1 want: ^2.2.0
+600 silly placeDep ROOT statuses@2.0.2 OK for: express@5.2.1 want: ^2.0.1
+601 silly placeDep ROOT type-is@2.0.1 OK for: express@5.2.1 want: ^2.0.1
+602 silly fetch manifest negotiator@^1.0.0
+603 silly packumentCache full:https://registry.npmjs.org/negotiator cache-miss
+604 silly fetch manifest bytes@^3.1.2
+605 silly packumentCache full:https://registry.npmjs.org/bytes cache-hit
+606 silly fetch manifest debug@^4.4.3
+607 silly packumentCache full:https://registry.npmjs.org/debug cache-hit
+608 silly fetch manifest iconv-lite@^0.7.0
+609 silly packumentCache full:https://registry.npmjs.org/iconv-lite cache-hit
+610 silly fetch manifest qs@^6.14.1
+611 silly packumentCache full:https://registry.npmjs.org/qs cache-hit
+612 silly fetch manifest ms@^2.1.3
+613 silly packumentCache full:https://registry.npmjs.org/ms cache-miss
+614 silly fetch manifest inherits@~2.0.4
+615 silly packumentCache full:https://registry.npmjs.org/inherits cache-miss
+616 silly fetch manifest setprototypeof@~1.2.0
+617 silly packumentCache full:https://registry.npmjs.org/setprototypeof cache-miss
+618 silly fetch manifest statuses@~2.0.2
+619 silly packumentCache full:https://registry.npmjs.org/statuses cache-hit
+620 silly fetch manifest toidentifier@~1.0.1
+621 silly packumentCache full:https://registry.npmjs.org/toidentifier cache-miss
+622 silly fetch manifest mime-db@^1.54.0
+623 silly packumentCache full:https://registry.npmjs.org/mime-db cache-miss
+624 silly fetch manifest ee-first@1.1.1
+625 silly packumentCache full:https://registry.npmjs.org/ee-first cache-miss
+626 silly fetch manifest wrappy@1
+627 silly packumentCache full:https://registry.npmjs.org/wrappy cache-miss
+628 silly fetch manifest forwarded@0.2.0
+629 silly packumentCache full:https://registry.npmjs.org/forwarded cache-miss
+630 silly fetch manifest ipaddr.js@1.9.1
+631 silly packumentCache full:https://registry.npmjs.org/ipaddr.js cache-miss
+632 silly fetch manifest side-channel@^1.1.0
+633 silly packumentCache full:https://registry.npmjs.org/side-channel cache-miss
+634 silly fetch manifest is-promise@^4.0.0
+635 silly packumentCache full:https://registry.npmjs.org/is-promise cache-miss
+636 silly fetch manifest path-to-regexp@^8.0.0
+637 silly packumentCache full:https://registry.npmjs.org/path-to-regexp cache-miss
+638 silly fetch manifest ms@^2.1.3
+639 silly packumentCache full:https://registry.npmjs.org/ms cache-miss
+640 silly fetch manifest statuses@^2.0.2
+641 silly packumentCache full:https://registry.npmjs.org/statuses cache-hit
+642 silly fetch manifest media-typer@^1.1.0
+643 silly packumentCache full:https://registry.npmjs.org/media-typer cache-miss
+644 http cache https://registry.npmjs.org/setprototypeof 10ms (cache hit)
+645 silly packumentCache full:https://registry.npmjs.org/setprototypeof set size:14532 disposed:false
+646 http cache https://registry.npmjs.org/inherits 10ms (cache hit)
+647 silly packumentCache full:https://registry.npmjs.org/inherits set size:12925 disposed:false
+648 http cache https://registry.npmjs.org/wrappy 9ms (cache hit)
+649 silly packumentCache full:https://registry.npmjs.org/wrappy set size:7682 disposed:false
+650 http cache https://registry.npmjs.org/ms 11ms (cache hit)
+651 silly packumentCache full:https://registry.npmjs.org/ms set size:92208 disposed:false
+652 http cache https://registry.npmjs.org/ee-first 11ms (cache hit)
+653 silly packumentCache full:https://registry.npmjs.org/ee-first set size:15327 disposed:false
+654 http cache https://registry.npmjs.org/toidentifier 12ms (cache hit)
+655 silly packumentCache full:https://registry.npmjs.org/toidentifier set size:12006 disposed:false
+656 http cache https://registry.npmjs.org/side-channel 7ms (cache hit)
+657 silly packumentCache full:https://registry.npmjs.org/side-channel set size:24660 disposed:false
+658 http cache https://registry.npmjs.org/ms 8ms (cache hit)
+659 silly packumentCache full:https://registry.npmjs.org/ms set size:92208 disposed:false
+660 silly packumentCache full:https://registry.npmjs.org/ms dispose
+661 http cache https://registry.npmjs.org/negotiator 15ms (cache hit)
+662 silly packumentCache full:https://registry.npmjs.org/negotiator set size:48046 disposed:false
+663 http cache https://registry.npmjs.org/is-promise 9ms (cache hit)
+664 silly packumentCache full:https://registry.npmjs.org/is-promise set size:18599 disposed:false
+665 http cache https://registry.npmjs.org/mime-db 13ms (cache hit)
+666 silly packumentCache full:https://registry.npmjs.org/mime-db set size:164953 disposed:false
+667 http cache https://registry.npmjs.org/path-to-regexp 11ms (cache hit)
+668 silly packumentCache full:https://registry.npmjs.org/path-to-regexp set size:216334 disposed:false
+669 http cache https://registry.npmjs.org/forwarded 15ms (cache hit)
+670 silly packumentCache full:https://registry.npmjs.org/forwarded set size:11229 disposed:false
+671 http cache https://registry.npmjs.org/ipaddr.js 15ms (cache hit)
+672 silly packumentCache full:https://registry.npmjs.org/ipaddr.js set size:67857 disposed:false
+673 http cache https://registry.npmjs.org/media-typer 13ms (cache hit)
+674 silly packumentCache full:https://registry.npmjs.org/media-typer set size:20873 disposed:false
+675 silly placeDep ROOT negotiator@1.0.0 OK for: accepts@2.0.0 want: ^1.0.0
+676 silly placeDep ROOT bytes@3.1.2 OK for: body-parser@2.2.2 want: ^3.1.2
+677 silly placeDep ROOT iconv-lite@0.7.2 OK for: body-parser@2.2.2 want: ^0.7.0
+678 silly fetch manifest safer-buffer@>= 2.1.2 < 3.0.0
+679 silly packumentCache full:https://registry.npmjs.org/safer-buffer cache-miss
+680 http cache https://registry.npmjs.org/safer-buffer 1ms (cache hit)
+681 silly packumentCache full:https://registry.npmjs.org/safer-buffer set size:18521 disposed:false
+682 silly placeDep ROOT ms@2.1.3 OK for: debug@4.4.3 want: ^2.1.3
+683 silly placeDep ROOT ip-address@10.1.0 OK for: express-rate-limit@8.3.2 want: 10.1.0
+684 silly placeDep ROOT inherits@2.0.4 OK for: http-errors@2.0.1 want: ~2.0.4
+685 silly placeDep ROOT setprototypeof@1.2.0 OK for: http-errors@2.0.1 want: ~1.2.0
+686 silly placeDep ROOT toidentifier@1.0.1 OK for: http-errors@2.0.1 want: ~1.0.1
+687 silly placeDep ROOT safer-buffer@2.1.2 OK for: iconv-lite@0.7.2 want: >= 2.1.2 < 3.0.0
+688 silly placeDep ROOT argparse@2.0.1 OK for: js-yaml@4.1.1 want: ^2.0.1
+689 silly placeDep ROOT mime-db@1.54.0 OK for: mime-types@3.0.2 want: ^1.54.0
+690 silly placeDep ROOT ee-first@1.1.1 OK for: on-finished@2.4.1 want: 1.1.1
+691 silly placeDep ROOT wrappy@1.0.2 OK for: once@1.4.0 want: 1
+692 silly placeDep ROOT @posthog/core@1.25.2 OK for: posthog-node@5.29.2 want: 1.25.2
+693 silly placeDep ROOT forwarded@0.2.0 OK for: proxy-addr@2.0.7 want: 0.2.0
+694 silly placeDep ROOT ipaddr.js@1.9.1 OK for: proxy-addr@2.0.7 want: 1.9.1
+695 silly placeDep ROOT side-channel@1.1.0 OK for: qs@6.15.1 want: ^1.1.0
+696 silly fetch manifest es-errors@^1.3.0
+697 silly packumentCache full:https://registry.npmjs.org/es-errors cache-miss
+698 silly fetch manifest object-inspect@^1.13.3
+699 silly packumentCache full:https://registry.npmjs.org/object-inspect cache-miss
+700 silly fetch manifest side-channel-list@^1.0.0
+701 silly packumentCache full:https://registry.npmjs.org/side-channel-list cache-miss
+702 silly fetch manifest side-channel-map@^1.0.1
+703 silly packumentCache full:https://registry.npmjs.org/side-channel-map cache-miss
+704 silly fetch manifest side-channel-weakmap@^1.0.2
+705 silly packumentCache full:https://registry.npmjs.org/side-channel-weakmap cache-miss
+706 http cache https://registry.npmjs.org/side-channel-weakmap 2ms (cache hit)
+707 silly packumentCache full:https://registry.npmjs.org/side-channel-weakmap set size:12620 disposed:false
+708 http cache https://registry.npmjs.org/object-inspect 3ms (cache hit)
+709 silly packumentCache full:https://registry.npmjs.org/object-inspect set size:101912 disposed:false
+710 http cache https://registry.npmjs.org/es-errors 5ms (cache hit)
+711 silly packumentCache full:https://registry.npmjs.org/es-errors set size:16918 disposed:false
+712 http cache https://registry.npmjs.org/side-channel-list 5ms (cache hit)
+713 silly packumentCache full:https://registry.npmjs.org/side-channel-list set size:9021 disposed:false
+714 http cache https://registry.npmjs.org/side-channel-map 5ms (cache hit)
+715 silly packumentCache full:https://registry.npmjs.org/side-channel-map set size:9126 disposed:false
+716 silly placeDep ROOT unpipe@1.0.0 OK for: raw-body@3.0.2 want: ~1.0.0
+717 silly placeDep ROOT is-promise@4.0.0 OK for: router@2.2.0 want: ^4.0.0
+718 silly placeDep ROOT path-to-regexp@8.4.2 OK for: router@2.2.0 want: ^8.0.0
+719 silly placeDep ROOT shebang-regex@3.0.0 OK for: shebang-command@2.0.0 want: ^3.0.0
+720 silly placeDep ROOT es-errors@1.3.0 OK for: side-channel@1.1.0 want: ^1.3.0
+721 silly placeDep ROOT object-inspect@1.13.4 OK for: side-channel@1.1.0 want: ^1.13.3
+722 silly placeDep ROOT side-channel-list@1.0.1 OK for: side-channel@1.1.0 want: ^1.0.0
+723 silly placeDep ROOT side-channel-map@1.0.1 OK for: side-channel@1.1.0 want: ^1.0.1
+724 silly placeDep ROOT side-channel-weakmap@1.0.2 OK for: side-channel@1.1.0 want: ^1.0.2
+725 silly fetch manifest call-bound@^1.0.2
+726 silly packumentCache full:https://registry.npmjs.org/call-bound cache-miss
+727 silly fetch manifest get-intrinsic@^1.2.5
+728 silly packumentCache full:https://registry.npmjs.org/get-intrinsic cache-miss
+729 silly fetch manifest call-bound@^1.0.2
+730 silly packumentCache full:https://registry.npmjs.org/call-bound cache-miss
+731 silly fetch manifest get-intrinsic@^1.2.5
+732 silly packumentCache full:https://registry.npmjs.org/get-intrinsic cache-miss
+733 http cache https://registry.npmjs.org/call-bound 2ms (cache hit)
+734 silly packumentCache full:https://registry.npmjs.org/call-bound set size:15317 disposed:false
+735 http cache https://registry.npmjs.org/call-bound 2ms (cache hit)
+736 silly packumentCache full:https://registry.npmjs.org/call-bound set size:15317 disposed:false
+737 silly packumentCache full:https://registry.npmjs.org/call-bound dispose
+738 http cache https://registry.npmjs.org/get-intrinsic 3ms (cache hit)
+739 silly packumentCache full:https://registry.npmjs.org/get-intrinsic set size:60985 disposed:false
+740 http cache https://registry.npmjs.org/get-intrinsic 3ms (cache hit)
+741 silly packumentCache full:https://registry.npmjs.org/get-intrinsic set size:60985 disposed:false
+742 silly packumentCache full:https://registry.npmjs.org/get-intrinsic dispose
+743 silly placeDep ROOT call-bound@1.0.4 OK for: side-channel-map@1.0.1 want: ^1.0.2
+744 silly placeDep ROOT get-intrinsic@1.3.0 OK for: side-channel-map@1.0.1 want: ^1.2.5
+745 silly fetch manifest call-bind-apply-helpers@^1.0.2
+746 silly packumentCache full:https://registry.npmjs.org/call-bind-apply-helpers cache-miss
+747 silly fetch manifest get-intrinsic@^1.3.0
+748 silly packumentCache full:https://registry.npmjs.org/get-intrinsic cache-hit
+749 silly fetch manifest gopd@^1.2.0
+750 silly packumentCache full:https://registry.npmjs.org/gopd cache-miss
+751 silly fetch manifest hasown@^2.0.2
+752 silly packumentCache full:https://registry.npmjs.org/hasown cache-miss
+753 silly fetch manifest get-proto@^1.0.1
+754 silly packumentCache full:https://registry.npmjs.org/get-proto cache-miss
+755 silly fetch manifest has-symbols@^1.1.0
+756 silly packumentCache full:https://registry.npmjs.org/has-symbols cache-miss
+757 silly fetch manifest function-bind@^1.1.2
+758 silly packumentCache full:https://registry.npmjs.org/function-bind cache-miss
+759 silly fetch manifest es-object-atoms@^1.1.1
+760 silly packumentCache full:https://registry.npmjs.org/es-object-atoms cache-miss
+761 silly fetch manifest math-intrinsics@^1.1.0
+762 silly packumentCache full:https://registry.npmjs.org/math-intrinsics cache-miss
+763 silly fetch manifest es-define-property@^1.0.1
+764 silly packumentCache full:https://registry.npmjs.org/es-define-property cache-miss
+765 silly fetch manifest call-bind-apply-helpers@^1.0.2
+766 silly packumentCache full:https://registry.npmjs.org/call-bind-apply-helpers cache-miss
+767 http cache https://registry.npmjs.org/gopd 4ms (cache hit)
+768 silly packumentCache full:https://registry.npmjs.org/gopd set size:11458 disposed:false
+769 http cache https://registry.npmjs.org/hasown 5ms (cache hit)
+770 silly packumentCache full:https://registry.npmjs.org/hasown set size:12476 disposed:false
+771 http cache https://registry.npmjs.org/get-proto 5ms (cache hit)
+772 silly packumentCache full:https://registry.npmjs.org/get-proto set size:8300 disposed:false
+773 http cache https://registry.npmjs.org/call-bind-apply-helpers 4ms (cache hit)
+774 silly packumentCache full:https://registry.npmjs.org/call-bind-apply-helpers set size:12744 disposed:false
+775 http cache https://registry.npmjs.org/has-symbols 6ms (cache hit)
+776 silly packumentCache full:https://registry.npmjs.org/has-symbols set size:21550 disposed:false
+777 http cache https://registry.npmjs.org/math-intrinsics 5ms (cache hit)
+778 silly packumentCache full:https://registry.npmjs.org/math-intrinsics set size:9265 disposed:false
+779 http cache https://registry.npmjs.org/function-bind 6ms (cache hit)
+780 silly packumentCache full:https://registry.npmjs.org/function-bind set size:15733 disposed:false
+781 http cache https://registry.npmjs.org/call-bind-apply-helpers 7ms (cache hit)
+782 silly packumentCache full:https://registry.npmjs.org/call-bind-apply-helpers set size:12744 disposed:false
+783 silly packumentCache full:https://registry.npmjs.org/call-bind-apply-helpers dispose
+784 http cache https://registry.npmjs.org/es-object-atoms 7ms (cache hit)
+785 silly packumentCache full:https://registry.npmjs.org/es-object-atoms set size:15304 disposed:false
+786 http cache https://registry.npmjs.org/es-define-property 6ms (cache hit)
+787 silly packumentCache full:https://registry.npmjs.org/es-define-property set size:8542 disposed:false
+788 silly placeDep ROOT call-bind-apply-helpers@1.0.2 OK for: call-bound@1.0.4 want: ^1.0.2
+789 silly placeDep ROOT function-bind@1.1.2 OK for: call-bind-apply-helpers@1.0.2 want: ^1.1.2
+790 silly placeDep ROOT es-define-property@1.0.1 OK for: get-intrinsic@1.3.0 want: ^1.0.1
+791 silly placeDep ROOT es-object-atoms@1.1.1 OK for: get-intrinsic@1.3.0 want: ^1.1.1
+792 silly placeDep ROOT get-proto@1.0.1 OK for: get-intrinsic@1.3.0 want: ^1.0.1
+793 silly placeDep ROOT gopd@1.2.0 OK for: get-intrinsic@1.3.0 want: ^1.2.0
+794 silly placeDep ROOT has-symbols@1.1.0 OK for: get-intrinsic@1.3.0 want: ^1.1.0
+795 silly placeDep ROOT hasown@2.0.2 OK for: get-intrinsic@1.3.0 want: ^2.0.2
+796 silly placeDep ROOT math-intrinsics@1.1.0 OK for: get-intrinsic@1.3.0 want: ^1.1.0
+797 silly fetch manifest dunder-proto@^1.0.1
+798 silly packumentCache full:https://registry.npmjs.org/dunder-proto cache-miss
+799 http cache https://registry.npmjs.org/dunder-proto 1ms (cache hit)
+800 silly packumentCache full:https://registry.npmjs.org/dunder-proto set size:8256 disposed:false
+801 silly placeDep ROOT dunder-proto@1.0.1 OK for: get-proto@1.0.1 want: ^1.0.1
+802 silly placeDep ROOT media-typer@1.1.0 OK for: type-is@2.0.1 want: ^1.1.0
+803 silly placeDep ROOT isexe@2.0.0 OK for: which@2.0.2 want: ^2.0.0
+804 warn EBADENGINE Unsupported engine {
+804 warn EBADENGINE   package: 'posthog-node@5.29.2',
+804 warn EBADENGINE   required: { node: '^20.20.0 || >=22.22.0' },
+804 warn EBADENGINE   current: { node: 'v22.13.0', npm: '11.0.0' }
+804 warn EBADENGINE }
+805 silly reify mark retired [
+805 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/accepts'
+805 silly reify ]
+806 silly reify mark retired [
+806 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ajv'
+806 silly reify ]
+807 silly reify mark retired [
+807 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/body-parser'
+807 silly reify ]
+808 silly reify mark retired [
+808 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/argparse'
+808 silly reify ]
+809 silly reify mark retired [
+809 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ajv-formats'
+809 silly reify ]
+810 silly reify mark retired [
+810 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/bytes'
+810 silly reify ]
+811 silly reify mark retired [
+811 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/call-bind-apply-helpers'
+811 silly reify ]
+812 silly reify mark retired [
+812 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/call-bound'
+812 silly reify ]
+813 silly reify mark retired [
+813 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/commander'
+813 silly reify ]
+814 silly reify mark retired [
+814 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cookie'
+814 silly reify ]
+815 silly reify mark retired [
+815 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/content-type'
+815 silly reify ]
+816 silly reify mark retired [
+816 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cookie-signature'
+816 silly reify ]
+817 silly reify mark retired [
+817 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/content-disposition'
+817 silly reify ]
+818 silly reify mark retired [
+818 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cors'
+818 silly reify ]
+819 silly reify mark retired [
+819 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cross-spawn'
+819 silly reify ]
+820 silly reify mark retired [
+820 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/debug'
+820 silly reify ]
+821 silly reify mark retired [
+821 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/depd'
+821 silly reify ]
+822 silly reify mark retired [
+822 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/detect-libc'
+822 silly reify ]
+823 silly reify mark retired [
+823 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/diff'
+823 silly reify ]
+824 silly reify mark retired [
+824 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/dunder-proto'
+824 silly reify ]
+825 silly reify mark retired [
+825 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/encodeurl'
+825 silly reify ]
+826 silly reify mark retired [
+826 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ee-first'
+826 silly reify ]
+827 silly reify mark retired [
+827 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/es-object-atoms'
+827 silly reify ]
+828 silly reify mark retired [
+828 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/es-define-property'
+828 silly reify ]
+829 silly reify mark retired [
+829 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/es-errors'
+829 silly reify ]
+830 silly reify mark retired [
+830 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/escape-html'
+830 silly reify ]
+831 silly reify mark retired [
+831 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/etag'
+831 silly reify ]
+832 silly reify mark retired [
+832 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/eventsource'
+832 silly reify ]
+833 silly reify mark retired [
+833 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/eventsource-parser'
+833 silly reify ]
+834 silly reify mark retired [
+834 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/express-rate-limit'
+834 silly reify ]
+835 silly reify mark retired [
+835 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/express'
+835 silly reify ]
+836 silly reify mark retired [
+836 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/fast-deep-equal'
+836 silly reify ]
+837 silly reify mark retired [
+837 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/finalhandler'
+837 silly reify ]
+838 silly reify mark retired [
+838 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/fast-uri'
+838 silly reify ]
+839 silly reify mark retired [
+839 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/forwarded'
+839 silly reify ]
+840 silly reify mark retired [
+840 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/get-intrinsic'
+840 silly reify ]
+841 silly reify mark retired [
+841 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/fresh'
+841 silly reify ]
+842 silly reify mark retired [
+842 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/function-bind'
+842 silly reify ]
+843 silly reify mark retired [
+843 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/gopd'
+843 silly reify ]
+844 silly reify mark retired [
+844 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/get-proto'
+844 silly reify ]
+845 silly reify mark retired [
+845 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/has-symbols'
+845 silly reify ]
+846 silly reify mark retired [
+846 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/hasown'
+846 silly reify ]
+847 silly reify mark retired [
+847 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/inherits'
+847 silly reify ]
+848 silly reify mark retired [
+848 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/hono'
+848 silly reify ]
+849 silly reify mark retired [
+849 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/http-errors'
+849 silly reify ]
+850 silly reify mark retired [
+850 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/iconv-lite'
+850 silly reify ]
+851 silly reify mark retired [
+851 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ip-address'
+851 silly reify ]
+852 silly reify mark retired [
+852 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ipaddr.js'
+852 silly reify ]
+853 silly reify mark retired [
+853 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/is-promise'
+853 silly reify ]
+854 silly reify mark retired [
+854 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/isexe'
+854 silly reify ]
+855 silly reify mark retired [
+855 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/js-yaml',
+855 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/js-yaml'
+855 silly reify ]
+856 silly reify mark retired [
+856 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/jose'
+856 silly reify ]
+857 silly reify mark retired [
+857 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/json-schema-traverse'
+857 silly reify ]
+858 silly reify mark retired [
+858 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/jsonc-parser'
+858 silly reify ]
+859 silly reify mark retired [
+859 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/json-schema-typed'
+859 silly reify ]
+860 silly reify mark retired [
+860 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/media-typer'
+860 silly reify ]
+861 silly reify mark retired [
+861 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/math-intrinsics'
+861 silly reify ]
+862 silly reify mark retired [
+862 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/merge-descriptors'
+862 silly reify ]
+863 silly reify mark retired [
+863 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/mime-types'
+863 silly reify ]
+864 silly reify mark retired [
+864 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/negotiator'
+864 silly reify ]
+865 silly reify mark retired [
+865 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ms'
+865 silly reify ]
+866 silly reify mark retired [
+866 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/object-assign'
+866 silly reify ]
+867 silly reify mark retired [
+867 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/object-inspect'
+867 silly reify ]
+868 silly reify mark retired [
+868 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64',
+868 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+868 silly reify ]
+869 silly reify mark retired [
+869 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode',
+869 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+869 silly reify ]
+870 silly reify mark retired [
+870 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/mime-db'
+870 silly reify ]
+871 silly reify mark retired [
+871 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64-baseline',
+871 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+871 silly reify ]
+872 silly reify mark retired [
+872 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/on-finished'
+872 silly reify ]
+873 silly reify mark retired [
+873 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/once'
+873 silly reify ]
+874 silly reify mark retired [
+874 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/parseurl'
+874 silly reify ]
+875 silly reify mark retired [
+875 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/picocolors'
+875 silly reify ]
+876 silly reify mark retired [
+876 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/path-to-regexp'
+876 silly reify ]
+877 silly reify mark retired [
+877 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/path-key'
+877 silly reify ]
+878 silly reify mark retired [
+878 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/pkce-challenge'
+878 silly reify ]
+879 silly reify mark retired [
+879 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/picomatch'
+879 silly reify ]
+880 silly reify mark retired [
+880 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/posthog-node'
+880 silly reify ]
+881 silly reify mark retired [
+881 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/qs'
+881 silly reify ]
+882 silly reify mark retired [
+882 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/range-parser'
+882 silly reify ]
+883 silly reify mark retired [
+883 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/proxy-addr'
+883 silly reify ]
+884 silly reify mark retired [
+884 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/raw-body'
+884 silly reify ]
+885 silly reify mark retired [
+885 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/router'
+885 silly reify ]
+886 silly reify mark retired [
+886 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/require-from-string'
+886 silly reify ]
+887 silly reify mark retired [
+887 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/safer-buffer'
+887 silly reify ]
+888 silly reify mark retired [
+888 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/send'
+888 silly reify ]
+889 silly reify mark retired [
+889 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/setprototypeof'
+889 silly reify ]
+890 silly reify mark retired [
+890 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/serve-static'
+890 silly reify ]
+891 silly reify mark retired [
+891 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/shebang-command'
+891 silly reify ]
+892 silly reify mark retired [
+892 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/shebang-regex'
+892 silly reify ]
+893 silly reify mark retired [
+893 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel'
+893 silly reify ]
+894 silly reify mark retired [
+894 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel-map'
+894 silly reify ]
+895 silly reify mark retired [
+895 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel-list'
+895 silly reify ]
+896 silly reify mark retired [
+896 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel-weakmap'
+896 silly reify ]
+897 silly reify mark retired [
+897 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/statuses'
+897 silly reify ]
+898 silly reify mark retired [
+898 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/sisteransi'
+898 silly reify ]
+899 silly reify mark retired [
+899 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/type-is'
+899 silly reify ]
+900 silly reify mark retired [
+900 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/unpipe'
+900 silly reify ]
+901 silly reify mark retired [
+901 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/toidentifier'
+901 silly reify ]
+902 silly reify mark retired [
+902 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/vary'
+902 silly reify ]
+903 silly reify mark retired [
+903 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/vscode-jsonrpc'
+903 silly reify ]
+904 silly reify mark retired [
+904 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/which',
+904 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/node-which'
+904 silly reify ]
+905 silly reify mark retired [
+905 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/zod-to-json-schema'
+905 silly reify ]
+906 silly reify mark retired [
+906 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/zod'
+906 silly reify ]
+907 silly reify mark retired [
+907 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli',
+907 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/sg',
+907 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/ast-grep'
+907 silly reify ]
+908 silly reify mark retired [
+908 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-linux-x64-gnu'
+908 silly reify ]
+909 silly reify mark retired [
+909 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/wrappy'
+909 silly reify ]
+910 silly reify mark retired [
+910 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi'
+910 silly reify ]
+911 silly reify mark retired [
+911 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@clack/prompts'
+911 silly reify ]
+912 silly reify mark retired [
+912 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@clack/core'
+912 silly reify ]
+913 silly reify mark retired [
+913 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-x64-gnu'
+913 silly reify ]
+914 silly reify mark retired [
+914 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@code-yeongyu/comment-checker',
+914 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/comment-checker'
+914 silly reify ]
+915 silly reify mark retired [
+915 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@hono/node-server'
+915 silly reify ]
+916 silly reify mark retired [
+916 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@opencode-ai/sdk'
+916 silly reify ]
+917 silly reify mark retired [
+917 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@opencode-ai/plugin'
+917 silly reify ]
+918 silly reify mark retired [
+918 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@posthog/core'
+918 silly reify ]
+919 silly reify mark retired [
+919 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@modelcontextprotocol/sdk'
+919 silly reify ]
+920 silly reify moves {
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/accepts': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.accepts-qVtpYrEF',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ajv': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.ajv-ockXTfNr',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/body-parser': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.body-parser-Pn3AZrMf',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/argparse': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.argparse-1Ca9XnCx',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ajv-formats': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.ajv-formats-NyRWXwOS',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/bytes': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bytes-knMbnHGb',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/call-bind-apply-helpers': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.call-bind-apply-helpers-TqX0hzMw',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/call-bound': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.call-bound-ksy4M8JG',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/commander': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.commander-Mm3jnyS9',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cookie': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.cookie-dipSSbMy',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/content-type': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.content-type-daFygunP',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cookie-signature': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.cookie-signature-knx1ASvk',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/content-disposition': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.content-disposition-hj4nGXde',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cors': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.cors-3ZxB9lkz',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/cross-spawn': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.cross-spawn-aMD0PtDt',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/debug': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.debug-2XgGWVZ6',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/depd': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.depd-s7nzH0rD',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/detect-libc': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.detect-libc-VmwH8vip',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/diff': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.diff-FD7Bij87',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/dunder-proto': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.dunder-proto-93PYvAOz',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/encodeurl': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.encodeurl-b27WGyPw',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ee-first': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.ee-first-smYzDnXP',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/es-object-atoms': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.es-object-atoms-gwX46DhB',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/es-define-property': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.es-define-property-M48R9KSv',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/es-errors': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.es-errors-92pdHEIk',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/escape-html': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.escape-html-C5jacw36',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/etag': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.etag-UEmwzS9R',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/eventsource': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.eventsource-e3Wpw8vg',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/eventsource-parser': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.eventsource-parser-RM6Pf2Er',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/express-rate-limit': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.express-rate-limit-GI4wjY4i',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/express': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.express-buvO4ukq',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/fast-deep-equal': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.fast-deep-equal-8Yhat9gS',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/finalhandler': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.finalhandler-rbikr3Fp',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/fast-uri': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.fast-uri-Pq1OG0lc',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/forwarded': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.forwarded-Xd7fdCmS',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/get-intrinsic': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.get-intrinsic-fYavRsCo',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/fresh': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.fresh-9193XyBg',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/function-bind': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.function-bind-Vl26n4Se',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/gopd': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.gopd-7ANNofO2',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/get-proto': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.get-proto-JJ6fRQCn',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/has-symbols': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.has-symbols-Fw6mqALF',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/hasown': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.hasown-6Nrsf1fC',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/inherits': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.inherits-jHyTezAl',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/hono': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.hono-qw0vut50',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/http-errors': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.http-errors-hMyKmsMm',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/iconv-lite': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.iconv-lite-EVqsiwOb',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ip-address': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.ip-address-doGeeE9u',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ipaddr.js': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.ipaddr.js-TIoikvz8',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/is-promise': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.is-promise-e9AWM2KL',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/isexe': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.isexe-CUuELEtI',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/js-yaml': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.js-yaml-Ktn8ynaF',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/js-yaml': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/.js-yaml-YPtbD2Gg',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/jose': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.jose-hiecKipe',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/json-schema-traverse': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.json-schema-traverse-6aRlIxub',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/jsonc-parser': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.jsonc-parser-KczYbeF7',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/json-schema-typed': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.json-schema-typed-DQaSldFY',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/media-typer': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.media-typer-rOpF3ciq',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/math-intrinsics': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.math-intrinsics-JyaXUTD7',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/merge-descriptors': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.merge-descriptors-DfgLdHE6',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/mime-types': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.mime-types-Wrio2CAU',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/negotiator': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.negotiator-Q6aY4BHm',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/ms': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.ms-KubBSpnZ',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/object-assign': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.object-assign-iZiWsNQ4',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/object-inspect': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.object-inspect-vnCpWtPf',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.oh-my-opencode-linux-x64-IomsDgUO',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/.oh-my-opencode-bDuMvrXs',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.oh-my-opencode-lXzV6GUZ',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/mime-db': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.mime-db-JCNrptYn',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64-baseline': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.oh-my-opencode-linux-x64-baseline-co0RTKYi',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/on-finished': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.on-finished-noi8pe7T',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/once': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.once-lfTHNUGn',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/parseurl': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.parseurl-7YK6J6UI',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/picocolors': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.picocolors-XkccQFsY',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/path-to-regexp': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.path-to-regexp-egk8blky',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/path-key': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.path-key-MgBaylAO',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/pkce-challenge': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.pkce-challenge-Kq8kRNY4',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/picomatch': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.picomatch-MRN4Rv5r',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/posthog-node': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.posthog-node-OXTucXeT',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/qs': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.qs-qGBzvKDn',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/range-parser': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.range-parser-8sKzy4HJ',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/proxy-addr': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.proxy-addr-O49HoPXv',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/raw-body': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.raw-body-s4BZUtxG',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/router': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.router-sTa7VuQb',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/require-from-string': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.require-from-string-xGmMaCpz',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/safer-buffer': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.safer-buffer-G9zHqlm6',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/send': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.send-fFUwmrcB',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/setprototypeof': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.setprototypeof-TqrXj9yp',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/serve-static': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.serve-static-s6b1bE1D',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/shebang-command': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.shebang-command-XLipPRWl',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/shebang-regex': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.shebang-regex-8kJ9iXCq',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.side-channel-rCiOcCGi',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel-map': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.side-channel-map-hb1QfhcL',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel-list': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.side-channel-list-m62IFLEP',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/side-channel-weakmap': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.side-channel-weakmap-0iuBQW0Z',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/statuses': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.statuses-dSFcdB70',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/sisteransi': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.sisteransi-Lgqw42oZ',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/type-is': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.type-is-avHIQfY3',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/unpipe': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.unpipe-OTKDiO9x',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/toidentifier': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.toidentifier-4KrnpOTO',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/vary': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.vary-XJt6JLKY',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/vscode-jsonrpc': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.vscode-jsonrpc-EQ5pl4QY',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/which': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.which-AS1AROcC',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/node-which': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/.node-which-slCxfIrn',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/zod-to-json-schema': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.zod-to-json-schema-QHC39MtO',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/zod': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.zod-zNjLcVVa',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/.cli-bPeyCVmC',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/sg': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/.sg-smDW1s21',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/ast-grep': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/.ast-grep-Djb4hIHo',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-linux-x64-gnu': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/.cli-linux-x64-gnu-Knl5N0ZN',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/wrappy': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.wrappy-KuLqYm23',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/.napi-holmWJz6',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@clack/prompts': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@clack/.prompts-cxUVRBlQ',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@clack/core': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@clack/.core-zAC8uc87',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-x64-gnu': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/.napi-linux-x64-gnu-E0QQZCBa',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@code-yeongyu/comment-checker': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@code-yeongyu/.comment-checker-cTJeeFTS',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/comment-checker': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/.comment-checker-0EBEIxs6',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@hono/node-server': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@hono/.node-server-6G5z6sUE',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@opencode-ai/sdk': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@opencode-ai/.sdk-g0Zj9J1y',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@opencode-ai/plugin': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@opencode-ai/.plugin-zP88zqMY',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@posthog/core': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@posthog/.core-25m705xj',
+920 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@modelcontextprotocol/sdk': '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@modelcontextprotocol/.sdk-8GBmMFvw'
+920 silly reify }
+921 silly audit bulk request {
+921 silly audit   '@ast-grep/cli': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-darwin-arm64': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-darwin-x64': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-linux-arm64-gnu': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-linux-x64-gnu': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-win32-arm64-msvc': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-win32-ia32-msvc': [ '0.41.1' ],
+921 silly audit   '@ast-grep/cli-win32-x64-msvc': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-darwin-arm64': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-darwin-x64': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-linux-arm64-gnu': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-linux-arm64-musl': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-linux-x64-gnu': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-linux-x64-musl': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-win32-arm64-msvc': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-win32-ia32-msvc': [ '0.41.1' ],
+921 silly audit   '@ast-grep/napi-win32-x64-msvc': [ '0.41.1' ],
+921 silly audit   '@clack/core': [ '0.5.0' ],
+921 silly audit   '@clack/prompts': [ '0.11.0' ],
+921 silly audit   '@code-yeongyu/comment-checker': [ '0.7.0' ],
+921 silly audit   '@hono/node-server': [ '1.19.14' ],
+921 silly audit   '@modelcontextprotocol/sdk': [ '1.29.0' ],
+921 silly audit   '@opencode-ai/plugin': [ '1.4.3' ],
+921 silly audit   zod: [ '4.3.6', '4.1.8' ],
+921 silly audit   '@opencode-ai/sdk': [ '1.4.3' ],
+921 silly audit   '@posthog/core': [ '1.25.2' ],
+921 silly audit   accepts: [ '2.0.0' ],
+921 silly audit   ajv: [ '8.18.0' ],
+921 silly audit   'ajv-formats': [ '3.0.1' ],
+921 silly audit   argparse: [ '2.0.1' ],
+921 silly audit   'body-parser': [ '2.2.2' ],
+921 silly audit   bytes: [ '3.1.2' ],
+921 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+921 silly audit   'call-bound': [ '1.0.4' ],
+921 silly audit   commander: [ '14.0.3' ],
+921 silly audit   'content-disposition': [ '1.1.0' ],
+921 silly audit   'content-type': [ '1.0.5' ],
+921 silly audit   cookie: [ '0.7.2' ],
+921 silly audit   'cookie-signature': [ '1.2.2' ],
+921 silly audit   cors: [ '2.8.6' ],
+921 silly audit   'cross-spawn': [ '7.0.6' ],
+921 silly audit   debug: [ '4.4.3' ],
+921 silly audit   depd: [ '2.0.0' ],
+921 silly audit   'detect-libc': [ '2.1.2' ],
+921 silly audit   diff: [ '8.0.4' ],
+921 silly audit   'dunder-proto': [ '1.0.1' ],
+921 silly audit   'ee-first': [ '1.1.1' ],
+921 silly audit   encodeurl: [ '2.0.0' ],
+921 silly audit   'es-define-property': [ '1.0.1' ],
+921 silly audit   'es-errors': [ '1.3.0' ],
+921 silly audit   'es-object-atoms': [ '1.1.1' ],
+921 silly audit   'escape-html': [ '1.0.3' ],
+921 silly audit   etag: [ '1.8.1' ],
+921 silly audit   eventsource: [ '3.0.7' ],
+921 silly audit   'eventsource-parser': [ '3.0.6' ],
+921 silly audit   express: [ '5.2.1' ],
+921 silly audit   'express-rate-limit': [ '8.3.2' ],
+921 silly audit   'fast-deep-equal': [ '3.1.3' ],
+921 silly audit   'fast-uri': [ '3.1.0' ],
+921 silly audit   finalhandler: [ '2.1.1' ],
+921 silly audit   forwarded: [ '0.2.0' ],
+921 silly audit   fresh: [ '2.0.0' ],
+921 silly audit   'function-bind': [ '1.1.2' ],
+921 silly audit   'get-intrinsic': [ '1.3.0' ],
+921 silly audit   'get-proto': [ '1.0.1' ],
+921 silly audit   gopd: [ '1.2.0' ],
+921 silly audit   'has-symbols': [ '1.1.0' ],
+921 silly audit   hasown: [ '2.0.2' ],
+921 silly audit   hono: [ '4.12.12' ],
+921 silly audit   'http-errors': [ '2.0.1' ],
+921 silly audit   'iconv-lite': [ '0.7.2' ],
+921 silly audit   inherits: [ '2.0.4' ],
+921 silly audit   'ip-address': [ '10.1.0' ],
+921 silly audit   'ipaddr.js': [ '1.9.1' ],
+921 silly audit   'is-promise': [ '4.0.0' ],
+921 silly audit   isexe: [ '2.0.0' ],
+921 silly audit   jose: [ '6.2.2' ],
+921 silly audit   'js-yaml': [ '4.1.1' ],
+921 silly audit   'json-schema-traverse': [ '1.0.0' ],
+921 silly audit   'json-schema-typed': [ '8.0.2' ],
+921 silly audit   'jsonc-parser': [ '3.3.1' ],
+921 silly audit   'math-intrinsics': [ '1.1.0' ],
+921 silly audit   'media-typer': [ '1.1.0' ],
+921 silly audit   'merge-descriptors': [ '2.0.0' ],
+921 silly audit   'mime-db': [ '1.54.0' ],
+921 silly audit   'mime-types': [ '3.0.2' ],
+921 silly audit   ms: [ '2.1.3' ],
+921 silly audit   negotiator: [ '1.0.0' ],
+921 silly audit   'object-assign': [ '4.1.1' ],
+921 silly audit   'object-inspect': [ '1.13.4' ],
+921 silly audit   'oh-my-opencode': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-darwin-arm64': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-darwin-x64': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-darwin-x64-baseline': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-linux-arm64': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-linux-arm64-musl': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-linux-x64': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-linux-x64-baseline': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-linux-x64-musl': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-linux-x64-musl-baseline': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-windows-x64': [ '3.17.1' ],
+921 silly audit   'oh-my-opencode-windows-x64-baseline': [ '3.17.1' ],
+921 silly audit   'on-finished': [ '2.4.1' ],
+921 silly audit   once: [ '1.4.0' ],
+921 silly audit   parseurl: [ '1.3.3' ],
+921 silly audit   'path-key': [ '3.1.1' ],
+921 silly audit   'path-to-regexp': [ '8.4.2' ],
+921 silly audit   picocolors: [ '1.1.1' ],
+921 silly audit   picomatch: [ '4.0.4' ],
+921 silly audit   'pkce-challenge': [ '5.0.1' ],
+921 silly audit   'posthog-node': [ '5.29.2' ],
+921 silly audit   'proxy-addr': [ '2.0.7' ],
+921 silly audit   qs: [ '6.15.1' ],
+921 silly audit   'range-parser': [ '1.2.1' ],
+921 silly audit   'raw-body': [ '3.0.2' ],
+921 silly audit   'require-from-string': [ '2.0.2' ],
+921 silly audit   router: [ '2.2.0' ],
+921 silly audit   'safer-buffer': [ '2.1.2' ],
+921 silly audit   send: [ '1.2.1' ],
+921 silly audit   'serve-static': [ '2.2.1' ],
+921 silly audit   setprototypeof: [ '1.2.0' ],
+921 silly audit   'shebang-command': [ '2.0.0' ],
+921 silly audit   'shebang-regex': [ '3.0.0' ],
+921 silly audit   'side-channel': [ '1.1.0' ],
+921 silly audit   'side-channel-list': [ '1.0.1' ],
+921 silly audit   'side-channel-map': [ '1.0.1' ],
+921 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+921 silly audit   sisteransi: [ '1.0.5' ],
+921 silly audit   statuses: [ '2.0.2' ],
+921 silly audit   toidentifier: [ '1.0.1' ],
+921 silly audit   'type-is': [ '2.0.1' ],
+921 silly audit   unpipe: [ '1.0.0' ],
+921 silly audit   vary: [ '1.1.2' ],
+921 silly audit   'vscode-jsonrpc': [ '8.2.1' ],
+921 silly audit   which: [ '2.0.2' ],
+921 silly audit   wrappy: [ '1.0.2' ],
+921 silly audit   'zod-to-json-schema': [ '3.25.2' ]
+921 silly audit }
+922 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-win32-x64-msvc
+923 silly reify mark deleted [
+923 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-win32-x64-msvc'
+923 silly reify ]
+924 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-win32-ia32-msvc
+925 silly reify mark deleted [
+925 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-win32-ia32-msvc'
+925 silly reify ]
+926 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-win32-arm64-msvc
+927 silly reify mark deleted [
+927 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-win32-arm64-msvc'
+927 silly reify ]
+928 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-x64-musl
+929 silly reify mark deleted [
+929 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-x64-musl'
+929 silly reify ]
+930 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-arm64-musl
+931 silly reify mark deleted [
+931 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-arm64-musl'
+931 silly reify ]
+932 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-arm64-gnu
+933 silly reify mark deleted [
+933 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-linux-arm64-gnu'
+933 silly reify ]
+934 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-darwin-x64
+935 silly reify mark deleted [
+935 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-darwin-x64'
+935 silly reify ]
+936 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-darwin-arm64
+937 silly reify mark deleted [
+937 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/napi-darwin-arm64'
+937 silly reify ]
+938 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-win32-x64-msvc
+939 silly reify mark deleted [
+939 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-win32-x64-msvc'
+939 silly reify ]
+940 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-win32-ia32-msvc
+941 silly reify mark deleted [
+941 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-win32-ia32-msvc'
+941 silly reify ]
+942 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-win32-arm64-msvc
+943 silly reify mark deleted [
+943 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-win32-arm64-msvc'
+943 silly reify ]
+944 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-linux-arm64-gnu
+945 silly reify mark deleted [
+945 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-linux-arm64-gnu'
+945 silly reify ]
+946 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-darwin-x64
+947 silly reify mark deleted [
+947 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-darwin-x64'
+947 silly reify ]
+948 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-darwin-arm64
+949 silly reify mark deleted [
+949 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/@ast-grep/cli-darwin-arm64'
+949 silly reify ]
+950 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-windows-x64-baseline
+951 silly reify mark deleted [
+951 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-windows-x64-baseline',
+951 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+951 silly reify ]
+952 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-windows-x64
+953 silly reify mark deleted [
+953 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-windows-x64',
+953 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+953 silly reify ]
+954 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64-musl-baseline
+955 silly reify mark deleted [
+955 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64-musl-baseline',
+955 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+955 silly reify ]
+956 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64-musl
+957 silly reify mark deleted [
+957 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-x64-musl',
+957 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+957 silly reify ]
+958 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-arm64-musl
+959 silly reify mark deleted [
+959 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-arm64-musl',
+959 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+959 silly reify ]
+960 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-arm64
+961 silly reify mark deleted [
+961 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-linux-arm64',
+961 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+961 silly reify ]
+962 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-darwin-x64-baseline
+963 silly reify mark deleted [
+963 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-darwin-x64-baseline',
+963 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+963 silly reify ]
+964 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-darwin-x64
+965 silly reify mark deleted [
+965 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-darwin-x64',
+965 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+965 silly reify ]
+966 verbose reify failed optional dependency /home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-darwin-arm64
+967 silly reify mark deleted [
+967 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/oh-my-opencode-darwin-arm64',
+967 silly reify   '/home/raekh/.dotfiles/opencode/.config/opencode/.npm-cache/_npx/47ababa9653307a4/node_modules/.bin/oh-my-opencode'
+967 silly reify ]
+968 http cache @modelcontextprotocol/sdk@https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.29.0.tgz 0ms (cache hit)
+969 http cache @opencode-ai/plugin@https://registry.npmjs.org/@opencode-ai/plugin/-/plugin-1.4.3.tgz 0ms (cache hit)
+970 http cache zod@https://registry.npmjs.org/zod/-/zod-4.1.8.tgz 0ms (cache hit)
+971 http cache @hono/node-server@https://registry.npmjs.org/@hono/node-server/-/node-server-1.19.14.tgz 0ms (cache hit)
+972 http cache @opencode-ai/sdk@https://registry.npmjs.org/@opencode-ai/sdk/-/sdk-1.4.3.tgz 0ms (cache hit)
+973 http cache @code-yeongyu/comment-checker@https://registry.npmjs.org/@code-yeongyu/comment-checker/-/comment-checker-0.7.0.tgz 0ms (cache hit)
+974 http cache @ast-grep/napi-linux-x64-gnu@https://registry.npmjs.org/@ast-grep/napi-linux-x64-gnu/-/napi-linux-x64-gnu-0.41.1.tgz 0ms (cache hit)
+975 http cache @clack/core@https://registry.npmjs.org/@clack/core/-/core-0.5.0.tgz 0ms (cache hit)
+976 http cache @clack/prompts@https://registry.npmjs.org/@clack/prompts/-/prompts-0.11.0.tgz 0ms (cache hit)
+977 http cache @ast-grep/napi@https://registry.npmjs.org/@ast-grep/napi/-/napi-0.41.1.tgz 0ms (cache hit)
+978 http cache @posthog/core@https://registry.npmjs.org/@posthog/core/-/core-1.25.2.tgz 0ms (cache hit)
+979 http cache wrappy@https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz 0ms (cache hit)
+980 http cache @ast-grep/cli-linux-x64-gnu@https://registry.npmjs.org/@ast-grep/cli-linux-x64-gnu/-/cli-linux-x64-gnu-0.41.1.tgz 0ms (cache hit)
+981 http cache @ast-grep/cli@https://registry.npmjs.org/@ast-grep/cli/-/cli-0.41.1.tgz 0ms (cache hit)
+982 http cache zod@https://registry.npmjs.org/zod/-/zod-4.3.6.tgz 0ms (cache hit)
+983 http cache zod-to-json-schema@https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.25.2.tgz 0ms (cache hit)
+984 http cache vscode-jsonrpc@https://registry.npmjs.org/vscode-jsonrpc/-/vscode-jsonrpc-8.2.1.tgz 0ms (cache hit)
+985 http cache vary@https://registry.npmjs.org/vary/-/vary-1.1.2.tgz 0ms (cache hit)
+986 http cache which@https://registry.npmjs.org/which/-/which-2.0.2.tgz 0ms (cache hit)
+987 http cache toidentifier@https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz 1ms (cache hit)
+988 http cache type-is@https://registry.npmjs.org/type-is/-/type-is-2.0.1.tgz 0ms (cache hit)
+989 http cache sisteransi@https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz 0ms (cache hit)
+990 http cache unpipe@https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz 0ms (cache hit)
+991 http cache statuses@https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz 0ms (cache hit)
+992 http cache side-channel-weakmap@https://registry.npmjs.org/side-channel-weakmap/-/side-channel-weakmap-1.0.2.tgz 0ms (cache hit)
+993 http cache side-channel@https://registry.npmjs.org/side-channel/-/side-channel-1.1.0.tgz 0ms (cache hit)
+994 http cache side-channel-map@https://registry.npmjs.org/side-channel-map/-/side-channel-map-1.0.1.tgz 0ms (cache hit)
+995 http cache shebang-regex@https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz 0ms (cache hit)
+996 http cache shebang-command@https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz 0ms (cache hit)
+997 http cache side-channel-list@https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.1.tgz 0ms (cache hit)
+998 http cache setprototypeof@https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz 0ms (cache hit)
+999 http cache serve-static@https://registry.npmjs.org/serve-static/-/serve-static-2.2.1.tgz 0ms (cache hit)
+1000 http cache send@https://registry.npmjs.org/send/-/send-1.2.1.tgz 0ms (cache hit)
+1001 http cache safer-buffer@https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz 0ms (cache hit)
+1002 http cache router@https://registry.npmjs.org/router/-/router-2.2.0.tgz 0ms (cache hit)
+1003 http cache require-from-string@https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz 0ms (cache hit)
+1004 http cache proxy-addr@https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz 0ms (cache hit)
+1005 http cache range-parser@https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz 0ms (cache hit)
+1006 http cache qs@https://registry.npmjs.org/qs/-/qs-6.15.1.tgz 0ms (cache hit)
+1007 http cache raw-body@https://registry.npmjs.org/raw-body/-/raw-body-3.0.2.tgz 0ms (cache hit)
+1008 http cache posthog-node@https://registry.npmjs.org/posthog-node/-/posthog-node-5.29.2.tgz 0ms (cache hit)
+1009 http cache picomatch@https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz 0ms (cache hit)
+1010 http cache path-key@https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz 0ms (cache hit)
+1011 http cache pkce-challenge@https://registry.npmjs.org/pkce-challenge/-/pkce-challenge-5.0.1.tgz 0ms (cache hit)
+1012 http cache path-to-regexp@https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-8.4.2.tgz 0ms (cache hit)
+1013 http cache picocolors@https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz 0ms (cache hit)
+1014 http cache parseurl@https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz 0ms (cache hit)
+1015 http cache once@https://registry.npmjs.org/once/-/once-1.4.0.tgz 0ms (cache hit)
+1016 http cache oh-my-opencode-linux-x64-baseline@https://registry.npmjs.org/oh-my-opencode-linux-x64-baseline/-/oh-my-opencode-linux-x64-baseline-3.17.1.tgz 0ms (cache hit)
+1017 http cache on-finished@https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz 0ms (cache hit)
+1018 http cache mime-db@https://registry.npmjs.org/mime-db/-/mime-db-1.54.0.tgz 0ms (cache hit)
+1019 http cache oh-my-opencode@https://registry.npmjs.org/oh-my-opencode/-/oh-my-opencode-3.17.1.tgz 0ms (cache hit)
+1020 http cache object-inspect@https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.4.tgz 0ms (cache hit)
+1021 http cache oh-my-opencode-linux-x64@https://registry.npmjs.org/oh-my-opencode-linux-x64/-/oh-my-opencode-linux-x64-3.17.1.tgz 0ms (cache hit)
+1022 http cache ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 0ms (cache hit)
+1023 http cache negotiator@https://registry.npmjs.org/negotiator/-/negotiator-1.0.0.tgz 0ms (cache hit)
+1024 http cache mime-types@https://registry.npmjs.org/mime-types/-/mime-types-3.0.2.tgz 0ms (cache hit)
+1025 http cache merge-descriptors@https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-2.0.0.tgz 0ms (cache hit)
+1026 http cache math-intrinsics@https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz 0ms (cache hit)
+1027 http cache media-typer@https://registry.npmjs.org/media-typer/-/media-typer-1.1.0.tgz 0ms (cache hit)
+1028 http cache json-schema-typed@https://registry.npmjs.org/json-schema-typed/-/json-schema-typed-8.0.2.tgz 0ms (cache hit)
+1029 http cache jsonc-parser@https://registry.npmjs.org/jsonc-parser/-/jsonc-parser-3.3.1.tgz 0ms (cache hit)
+1030 http cache json-schema-traverse@https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz 0ms (cache hit)
+1031 http cache js-yaml@https://registry.npmjs.org/js-yaml/-/js-yaml-4.1.1.tgz 0ms (cache hit)
+1032 http cache is-promise@https://registry.npmjs.org/is-promise/-/is-promise-4.0.0.tgz 0ms (cache hit)
+1033 http cache isexe@https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz 0ms (cache hit)
+1034 http cache ipaddr.js@https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz 0ms (cache hit)
+1035 http cache object-assign@https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz 0ms (cache hit)
+1036 http cache ip-address@https://registry.npmjs.org/ip-address/-/ip-address-10.1.0.tgz 0ms (cache hit)
+1037 http cache iconv-lite@https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.2.tgz 0ms (cache hit)
+1038 http cache jose@https://registry.npmjs.org/jose/-/jose-6.2.2.tgz 0ms (cache hit)
+1039 http cache hono@https://registry.npmjs.org/hono/-/hono-4.12.12.tgz 0ms (cache hit)
+1040 http cache inherits@https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz 0ms (cache hit)
+1041 http cache http-errors@https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz 0ms (cache hit)
+1042 http cache hasown@https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz 0ms (cache hit)
+1043 http cache has-symbols@https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz 0ms (cache hit)
+1044 http cache function-bind@https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz 0ms (cache hit)
+1045 http cache get-proto@https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz 0ms (cache hit)
+1046 http cache gopd@https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz 0ms (cache hit)
+1047 http cache fresh@https://registry.npmjs.org/fresh/-/fresh-2.0.0.tgz 0ms (cache hit)
+1048 http cache get-intrinsic@https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz 0ms (cache hit)
+1049 http cache forwarded@https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz 0ms (cache hit)
+1050 http cache finalhandler@https://registry.npmjs.org/finalhandler/-/finalhandler-2.1.1.tgz 0ms (cache hit)
+1051 http cache fast-deep-equal@https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz 0ms (cache hit)
+1052 http cache fast-uri@https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.0.tgz 0ms (cache hit)
+1053 http cache express-rate-limit@https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-8.3.2.tgz 0ms (cache hit)
+1054 http cache eventsource-parser@https://registry.npmjs.org/eventsource-parser/-/eventsource-parser-3.0.6.tgz 0ms (cache hit)
+1055 http cache express@https://registry.npmjs.org/express/-/express-5.2.1.tgz 0ms (cache hit)
+1056 http cache etag@https://registry.npmjs.org/etag/-/etag-1.8.1.tgz 0ms (cache hit)
+1057 http cache escape-html@https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz 0ms (cache hit)
+1058 http cache eventsource@https://registry.npmjs.org/eventsource/-/eventsource-3.0.7.tgz 0ms (cache hit)
+1059 http cache es-errors@https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz 0ms (cache hit)
+1060 http cache es-define-property@https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz 0ms (cache hit)
+1061 http cache ee-first@https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz 0ms (cache hit)
+1062 http cache es-object-atoms@https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz 0ms (cache hit)
+1063 http cache dunder-proto@https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz 0ms (cache hit)
+1064 http cache detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz 0ms (cache hit)
+1065 http cache encodeurl@https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz 0ms (cache hit)
+1066 http cache depd@https://registry.npmjs.org/depd/-/depd-2.0.0.tgz 0ms (cache hit)
+1067 http cache diff@https://registry.npmjs.org/diff/-/diff-8.0.4.tgz 0ms (cache hit)
+1068 http cache debug@https://registry.npmjs.org/debug/-/debug-4.4.3.tgz 0ms (cache hit)
+1069 http cache cors@https://registry.npmjs.org/cors/-/cors-2.8.6.tgz 0ms (cache hit)
+1070 http cache cross-spawn@https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz 0ms (cache hit)
+1071 http cache cookie-signature@https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.2.2.tgz 0ms (cache hit)
+1072 http cache content-type@https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz 0ms (cache hit)
+1073 http cache content-disposition@https://registry.npmjs.org/content-disposition/-/content-disposition-1.1.0.tgz 0ms (cache hit)
+1074 http cache commander@https://registry.npmjs.org/commander/-/commander-14.0.3.tgz 0ms (cache hit)
+1075 http cache call-bound@https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz 0ms (cache hit)
+1076 http cache cookie@https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz 0ms (cache hit)
+1077 http cache call-bind-apply-helpers@https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz 0ms (cache hit)
+1078 http cache bytes@https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz 0ms (cache hit)
+1079 http cache ajv-formats@https://registry.npmjs.org/ajv-formats/-/ajv-formats-3.0.1.tgz 0ms (cache hit)
+1080 http cache ajv@https://registry.npmjs.org/ajv/-/ajv-8.18.0.tgz 0ms (cache hit)
+1081 http cache argparse@https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz 0ms (cache hit)
+1082 http cache accepts@https://registry.npmjs.org/accepts/-/accepts-2.0.0.tgz 0ms (cache hit)
+1083 http cache body-parser@https://registry.npmjs.org/body-parser/-/body-parser-2.2.2.tgz 0ms (cache hit)
+1084 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 1008ms
+1085 silly audit report {}
+1086 info run @ast-grep/cli@0.41.1 postinstall node_modules/@ast-grep/cli node postinstall.js
+1087 info run @code-yeongyu/comment-checker@0.7.0 postinstall node_modules/@code-yeongyu/comment-checker node postinstall.js
+1088 info run oh-my-opencode@3.17.1 postinstall node_modules/oh-my-opencode node postinstall.mjs
+1089 info run @code-yeongyu/comment-checker@0.7.0 postinstall { code: 0, signal: null }
+1090 info run @ast-grep/cli@0.41.1 postinstall { code: 0, signal: null }
+1091 info run oh-my-opencode@3.17.1 postinstall { code: 0, signal: null }
+1092 verbose cwd /home/raekh/.dotfiles/opencode/.config/opencode
+1093 verbose os Linux 6.17.0-20-generic
+1094 verbose node v22.13.0
+1095 verbose npm  v11.0.0
+1096 verbose exit 127
+1097 verbose code 127
