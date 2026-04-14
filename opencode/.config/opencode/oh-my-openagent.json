@@ -29,16 +29,19 @@
         }
       ]
     },
+    "librarian": {
+      "model": "github-copilot/claude-haiku-4.5"
+    },
     "explore": {
       "model": "github-copilot/grok-code-fast-1",
       "fallback_models": [
         {
-          "model": "github-copilot/gpt-5-mini"
+          "model": "github-copilot/gpt-5.4-mini"
         }
       ]
     },
     "multimodal-looker": {
-      "model": "github-copilot/gpt-5-nano"
+      "model": "github-copilot/gpt-5.4-mini"
     },
     "prometheus": {
       "model": "github-copilot/claude-opus-4.6",
