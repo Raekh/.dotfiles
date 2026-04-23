@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/master/dcp.schema.json",
+  "enabled": true,
+  "debug": false,
+  "pruneNotification": "detailed",
+  "pruneNotificationType": "chat",
+  "compress": {
+    "mode": "range",
+    "permission": "allow",
+    "summaryBuffer": true,
+    "minContextLimit": 40000,
+    "maxContextLimit": 120000,
+    "modelMinLimits": {
+      "github-copilot/gpt-5.4": 40000,
+      "github-copilot/gpt-5.4-mini": 30000,
+      "github-copilot/claude-opus-4.7": 60000,
+      "github-copilot/gemini-3.1-pro": 40000,
+      "github-copilot/gemini-3-flash": 30000,
+      "github-copilot/claude-haiku-4.5": 30000,
+      "github-copilot/claude-sonnet-4.6": 40000,
+      "github-copilot/grok-code-fast-1": 30000
+    },
+    "modelMaxLimits": {
+      "github-copilot/gpt-5.4": 120000,
+      "github-copilot/gpt-5.4-mini": 60000,
+      "github-copilot/claude-opus-4.7": 150000,
+      "github-copilot/gemini-3.1-pro": 120000,
+      "github-copilot/gemini-3-flash": 60000,
+      "github-copilot/claude-haiku-4.5": 60000,
+      "github-copilot/claude-sonnet-4.6": 100000,
+      "github-copilot/grok-code-fast-1": 60000
+    }
+  },
+  "strategies": {
+    "deduplication": {
+      "enabled": true
+    },
+    "purgeErrors": {
+      "enabled": true,
+      "turns": 4
+    }
+  }
+}
