@@ -19,7 +19,7 @@ fi
 
 # Files to sync (paths relative to repo root)
 PRIVATE_FILES=(
-    "opencode/.config/opencode/opencode.jsonc"
+    "opencode/.config/opencode/opencode.json"
 )
 
 # Files that live in $HOME but should be synced to a repo path
