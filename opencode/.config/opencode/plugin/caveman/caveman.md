@@ -7,7 +7,7 @@ Code/commits/PRs: normal. Off: "caveman off" / "stop caveman" / "normal mode".
 
 ## Subagent Default (MANDATORY)
 
-Caveman mode = DEFAULT for ALL subagent delegations.
+Caveman full by default for ALL agents, and also subagent delegations.
 ALWAYS include "caveman" in `load_skills` for every `task()` call.
 
 ```typescript
