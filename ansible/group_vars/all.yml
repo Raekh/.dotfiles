@@ -1,0 +1,39 @@
+---
+neovim_version: stable
+python_version: "3.12.0"
+install_ghostty: true
+install_haskell: true
+install_hyprland_stack: true
+install_optional_shell_utils: true
+ghostty_package_arch: ghostty
+font_packages_arch:
+  - ttf-iosevka
+hyprland_packages_arch:
+  - hyprland
+  - hyprlock
+  - hypridle
+  - xdg-desktop-portal-hyprland
+  - kanshi
+  - swaync
+  - wlogout
+  - wl-clipboard
+  - cliphist
+  - grim
+  - slurp
+  - swappy
+  - brightnessctl
+  - playerctl
+  - pamixer
+  - pavucontrol
+  - network-manager-applet
+  - blueman
+  - rofi
+  - qalculate-gtk
+  - swww
+  - waybar
+  - polkit-gnome
+optional_shell_packages_arch:
+  - xsel
+  - bat
+  - docker
+  - docker-compose

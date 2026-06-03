@@ -20,8 +20,8 @@ sudo pacman -S ansible
 ## Usage
 
 ```bash
-cd ~/.dotfiles/ansible
-ansible-playbook playbook.yml --ask-become-pass
+cd ~/.dotfiles
+./install-ansible
 ```
 
 ## What Gets Installed
@@ -38,6 +38,8 @@ ansible-playbook playbook.yml --ask-become-pass
 | neovim | bob (nvim version manager) + nvim |
 | terminal | tmux, TPM, tmuxinator, ghostty |
 | cli_tools | exa, gum, lazygit, lazydocker |
+| hyprland | hyprland, hyprlock, hypridle, kanshi, xdg-desktop-portal-hyprland |
+| wayland_helpers | swaync, wlogout, wl-clipboard, cliphist, grim, slurp, swappy, brightnessctl, playerctl, pamixer, pavucontrol, rofi, swww, waybar, nm-applet, blueman |
 
 ## Configuration
 
@@ -47,6 +49,8 @@ Edit `group_vars/all.yml` to customize:
 - `python_version`: Which Python version pyenv should install (default: 3.12.0)
 - `install_ghostty`: Enable/disable ghostty installation (default: true)
 - `install_haskell`: Enable/disable ghcup installation (default: true)
+- `install_hyprland_stack`: Enable/disable Hyprland desktop packages on Arch-like systems
+- `install_optional_shell_utils`: Enable/disable extra utilities like Docker, `xsel`, and `bat`
 
 ## Post-Install
 
@@ -65,6 +69,7 @@ After running the playbook:
 
 ## Notes
 
-- Ghostty on Arch needs AUR: `yay -S ghostty-git`
+- Ghostty package naming can vary across Arch-based systems; override `ghostty_package_arch` in `group_vars/all.yml` if needed.
 - The playbook is idempotent (safe to run multiple times)
 - Roles only install tools; your dotfiles handle configuration
+- Stowing still happens separately via `./install`

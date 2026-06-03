@@ -8,10 +8,6 @@
     user_name: "{{ ansible_user_id }}"
     user_home: "{{ ansible_env.HOME }}"
     dotfiles_path: "{{ user_home }}/.dotfiles"
-    neovim_version: "stable"
-    python_version: "3.12.0"
-    install_ghostty: true
-    install_haskell: true
     cargo_home: "{{ user_home }}/.cargo"
     cargo_bin: "{{ cargo_home }}/bin"
     go_root: "/usr/local/go"
@@ -50,6 +46,27 @@
           - fuse2
           - jq
         state: present
+
+    - name: Install fonts used by stowed configs
+      become: true
+      community.general.pacman:
+        name: "{{ font_packages_arch }}"
+        state: present
+      when: font_packages_arch | length > 0
+
+    - name: Install Hyprland stack and Wayland helpers
+      become: true
+      community.general.pacman:
+        name: "{{ hyprland_packages_arch }}"
+        state: present
+      when: install_hyprland_stack
+
+    - name: Install optional shell and workstation utilities
+      become: true
+      community.general.pacman:
+        name: "{{ optional_shell_packages_arch }}"
+        state: present
+      when: install_optional_shell_utils
 
     - name: Ensure local bin directory exists
       ansible.builtin.file:
@@ -318,7 +335,7 @@
     - name: Install ghostty
       become: true
       community.general.pacman:
-        name: ghostty
+        name: "{{ ghostty_package_arch }}"
         state: present
       when: install_ghostty
 
@@ -348,6 +365,20 @@
       community.general.pacman:
         name: lazydocker
         state: present
+
+    - name: Enable NetworkManager service
+      become: true
+      ansible.builtin.systemd:
+        name: NetworkManager
+        enabled: true
+      when: install_hyprland_stack
+
+    - name: Enable bluetooth service
+      become: true
+      ansible.builtin.systemd:
+        name: bluetooth
+        enabled: true
+      when: install_hyprland_stack
 
     # ===================
     # OpenCode
