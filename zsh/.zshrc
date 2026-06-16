@@ -104,8 +104,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases {{{
 ## Ubuntu
-alias fu='sudo --preserve-env'
-alias fus='sudo --preserve-env zsh'
+alias fu='sudo.ws --preserve-env'
+alias fus='sudo.ws --preserve-env zsh'
 
 alias cpugetavail='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors'
 alias cpushowcurrent='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
