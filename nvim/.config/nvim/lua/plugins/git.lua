@@ -5,7 +5,7 @@ return {
     {
       -- Best git diff tool to exist on the planet
       -- Using local fork with hunk_links feature
-      "dlyongemallo/diffview.nvim",
+      "dlyongemallo/diffview-plus.nvim",
       -- dir = "/home/raekh/Documents/Code/diffview-graphs/diffview.nvim",
       -- name = "diffview.nvim",
       lazy = false,
@@ -30,14 +30,14 @@ return {
         -- }}}
       end,
       keys = {
-        { "<Leader>Do", "<CMD>DiffviewOpen<CR>",          desc = "Diffview: Open" },
-        { "<Leader>Dc", "<CMD>DiffviewClose<CR>",         desc = "Diffview: Close" },
-        { "<Leader>Dl", "<CMD>DiffviewLog<CR>",           desc = "Diffview: Log" },
-        { "<Leader>Dr", "<CMD>DiffviewRefresh<CR>",       desc = "Diffview: Refresh" },
-        { "<Leader>Df", "<CMD>DiffviewFocusFiles<CR>",    desc = "Diffview: Focus files" },
-        { "<Leader>Dh", "<CMD>DiffviewFileHistory<CR>",   desc = "Diffview: File history" },
+        { "<Leader>Do", "<CMD>DiffviewOpen<CR>", desc = "Diffview: Open" },
+        { "<Leader>Dc", "<CMD>DiffviewClose<CR>", desc = "Diffview: Close" },
+        { "<Leader>Dl", "<CMD>DiffviewLog<CR>", desc = "Diffview: Log" },
+        { "<Leader>Dr", "<CMD>DiffviewRefresh<CR>", desc = "Diffview: Refresh" },
+        { "<Leader>Df", "<CMD>DiffviewFocusFiles<CR>", desc = "Diffview: Focus files" },
+        { "<Leader>Dh", "<CMD>DiffviewFileHistory<CR>", desc = "Diffview: File history" },
         { "<Leader>DH", "<CMD>DiffviewFileHistory %<CR>", desc = "Diffview: Current file history" },
-        { "<Leader>Dt", "<CMD>DiffviewToggleFiles<CR>",   desc = "Diffview: Toggle files" },
+        { "<Leader>Dt", "<CMD>DiffviewToggleFiles<CR>", desc = "Diffview: Toggle files" },
       },
     },
     {
@@ -46,7 +46,7 @@ return {
       dependencies = {
         "MunifTanjim/nui.nvim",
         "nvim-lua/plenary.nvim",
-        "dlyongemallo/diffview.nvim",
+        "dlyongemallo/diffview-plus.nvim",
         -- "stevearc/dressing.nvim", -- Recommended but not required. Better UI for pickers.
         "nvim-tree/nvim-web-devicons", -- Recommended but not required. Icons in discussion tree.
       },
