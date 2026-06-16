@@ -26,49 +26,49 @@ main() {
     choice=$(menu | rofi -i -dmenu -config ~/.config/rofi/config-compact.rasi | cut -d. -f1)
     case $choice in
         1)
-            kitty -e nvim "$UserConfigs/ENVariables.conf"
+            ghostty -e nvim "$UserConfigs/ENVariables.conf"
             ;;
         2)
-            kitty -e nvim "$UserConfigs/WindowRules.conf"
+            ghostty -e nvim "$UserConfigs/WindowRules.conf"
             ;;
         3)
-            kitty -e nvim "$UserConfigs/Startup_Apps.conf"
+            ghostty -e nvim "$UserConfigs/Startup_Apps.conf"
             ;;
         4)
-            kitty -e nvim "$UserConfigs/UserKeybinds.conf"
+            ghostty -e nvim "$UserConfigs/UserKeybinds.conf"
             ;;
         5)
-            kitty -e nvim "$UserConfigs/Monitors.conf"
+            ghostty -e nvim "$UserConfigs/Monitors.conf"
             ;;
         6)
-            kitty -e nvim "$UserConfigs/Laptops.conf"
+            ghostty -e nvim "$UserConfigs/Laptops.conf"
             ;;
         7)
-            kitty -e nvim "$UserConfigs/UserSettings.conf"
+            ghostty -e nvim "$UserConfigs/UserSettings.conf"
             ;;
         8)
-            kitty -e nvim "$UserConfigs/WorkspaceRules.conf"
+            ghostty -e nvim "$UserConfigs/WorkspaceRules.conf"
             ;;
 		9)
-            kitty -e nvim "$configs/Settings.conf"
+            ghostty -e nvim "$configs/Settings.conf"
             ;;
         10)
-            kitty -e nvim "$configs/Keybinds.conf"
+            ghostty -e nvim "$configs/Keybinds.conf"
             ;;
         11)
-            kitty -e nvim "$HOME/.config/kanshi/config"
+            ghostty -e nvim "$HOME/.config/kanshi/config"
             ;;
         12)
-            kitty -e bluetui
+            ghostty -e bluetui
             ;;
         13)
-            kitty -e pulsemixer
+            ghostty -e pulsemixer
             ;;
         14)
-            kitty -e nvim "$HOME/.config/nvim/lua/plugins/"
+            ghostty -e nvim "$HOME/.config/nvim/lua/plugins/"
             ;;
         15)
-            kitty -e sh -lc '$HOME/.config/hypr/scripts/MonitorProfiles.sh --apply; hyprctl monitors all'
+            ghostty -e sh -lc '$HOME/.config/hypr/scripts/MonitorProfiles.sh --apply; hyprctl monitors all'
             ;;
         *)
             ;;
